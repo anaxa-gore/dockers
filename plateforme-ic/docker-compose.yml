@@ -1,0 +1,65 @@
+version: "2"
+
+services:
+    jenkins:
+        image: jenkins:latest
+        ports: 
+            - "8080:8080"
+            - "50000:50000"
+        volumes:
+            - ${ROOT_DATA}/jenkins_home:/var/jenkins_home
+
+    db_sonar:
+        image: mysql:5.7
+        networks:
+            - ic_net
+        ports:
+            - "3306:3306"
+        volumes:
+            - ${ROOT_DATA}/mysql:/var/lib/mysql
+        environment:
+            - MYSQL_ROOT_PASSWORD=@Soleil1
+            - MYSQL_DATABASE=sonar
+            - MYSQL_USER=sonar
+            - MYSQL_PASSWORD=sonar
+            
+    sonarqube:
+        image: sonarqube:alpine
+        links:
+            - db_sonar
+        networks:
+            - ic_net
+        ports:
+            - "9000:9000"
+            - "9092:9092"
+        environment:
+            - SONARQUBE_JDBC_USERNAME=sonar
+            - SONARQUBE_JDBC_PASSWORD=sonar
+            - SONARQUBE_JDBC_URL=jdbc:mysql://db_sonar:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+        volumes:
+            - ${ROOT_DATA}/sonarqube/conf:/opt/sonarqube/conf
+            - ${ROOT_DATA}/sonarqube/data:/opt/sonarqube/data
+            - ${ROOT_DATA}/sonarqube/extensions:/opt/sonarqube/extensions
+            - ${ROOT_DATA}/sonarqube/plugins:/opt/sonarqube/lib/bundled-plugins
+
+    db_rocket:
+        image: mongo:latest
+        networks:
+            - ic_net
+        ports:
+            - "27017:27017"
+        command: --smallfiles
+
+    rocket:
+        image: rocket.chat:latest
+        links:
+            - db_rocket
+        networks:
+            - ic_net
+        ports:
+            - "80:3000"
+    
+
+networks:
+    ic_net:
+        driver: bridge
