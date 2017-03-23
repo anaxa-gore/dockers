@@ -44,21 +44,23 @@ services:
 
     db_rocket:
         image: mongo:latest
-        networks:
-            - ic_net
         ports:
             - "27017:27017"
-        command: --smallfiles
+        volumes:
+            - ${MONGO_DATA}:/data/db
+        command: mongod --smallfiles
 
     rocket:
         image: rocket.chat:latest
         links:
             - db_rocket
-        networks:
-            - ic_net
         ports:
             - "80:3000"
-    
+        volumes:
+            - ${ROOT_DATA}/rocket.chat/uploads:/app/uploads
+        environment:
+            - PORT=3000
+            - MONGO_URL=mongodb://db_rocket:27017/rocketchat
 
 networks:
     ic_net:
