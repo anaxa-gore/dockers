@@ -9,6 +9,20 @@ services:
         volumes:
             - ${ROOT_DATA}/jenkins_home:/var/jenkins_home
 
+    #nexus:
+    #    image: sonatype/nexus3
+    #    ports:
+    #        - "8081:8081"
+    #    volumes:
+    #        - ${ROOT_SHARED_DATA}/nexus:/nexus-data
+     
+    nexus2:
+        image: sonatype/nexus
+        ports:
+            - "8081:8081"
+        volumes:
+            - ${ROOT_SHARED_DATA}/nexus2:/sonatype-work
+    
     db_sonar:
         image: mysql:5.7
         networks:
@@ -16,7 +30,7 @@ services:
         ports:
             - "3306:3306"
         volumes:
-            - ${ROOT_DATA}/mysql:/var/lib/mysql
+            - ${ROOT_SHARED_DATA}/mysql:/var/lib/mysql
         environment:
             - MYSQL_ROOT_PASSWORD=@Soleil1
             - MYSQL_DATABASE=sonar
@@ -37,17 +51,17 @@ services:
             - SONARQUBE_JDBC_PASSWORD=sonar
             - SONARQUBE_JDBC_URL=jdbc:mysql://db_sonar:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
         volumes:
-            - ${ROOT_DATA}/sonarqube/conf:/opt/sonarqube/conf
-            - ${ROOT_DATA}/sonarqube/data:/opt/sonarqube/data
-            - ${ROOT_DATA}/sonarqube/extensions:/opt/sonarqube/extensions
-            - ${ROOT_DATA}/sonarqube/plugins:/opt/sonarqube/lib/bundled-plugins
+            - ${ROOT_SHARED_DATA}/sonarqube/conf:/opt/sonarqube/conf
+            - ${ROOT_SHARED_DATA}/sonarqube/data:/opt/sonarqube/data
+            - ${ROOT_SHARED_DATA}/sonarqube/extensions:/opt/sonarqube/extensions
+            - ${ROOT_SHARED_DATA}/sonarqube/plugins:/opt/sonarqube/lib/bundled-plugins
 
     db_rocket:
         image: mongo:latest
         ports:
             - "27017:27017"
         volumes:
-            - ${MONGO_DATA}:/data/db
+            - ${ROOT_DATA}/mongo:/data/db
         command: mongod --smallfiles
 
     rocket:
@@ -57,7 +71,7 @@ services:
         ports:
             - "80:3000"
         volumes:
-            - ${ROOT_DATA}/rocket.chat/uploads:/app/uploads
+            - ${ROOT_SHARED_DATA}/rocket.chat/uploads:/app/uploads
         environment:
             - PORT=3000
             - MONGO_URL=mongodb://db_rocket:27017/rocketchat
