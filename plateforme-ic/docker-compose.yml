@@ -9,19 +9,19 @@ services:
         volumes:
             - ${ROOT_DATA}/jenkins_home:/var/jenkins_home
 
-    #nexus:
-    #    image: sonatype/nexus3
-    #    ports:
-    #        - "8081:8081"
-    #    volumes:
-    #        - ${ROOT_SHARED_DATA}/nexus:/nexus-data
-     
-    nexus2:
-        image: sonatype/nexus
+    nexus:
+        image: sonatype/nexus3
         ports:
             - "8081:8081"
         volumes:
-            - ${ROOT_SHARED_DATA}/nexus2:/sonatype-work
+            - ${ROOT_SHARED_DATA}/nexus:/nexus-data
+     
+    #nexus2:
+    #    image: sonatype/nexus
+    #    ports:
+    #        - "8081:8081"
+    #    volumes:
+    #        - ${ROOT_SHARED_DATA}/nexus2:/sonatype-work
     
     db_sonar:
         image: mysql:5.7
