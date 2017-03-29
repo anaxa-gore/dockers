@@ -3,27 +3,27 @@
 # On arrête tous les containers de l'environnement
 docker-compose down
 
-# On supprime les anciens répertoires
-if [ -d ./data_jenkins_home_save_old ]; then
-    rm -rf ./data_jenkins_home_save_old
+# On supprime les anciens packages
+if [ -f ./data_jenkins.old.tar.gz ]; then
+    rm -f ./data_jenkins.old.tar.gz
 fi
-if [ -d ./data_mongo_save_old ]; then
-    rm -rf ./data_mongo_save_old
+if [ -f ./data_mongo.old.tar.gz ]; then
+    rm -f ./data_mongo.old.tar.gz
 fi
 
-# On renomme les répertoires de données courants en anciens répertoires
-if [ -d ./data_jenkins_home_save ]; then
-    mv ./data_jenkins_home_save ./data_jenkins_home_save_old
+# On renomme les packages courants en anciens
+if [ -f ./data_jenkins.tar.gz ]; then
+    mv ./data_jenkins.tar.gz ./data_jenkins.old.tar.gz
 fi
-if [ -d ./data_mongo_save ]; then
-    mv ./data_mongo_save ./data_mongo_save_old
+if [ -f ./data_mongo.tar.gz ]; then
+    mv ./data_mongo.tar.gz ./data_mongo.old.tar.gz
 fi
 
 # On sauvegarde les données de l'environnement
-docker-machine scp -r default:/data/jenkins_home .
-docker-machine scp -r default:/data/mongo .
+docker-machine ssh default "cd /data && sudo tar czf /data/data_jenkins.tar.gz jenkins_home/"
+docker-machine ssh default "cd /data && tar czf /data/data_mongo.tar.gz mongo/"
 
-mv ./jenkins_home ./data_jenkins_home_save
-mv ./mongo ./data_mongo_save
+docker-machine scp default:/data/data_jenkins.tar.gz .
+docker-machine scp default:/data/data_mongo.tar.gz .
 
 docker-machine stop default
