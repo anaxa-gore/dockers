@@ -32,8 +32,13 @@ services:
             
     logstash:
         image: docker.elastic.co/logstash/logstash:5.3.0
+        ports:
+            - "8080:8080"
+            - "5000:5000"
         links:
             - elasticsearch
+        volumes:
+            - ${ROOT_SHARED_DATA}/logstash/pipeline:/usr/share/logstash/pipeline
         networks:
             - logstash_net
     
