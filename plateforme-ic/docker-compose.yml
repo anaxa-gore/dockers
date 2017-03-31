@@ -51,10 +51,10 @@ services:
             - SONARQUBE_JDBC_PASSWORD=sonar
             - SONARQUBE_JDBC_URL=jdbc:mysql://db_sonar:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
         volumes:
-            - ${ROOT_SHARED_DATA}/sonarqube/conf:/opt/sonarqube/conf
+            #- ${ROOT_SHARED_DATA}/sonarqube/conf:/opt/sonarqube/conf
             - ${ROOT_SHARED_DATA}/sonarqube/data:/opt/sonarqube/data
             - ${ROOT_SHARED_DATA}/sonarqube/extensions:/opt/sonarqube/extensions
-            - ${ROOT_SHARED_DATA}/sonarqube/plugins:/opt/sonarqube/lib/bundled-plugins
+            #- ${ROOT_SHARED_DATA}/sonarqube/plugins:/opt/sonarqube/lib/bundled-plugins
 
     db_rocket:
         image: mongo:latest
