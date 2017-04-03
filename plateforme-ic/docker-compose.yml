@@ -103,6 +103,7 @@ services:
         restart: always
         volumes:
             - ${ROOT_SHARED_DATA}/redmine:/usr/src/redmine/files
+            - ${ROOT_SHARED_DATA}/redmine_plugins:/usr/src/redmine/plugins
         
 networks:
     ic_net:
