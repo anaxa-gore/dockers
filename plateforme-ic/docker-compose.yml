@@ -88,6 +88,22 @@ services:
             - ${ROOT_SHARED_DATA}/mantis/main:/var/www/html/config
             - ${ROOT_SHARED_DATA}/mantis/plugins:/var/www/html/plugins
 
+            
+    redmine:
+        image: redmine:latest
+        links: 
+            - db_sonar
+        networks:
+            - ic_net
+        ports:
+            - "5001:3000"
+        environment:
+            REDMINE_DB_MYSQL: db_sonar
+            REDMINE_DB_PASSWORD: @Soleil1
+        restart: always
+        volumes:
+            - ${ROOT_SHARED_DATA}/redmine:/usr/src/redmine/files
+        
 networks:
     ic_net:
         driver: bridge
