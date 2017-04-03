@@ -98,8 +98,8 @@ services:
         ports:
             - "5001:3000"
         environment:
-            REDMINE_DB_MYSQL: db_sonar
-            REDMINE_DB_PASSWORD: @Soleil1
+            - REDMINE_DB_MYSQL=db_sonar
+            - REDMINE_DB_PASSWORD=@Soleil1
         restart: always
         volumes:
             - ${ROOT_SHARED_DATA}/redmine:/usr/src/redmine/files
