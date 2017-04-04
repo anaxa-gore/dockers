@@ -86,6 +86,7 @@ services:
             - MM_USERNAME=mattermost
             - MM_PASSWORD=mattermost
             - MM_DBNAME=mattermost
+            - DB_HOST=db_mattermost
         networks:
             - ic_net
     
