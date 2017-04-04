@@ -84,6 +84,8 @@ services:
             - MM_USERNAME=mattermost
             - MM_PASSWORD=mattermost
             - MM_DBNAME=mattermost
+        networks:
+            - ic_net
     
     mattermost_web:
         build: mattermost/web
@@ -96,6 +98,8 @@ services:
         volumes:
             - ${ROOT_SHARED_DATA}/mattermost_web/cert:/cert:ro
             - /etc/localtime:/etc/localtime:ro
+        networks:
+            - ic_net
     
     ########## BDD Outils collaboratifs
     #db_rocket:
@@ -116,6 +120,8 @@ services:
         volumes:
             - ${ROOT_DATA}/postgres:/var/lib/postgresql/data
             - /etc/localtime:/etc/localtime:ro
+        networks:
+            - ic_net
 
     ########## Gestion de tickets : MANTIS ou REDMINE    
     mantis:
