@@ -56,6 +56,20 @@ services:
             - ${ROOT_SHARED_DATA}/sonarqube/extensions:/opt/sonarqube/extensions
             #- ${ROOT_SHARED_DATA}/sonarqube/plugins:/opt/sonarqube/lib/bundled-plugins
 
+    ########## Version Control et ticketing ?
+    gitlab:
+        image: gitlab/gitlab-ce:latest
+        ports:
+            - "80:80"
+            - "443:443"
+            - "22:22"
+        volumes:
+            - ${ROOT_SHARED_DATA}/gitlab/etc:/etc/gitlab
+            - ${ROOT_SHARED_DATA}/gitlab/data:/var/opt/gitlab
+            - ${ROOT_SHARED_DATA}/gitlab/log:/var/log/gitlab
+        networks:
+            - ic_net
+    
     
     ########## Outils collaboratifs : ROCKET.CHAT ou MATTERMOST
     #rocket:
@@ -127,17 +141,17 @@ services:
             - ic_net
 
     ########## Gestion de tickets : MANTIS ou REDMINE    
-    mantis:
-        image: chessmasterrr/mantis:latest
-        links:
-            - db_sonar
-        networks:
-            - ic_net
-        ports:
-            - "5000:80"
-        volumes:
-            - ${ROOT_SHARED_DATA}/mantis/main:/var/www/html/config
-            - ${ROOT_SHARED_DATA}/mantis/plugins:/var/www/html/plugins
+    #mantis:
+    #    image: chessmasterrr/mantis:latest
+    #    links:
+    #        - db_sonar
+    #    networks:
+    #        - ic_net
+    #    ports:
+    #        - "5000:80"
+    #    volumes:
+    #        - ${ROOT_SHARED_DATA}/mantis/main:/var/www/html/config
+    #        - ${ROOT_SHARED_DATA}/mantis/plugins:/var/www/html/plugins
 
             
     #redmine:
