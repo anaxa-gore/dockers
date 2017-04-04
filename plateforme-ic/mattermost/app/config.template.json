@@ -5,7 +5,7 @@
         "SegmentDeveloperKey": "",
         "GoogleDeveloperKey": "",
         "EnableOAuthServiceProvider": false,
-        "EnableIncomingWebhooks": false,
+        "EnableIncomingWebhooks": true,
         "EnableOutgoingWebhooks": false,
         "EnablePostUsernameOverride": false,
         "EnablePostIconOverride": false,
