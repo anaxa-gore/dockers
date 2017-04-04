@@ -60,9 +60,9 @@ services:
     gitlab:
         image: gitlab/gitlab-ce:latest
         ports:
-            - "80:80"
-            - "443:443"
-            - "22:22"
+            - "5005:80"
+            - "5006:443"
+            - "5007:22"
         volumes:
             - ${ROOT_SHARED_DATA}/gitlab/etc:/etc/gitlab
             - ${ROOT_SHARED_DATA}/gitlab/data:/var/opt/gitlab
