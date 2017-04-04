@@ -56,26 +56,68 @@ services:
             - ${ROOT_SHARED_DATA}/sonarqube/extensions:/opt/sonarqube/extensions
             #- ${ROOT_SHARED_DATA}/sonarqube/plugins:/opt/sonarqube/lib/bundled-plugins
 
-    db_rocket:
-        image: mongo:latest
-        ports:
-            - "27017:27017"
-        volumes:
-            - ${ROOT_DATA}/mongo:/data/db
-        command: mongod --smallfiles
-
-    rocket:
-        image: rocket.chat:latest
+    
+    ########## Outils collaboratifs : ROCKET.CHAT ou MATTERMOST
+    #rocket:
+    #    image: rocket.chat:latest
+    #    links:
+    #        - db_rocket
+    #    ports:
+    #        - "80:3000"
+    #    volumes:
+    #        - ${ROOT_SHARED_DATA}/rocket.chat/uploads:/app/uploads
+    #    environment:
+    #        - PORT=3000
+    #        - MONGO_URL=mongodb://db_rocket:27017/rocketchat
+    
+    mattermost:
+        build: mattermost/app
         links:
-            - db_rocket
-        ports:
-            - "80:3000"
+            - db_mattermost
+        restart: unless-stopped
         volumes:
-            - ${ROOT_SHARED_DATA}/rocket.chat/uploads:/app/uploads
+            - ${ROOT_SHARED_DATA}/mattermost/config:/mattermost/config:rw
+            - ${ROOT_SHARED_DATA}/mattermost/data:/mattermost/data:rw
+            - ${ROOT_SHARED_DATA}/mattermost/logs:/mattermost/logs:rw
+            - /etc/localtime:/etc/localtime:ro
         environment:
-            - PORT=3000
-            - MONGO_URL=mongodb://db_rocket:27017/rocketchat
-            
+            - MM_USERNAME=mattermost
+            - MM_PASSWORD=mattermost
+            - MM_DBNAME=mattermost
+    
+    mattermost_web:
+        build: mattermost/web
+        links: 
+            - mattermost
+        ports:
+            - "80:80"
+            - "443:443"
+        restart: unless-stopped
+        volumes:
+            - ${ROOT_SHARED_DATA}/mattermost_web/cert:/cert:ro
+            - /etc/localtime:/etc/localtime:ro
+    
+    ########## BDD Outils collaboratifs
+    #db_rocket:
+    #    image: mongo:latest
+    #    ports:
+    #        - "27017:27017"
+    #    volumes:
+    #        - ${ROOT_DATA}/mongo:/data/db
+    #    command: mongod --smallfiles
+        
+    db_mattermost:
+        image: postgres:alpine
+        ports:
+            - "5432:5432"
+        environment:
+            - POSTGRES_USER=mattermost
+            - POSTGRES_PASSWORD=mattermost
+        volumes:
+            - ${ROOT_DATA}/postgres:/var/lib/postgresql/data
+            - /etc/localtime:/etc/localtime:ro
+
+    ########## Gestion de tickets : MANTIS ou REDMINE    
     mantis:
         image: chessmasterrr/mantis:latest
         links:
@@ -89,21 +131,21 @@ services:
             - ${ROOT_SHARED_DATA}/mantis/plugins:/var/www/html/plugins
 
             
-    redmine:
-        image: redmine:latest
-        links: 
-            - db_sonar
-        networks:
-            - ic_net
-        ports:
-            - "5001:3000"
-        environment:
-            - REDMINE_DB_MYSQL=db_sonar
-            - REDMINE_DB_PASSWORD=@Soleil1
-        restart: always
-        volumes:
-            - ${ROOT_SHARED_DATA}/redmine:/usr/src/redmine/files
-            - ${ROOT_SHARED_DATA}/redmine_plugins:/usr/src/redmine/plugins
+    #redmine:
+    #    image: redmine:latest
+    #    links: 
+    #        - db_sonar
+    #    networks:
+    #        - ic_net
+    #    ports:
+    #        - "5001:3000"
+    #    environment:
+    #        - REDMINE_DB_MYSQL=db_sonar
+    #        - REDMINE_DB_PASSWORD=@Soleil1
+    #    restart: always
+    #    volumes:
+    #        - ${ROOT_SHARED_DATA}/redmine:/usr/src/redmine/files
+    #        - ${ROOT_SHARED_DATA}/redmine_plugins:/usr/src/redmine/plugins
         
 networks:
     ic_net:
