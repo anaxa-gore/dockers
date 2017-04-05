@@ -57,19 +57,19 @@ services:
             #- ${ROOT_SHARED_DATA}/sonarqube/plugins:/opt/sonarqube/lib/bundled-plugins
 
     ########## Version Control et ticketing ?
-    gitlab:
-        image: gitlab/gitlab-ce:latest
-        ports:
-            - "80:80"
-            - "443:443"
-            - "222:22"
-        volumes:
-            - ${ROOT_SHARED_DATA}/gitlab/etc:/etc/gitlab
-            - ${ROOT_SHARED_DATA}/gitlab/data:/var/opt/gitlab
-            - ${ROOT_SHARED_DATA}/gitlab/log:/var/log/gitlab
-            - ${ROOT_SHARED_DATA}/gitlab/hosts:/etc/hosts
-        networks:
-            - ic_net
+    #gitlab:
+    #    image: gitlab/gitlab-ce:latest
+    #    ports:
+    #        - "80:80"
+    #        - "443:443"
+    #        - "222:22"
+    #    volumes:
+    #        - ${ROOT_SHARED_DATA}/gitlab/etc:/etc/gitlab
+    #        - ${ROOT_SHARED_DATA}/gitlab/data:/var/opt/gitlab
+    #        - ${ROOT_SHARED_DATA}/gitlab/log:/var/log/gitlab
+    #        - ${ROOT_SHARED_DATA}/gitlab/hosts:/etc/hosts
+    #    networks:
+    #        - ic_net
     
     
     ########## Outils collaboratifs : ROCKET.CHAT ou MATTERMOST
