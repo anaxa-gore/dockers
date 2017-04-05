@@ -73,17 +73,17 @@ services:
     
     
     ########## Outils collaboratifs : ROCKET.CHAT ou MATTERMOST
-    #rocket:
-    #    image: rocket.chat:latest
-    #    links:
-    #        - db_rocket
-    #    ports:
-    #        - "80:3000"
-    #    volumes:
-    #        - ${ROOT_SHARED_DATA}/rocket.chat/uploads:/app/uploads
-    #    environment:
-    #        - PORT=3000
-    #        - MONGO_URL=mongodb://db_rocket:27017/rocketchat
+    rocket:
+        image: rocket.chat:latest
+        links:
+            - db_rocket
+        ports:
+            - "80:3000"
+        volumes:
+            - ${ROOT_SHARED_DATA}/rocket.chat/uploads:/app/uploads
+        environment:
+            - PORT=3000
+            - MONGO_URL=mongodb://db_rocket:27017/rocketchat
     
     #mattermost:
     #    build: mattermost/app
@@ -120,13 +120,13 @@ services:
     #        - ic_net
     
     ########## BDD Outils collaboratifs
-    #db_rocket:
-    #    image: mongo:latest
-    #    ports:
-    #        - "27017:27017"
-    #    volumes:
-    #        - ${ROOT_DATA}/mongo:/data/db
-    #    command: mongod --smallfiles
+    db_rocket:
+        image: mongo:latest
+        ports:
+            - "27017:27017"
+        volumes:
+            - ${ROOT_DATA}/mongo:/data/db
+        command: mongod --smallfiles
         
     #db_mattermost:
     #    image: postgres:alpine
