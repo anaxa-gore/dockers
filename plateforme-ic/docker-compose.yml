@@ -78,7 +78,7 @@ services:
         links:
             - db_rocket
         ports:
-            - "80:3000"
+            - "800:3000"
         volumes:
             - ${ROOT_SHARED_DATA}/rocket.chat/uploads:/app/uploads
         environment:
