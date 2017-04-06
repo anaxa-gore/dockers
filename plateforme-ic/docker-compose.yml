@@ -59,13 +59,13 @@ services:
             - ${ROOT_SHARED_DATA}/sonarqube/extensions:/opt/sonarqube/extensions
             #- ${ROOT_SHARED_DATA}/sonarqube/plugins:/opt/sonarqube/lib/bundled-plugins
 
-    ########## Version Control et ticketing ?
+    ########## Version Control
     gitlab:
         image: gitlab/gitlab-ce:latest
         ports:
-            - "80:80"
-            - "443:443"
-            - "222:22"
+            - "1212:80"
+            #- "443:443"
+            #- "222:22"
         volumes:
             - ${ROOT_SHARED_DATA}/gitlab/etc:/etc/gitlab
             - ${ROOT_SHARED_DATA}/gitlab/data:/var/opt/gitlab
@@ -96,50 +96,50 @@ services:
     #        - PORT=3000
     #        - MONGO_URL=mongodb://db_rocket:27017/rocketchat
     
-    #db_mattermost:
-    #    image: postgres:alpine
-    #    ports:
-    #        - "5432:5432"
-    #    environment:
-    #        - POSTGRES_USER=mattermost
-    #        - POSTGRES_PASSWORD=mattermost
-    #    volumes:
-    #        - ${ROOT_DATA}/postgres:/var/lib/postgresql/data
-    #        - /etc/localtime:/etc/localtime:ro
-    #    networks:
-    #        - ic_net
+    db_mattermost:
+        image: postgres:alpine
+        ports:
+            - "5432:5432"
+        environment:
+            - POSTGRES_USER=mattermost
+            - POSTGRES_PASSWORD=mattermost
+        volumes:
+            - ${ROOT_DATA}/postgres:/var/lib/postgresql/data
+            - /etc/localtime:/etc/localtime:ro
+        networks:
+            - ic_net
     
-    #mattermost:
-    #    build: mattermost/app
-    #    links:
-    #        - db_mattermost
-    #    restart: unless-stopped
-    #    volumes:
-    #        - ${ROOT_SHARED_DATA}/mattermost/config:/mattermost/config:rw
-    #        - ${ROOT_SHARED_DATA}/mattermost/data:/mattermost/data:rw
-    #        - ${ROOT_SHARED_DATA}/mattermost/logs:/mattermost/logs:rw
-    #        - /etc/localtime:/etc/localtime:ro
-    #    environment:
-    #        - MM_USERNAME=mattermost
-    #        - MM_PASSWORD=mattermost
-    #        - MM_DBNAME=mattermost
-    #        - DB_HOST=db_mattermost
-    #    networks:
-    #        - ic_net
+    mattermost:
+        build: mattermost/app
+        links:
+            - db_mattermost
+        restart: unless-stopped
+        volumes:
+            - ${ROOT_SHARED_DATA}/mattermost/config:/mattermost/config:rw
+            - ${ROOT_SHARED_DATA}/mattermost/data:/mattermost/data:rw
+            - ${ROOT_SHARED_DATA}/mattermost/logs:/mattermost/logs:rw
+            - /etc/localtime:/etc/localtime:ro
+        environment:
+            - MM_USERNAME=mattermost
+            - MM_PASSWORD=mattermost
+            - MM_DBNAME=mattermost
+            - DB_HOST=db_mattermost
+        networks:
+            - ic_net
     
-    #mattermost_web:
-    #    build: mattermost/web
-    #    links: 
-    #        - mattermost
-    #    ports:
-    #        - "80:80"
-    #        - "443:443"
-    #    restart: unless-stopped
-    #    volumes:
-    #        - ${ROOT_SHARED_DATA}/mattermost_web/cert:/cert:ro
-    #        - /etc/localtime:/etc/localtime:ro
-    #    networks:
-    #        - ic_net
+    mattermost_web:
+        build: mattermost/web
+        links: 
+            - mattermost
+        ports:
+            - "80:80"
+            - "443:443"
+        restart: unless-stopped
+        volumes:
+            - ${ROOT_SHARED_DATA}/mattermost_web/cert:/cert:ro
+            - /etc/localtime:/etc/localtime:ro
+        networks:
+            - ic_net
     
     ########## Gestion de tickets : MANTIS
     mantis:
