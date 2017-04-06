@@ -114,8 +114,6 @@ services:
         links:
             - db_mattermost
         restart: unless-stopped
-        ports:
-            - "80:80"
         volumes:
             - ${ROOT_SHARED_DATA}/mattermost/config:/mattermost/config:rw
             - ${ROOT_SHARED_DATA}/mattermost/data:/mattermost/data:rw
