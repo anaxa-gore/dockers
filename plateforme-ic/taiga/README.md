@@ -1,27 +1,18 @@
-# Example Taiga Setup - Advanced
+# Example Taiga Setup - Slack & LDAP Example
 
-This project serves as an example demonstrating how to use [benhutchins/docker-taiga](https://github.com/benhutchins/docker-taiga). Please see that project for more details.
+This example demonstrates how to use [benhutchins/docker-taiga](https://github.com/benhutchins/docker-taiga).
+It adds a single extension, [taiga-contrib-slack](https://github.com/taigaio/taiga-contrib-slack)!
 
 ## How to use
 
 First clone this repository and edit the configuration files (see [taiga-conf](https://github.com/benhutchins/docker-taiga-example/tree/master/taiga-conf)). View and edit `docker-compose.yml` and change the `TAIGA_HOSTNAME` environment variable and then run `up`:
 
-		docker-compose up
-
-## Extensions
-
-This example installs a few extensions to show how you might do that using [benhutchins/docker-taiga](https://github.com/benhutchins/docker-taiga).
-
-### Slack
-
-> [taiga-contrib-slack](https://github.com/taigaio/taiga-contrib-slack).
-
-You'll need to download the appropriate compiled `slack.js` file from this repo if rebuilding. To get the latest run:
-
-	wget https://github.com/taigaio/taiga-contrib-slack/raw/master/front/dist/slack.js
+    docker-compose build
+    docker-compose up
 
 ### LDAP
 
-> [taiga-contrib-ldap-auth](https://github.com/ensky/taiga-contrib-ldap-auth)
+To easily enable LDAP as well, simply uncomment it from the `Dockerfile` and `taiga-conf/local.py`,
+then add this to your `taiga-conf/conf.json` file:
 
-You'll need to configure your `local.py` file with the correct LDAP server details. Please see the project link above for details.
+    "loginFormType": "ldap"

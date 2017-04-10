@@ -187,6 +187,7 @@ services:
     
     taiga:
         build: taiga/
+        name: taiga
         ports:
             - "8056:80"
         links:

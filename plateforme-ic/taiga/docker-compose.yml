@@ -1,48 +1,29 @@
-postgres:
-  image: postgres
-  environment:
-    POSTGRES_PASSWORD: password 
-  volumes:
-    # This ensures files uploaded to Taiga are not lost when recreating
-    # your taiga container during upgrades
-    - ./data:/var/lib/postgresql/data
+version: '2'
 
-rabbit:
-  image: rabbitmq:3
-  hostname: rabbit
+services:
+  taiga:
+    build: .
+    ports:
+      - 8056:80
+    depends_on:
+      - postgres
+    environment:
+      TAIGA_HOSTNAME: localhost
+      TAIGA_DB_HOST: postgres
+      TAIGA_DB_NAME: taigadb
+      TAIGA_DB_USER: taiga
+      TAIGA_DB_PASSWORD: password
+    volumes:
+      - ./media:/usr/src/taiga-back/media
+      - ./taiga-conf:/taiga
 
-redis:
-  image: redis:3
-
-celery:
-  image: celery
-  links:
-    - rabbit
-
-events:
-  image: benhutchins/taiga-events
-  links:
-    - rabbit
-
-taiga:
-  build: .
-  ports:
-    - 80:80
-    # - 443:443 # To enable SSL, uncomment this line
-  links:
-    - postgres
-    - events
-    - rabbit
-    - redis
-  environment:
-    TAIGA_HOSTNAME: example.com
-    # TAIGA_SSL: 'true' # To enable SSL, uncomment this line
-
-    #TAIGA_DB_HOST: postgres
-    #TAIGA_DB_NAME: taiga
-    #TAIGA_DB_USER: taiga
-    TAIGA_DB_PASSWORD: password
-  volumes:
-    # This ensures files uploaded to Taiga are not lost when recreating
-    # your taiga container during upgrades
-    - ./media:/usr/src/taiga-back/media
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_DB: taigadb
+      POSTGRES_USER: taiga
+      POSTGRES_PASSWORD: password
+    ports:
+      - 5432
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
