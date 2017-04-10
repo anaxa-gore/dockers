@@ -132,7 +132,7 @@ services:
         links: 
             - mattermost
         ports:
-            - "80:80"
+            - "2424:80"
             - "443:443"
         restart: unless-stopped
         volumes:
