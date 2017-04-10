@@ -174,7 +174,6 @@ services:
             - db:postgres
         environment:
             - SECRET_KEY=insecurekey
-            - POSTGRES_HOST=db_taiga
             - POSTGRES_DB_NAME=taiga
             - POSTGRES_USER=taiga
             - POSTGRES_PASSWORD=password
