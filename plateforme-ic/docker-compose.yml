@@ -175,9 +175,9 @@ services:
             - POSTGRES_USER=taiga
             - POSTGRES_PASSWORD=password
         volumes:
-            - ${ROOT_DATA}/taiga/media: /usr/local/taiga/media
-            - ${ROOT_DATA}/taiga/static: /usr/local/taiga/static
-            - ${ROOT_DATA}/taiga/logs: /usr/local/taiga/logs
+            - ${ROOT_DATA}/taiga/media:/usr/local/taiga/media
+            - ${ROOT_DATA}/taiga/static:/usr/local/taiga/static
+            - ${ROOT_DATA}/taiga/logs:/usr/local/taiga/logs
     taigafront:
         image: htdvisser/taiga-front-dist:stable
         links:
