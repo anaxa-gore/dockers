@@ -155,7 +155,7 @@ services:
             - ${ROOT_SHARED_DATA}/mantis/plugins:/var/www/html/plugins
 
     ########## Gestion de tickets / Gestion de projet : TAIGA.IO
-    db:
+    postgres:
         image: postgres:alpine
         environment:
             - POSTGRES_USER=taiga
@@ -168,32 +168,65 @@ services:
         networks:
             - ic_net
     
-    taigaback:
-        image : htdvisser/taiga-back:stable
+    rabbit:
+        image: rabbitmq:3
+        hostname: rabbit
+    
+    redis:
+        image: redis:3
+        
+    celery:
+        image: celery
+        links: rabbit
+        
+    events:
+        image: benhutchins/taiga-events
         links:
-            - db:postgres
+            - rabbit
+    
+    taiga:
+        build: taiga/
+        ports:
+            - "8056:80"
+        links:
+            - postgres
+            - events
+            - rabbit
+            - redis
         environment:
-            - SECRET_KEY=insecurekey
-            - POSTGRES_HOST=db
-            - POSTGRES_DB_NAME=taiga
-            - POSTGRES_USER=taiga
-            - POSTGRES_PASSWORD=password
+            - TAIGA_HOSTNAME=plateforme.ic.com
+            - TAIGA_DB_PASSWORD=taiga
         volumes:
             - ${ROOT_DATA}/taiga/media:/usr/local/taiga/media
             - ${ROOT_DATA}/taiga/static:/usr/local/taiga/static
             - ${ROOT_DATA}/taiga/logs:/usr/local/taiga/logs
-        networks:
-            - ic_net
-    taigafront:
-        image: htdvisser/taiga-front-dist:stable
-        links:
-            - taigaback
-        ports:
-            - "8056:80"
-        environment:
-            - TAIGABACK_PORT_8000_TCP_ADDR=taigaback
-        networks:
-            - ic_net
+    
+    #taigaback:
+    #    image : htdvisser/taiga-back:stable
+    #    links:
+    #        - db:postgres
+    #    environment:
+    #        - SECRET_KEY=insecurekey
+    #        - POSTGRES_HOST=db
+    #        - POSTGRES_DB_NAME=taiga
+    #        - POSTGRES_USER=taiga
+    #        - POSTGRES_PASSWORD=password
+    #    volumes:
+    #        - ${ROOT_DATA}/taiga/media:/usr/local/taiga/media
+    #        - ${ROOT_DATA}/taiga/static:/usr/local/taiga/static
+    #        - ${ROOT_DATA}/taiga/logs:/usr/local/taiga/logs
+    #    networks:
+    #        - ic_net
+    #taigafront:
+    #    image: htdvisser/taiga-front-dist:stable
+    #    links:
+    #        - taigaback
+    #    ports:
+    #        - "8056:80"
+    #    environment:
+    #        - TAIGABACK_PORT_8000_TCP_ADDR=taigaback
+    #    networks:
+    #        - ic_net
 networks:
     ic_net:
         driver: bridge
