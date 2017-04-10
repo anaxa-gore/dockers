@@ -178,6 +178,8 @@ services:
             - ${ROOT_DATA}/taiga/media:/usr/local/taiga/media
             - ${ROOT_DATA}/taiga/static:/usr/local/taiga/static
             - ${ROOT_DATA}/taiga/logs:/usr/local/taiga/logs
+        networks:
+            - ic_net
     taigafront:
         image: htdvisser/taiga-front-dist:stable
         links:
@@ -186,6 +188,8 @@ services:
             - "8056:80"
         environment:
             - TAIGABACK_PORT_8000_TCP_ADDR=taigaback
+        networks:
+            - ic_net
 networks:
     ic_net:
         driver: bridge
