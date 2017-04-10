@@ -167,41 +167,26 @@ services:
             - /etc/localtime:/etc/localtime:ro
         networks:
             - ic_net
-    
-    rabbit:
-        image: rabbitmq:3
-        hostname: rabbit
-    
-    redis:
-        image: redis:3
-        
-    celery:
-        image: celery
-        links: 
-            - rabbit
-        
-    events:
-        image: benhutchins/taiga-events
-        links:
-            - rabbit
-    
+            
     taiga:
         build: taiga/
-        name: taiga
         ports:
             - "8056:80"
         links:
             - postgres
-            - events
-            - rabbit
-            - redis
         environment:
             - TAIGA_HOSTNAME=plateforme.ic.com
+            - TAIGA_DB_HOST=postgres
+            - TAIGA_DB_NAME=taiga
+            - TAIGA_DB_USER=taiga
             - TAIGA_DB_PASSWORD=taiga
         volumes:
             - ${ROOT_DATA}/taiga/media:/usr/local/taiga/media
             - ${ROOT_DATA}/taiga/static:/usr/local/taiga/static
             - ${ROOT_DATA}/taiga/logs:/usr/local/taiga/logs
+            - ${ROOT_DATA}/taiga/conf:/taiga
+        networks:
+            - ic_net
     
     #taigaback:
     #    image : htdvisser/taiga-back:stable
