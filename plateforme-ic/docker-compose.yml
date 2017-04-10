@@ -154,6 +154,38 @@ services:
             - ${ROOT_SHARED_DATA}/mantis/main:/var/www/html/config
             - ${ROOT_SHARED_DATA}/mantis/plugins:/var/www/html/plugins
 
+    ########## Gestion de tickets / Gestion de projet : TAIGA.IO
+    db_taiga:
+        image: postgres:alpine
+        environment:
+            - POSTGRES_USER=taiga
+            - POSTGRES_PASSWORD=taiga
+        volumes:
+            - ${ROOT_DATA}/postgres_taiga:/var/lib/postgresql/data
+            - /etc/localtime:/etc/localtime:ro
+        networks:
+            - ic_net
+    
+    taigaback:
+        image : htdvisser/taiga-back:stable
+        links:
+            - db_taiga
+        environment:
+            - POSTGRES_DB_NAME=taiga
+            - POSTGRES_USER=taiga
+            - POSTGRES_PASSWORD=password
+        volumes:
+            - ${ROOT_DATA}/taiga/media: /usr/local/taiga/media
+            - ${ROOT_DATA}/taiga/static: /usr/local/taiga/static
+            - ${ROOT_DATA}/taiga/logs: /usr/local/taiga/logs
+    taigafront:
+        image: htdvisser/taiga-front-dist:stable
+        links:
+            - taigaback
+        ports:
+            - "8056:80"
+        environment:
+            - TAIGABACK_PORT_8000_TCP_ADDR=taigaback
 networks:
     ic_net:
         driver: bridge
