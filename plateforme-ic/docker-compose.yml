@@ -70,7 +70,7 @@ services:
             - ${ROOT_SHARED_DATA}/gitlab/etc:/etc/gitlab
             - ${ROOT_SHARED_DATA}/gitlab/data:/var/opt/gitlab
             - ${ROOT_SHARED_DATA}/gitlab/log:/var/log/gitlab
-            - ${ROOT_SHARED_DATA}/gitlab/hosts:/etc/hosts
+            #- ${ROOT_SHARED_DATA}/gitlab/hosts:/etc/hosts
         networks:
             - ic_net
     
