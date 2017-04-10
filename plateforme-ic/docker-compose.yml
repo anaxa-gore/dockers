@@ -160,6 +160,8 @@ services:
         environment:
             - POSTGRES_USER=taiga
             - POSTGRES_PASSWORD=taiga
+        ports:
+            - "5433:5432"
         volumes:
             - ${ROOT_DATA}/postgres_taiga:/var/lib/postgresql/data
             - /etc/localtime:/etc/localtime:ro
@@ -171,6 +173,7 @@ services:
         links:
             - db_taiga
         environment:
+            - POSTGRES_HOST=db_taiga
             - POSTGRES_DB_NAME=taiga
             - POSTGRES_USER=taiga
             - POSTGRES_PASSWORD=password
