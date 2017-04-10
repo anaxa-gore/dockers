@@ -4,11 +4,11 @@ services:
   taiga:
     build: .
     ports:
-      - 8056:80
+      - 80:80
     depends_on:
       - postgres
     environment:
-      TAIGA_HOSTNAME: localhost
+      TAIGA_HOSTNAME: plateforme.ic.com
       TAIGA_DB_HOST: postgres
       TAIGA_DB_NAME: taigadb
       TAIGA_DB_USER: taiga
@@ -16,7 +16,9 @@ services:
     volumes:
       - ./media:/usr/src/taiga-back/media
       - ./taiga-conf:/taiga
-
+    networks:
+      - taiga_net
+  
   postgres:
     image: postgres
     environment:
@@ -27,3 +29,9 @@ services:
       - 5432
     volumes:
       - ./pgdata:/var/lib/postgresql/data
+    networks:
+      - taiga_net
+
+networks:
+   taiga_net:
+      driver: bridge      
