@@ -169,8 +169,8 @@ services:
             
     taiga:
         build: taiga/
-        #ports:
-        #    - "8056:80"
+        ports:
+            - "80:80"
         links:
             - postgres
         environment:
