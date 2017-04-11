@@ -183,7 +183,7 @@ services:
             - ${ROOT_DATA}/taiga/media:/usr/local/taiga/media
             - ${ROOT_DATA}/taiga/static:/usr/local/taiga/static
             - ${ROOT_DATA}/taiga/logs:/usr/local/taiga/logs
-            - ./taiga-conf:/taiga
+            - ${ROOT_DATA}/taiga/conf:/taiga
         networks:
             - ic_net
 networks:
