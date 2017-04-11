@@ -1,5 +1,5 @@
 {
-    "api": "http://plateforme.ic.com/api/v1/",
+    "api": "http://plateforme.ic.com:8056/api/v1/",
     "eventsUrl": null,
     "debug": false,
     "debugInfo": false,
