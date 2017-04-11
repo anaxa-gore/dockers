@@ -169,6 +169,8 @@ services:
             
     taiga:
         build: taiga/
+        ports:
+            - "80:80"
         links:
             - postgres
         environment:
@@ -182,7 +184,6 @@ services:
             - ${ROOT_DATA}/taiga/media:/usr/local/taiga/media
             - ${ROOT_DATA}/taiga/static:/usr/local/taiga/static
             - ${ROOT_DATA}/taiga/logs:/usr/local/taiga/logs
-            #- ${ROOT_DATA}/taiga/conf:/taiga
         networks:
             - ic_net
     
