@@ -179,6 +179,7 @@ services:
             - TAIGA_DB_NAME=taiga
             - TAIGA_DB_USER=taiga
             - TAIGA_DB_PASSWORD=taiga
+            - TAIGA_SLEEP=15
         volumes:
             - ${ROOT_DATA}/taiga/media:/usr/local/taiga/media
             - ${ROOT_DATA}/taiga/static:/usr/local/taiga/static
