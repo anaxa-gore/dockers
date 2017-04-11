@@ -3,12 +3,12 @@
     "eventsUrl": null,
     "debug": false,
     "debugInfo": false,
-    "defaultLanguage": "fr",
+    "defaultLanguage": "en",
     "publicRegisterEnabled": false,
     "gravatar": false,
     "feedbackEnabled": false,
     "privacyPolicyUrl": null,
     "termsOfServiceUrl": null,
     "maxUploadFileSize": null,
-    "contribPlugins": []
+    "contribPlugins": ["/slack.js"]
 }

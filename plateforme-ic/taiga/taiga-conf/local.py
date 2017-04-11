@@ -12,7 +12,7 @@ TEMPLATE_DEBUG = False
 
 ## Slack
 # https://github.com/taigaio/taiga-contrib-slack
-#INSTALLED_APPS += ["taiga_contrib_slack"]
+INSTALLED_APPS += ["taiga_contrib_slack"]
 
 ## LDAP
 # see https://github.com/ensky/taiga-contrib-ldap-auth
