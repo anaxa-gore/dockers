@@ -1,4 +1,4 @@
-FROM tomcat:latest
+FROM tomcat:8.5.12
 MAINTAINER Thomas Bonavia <thomas.bonavia@apave.com>
 
 ADD tomcat-users.xml /usr/local/tomcat/conf/
