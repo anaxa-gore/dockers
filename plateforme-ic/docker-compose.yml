@@ -9,7 +9,9 @@ services:
             - "50000:50000"
         volumes:
             - ${ROOT_DATA}/jenkins_home:/var/jenkins_home
-
+        networks:
+            - ic_net
+            
     ########## Repository de données
     nexus:
         image: sonatype/nexus3
