@@ -189,8 +189,8 @@ services:
             
     ########## Tomcat pour déploiement application
     tomcat:
-        #build: tomcat/
-        image: tomcat:latest
+        build: tomcat/
+        #image: tomcat:latest
         ports:
             - "9595:8080"
         volumes:
