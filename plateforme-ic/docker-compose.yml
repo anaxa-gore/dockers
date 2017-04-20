@@ -186,6 +186,17 @@ services:
             - ${ROOT_DATA}/taiga/conf:/taiga
         networks:
             - ic_net
+            
+    ########## Tomcat pour déploiement application
+    tomcat:
+        build: tomcat/
+        ports:
+            - "9595:8080"
+        volumes:
+            - ${ROOT_DATA}/tomcat:/usr/local/tomcat
+        networks:
+            - ic_net
+            
 networks:
     ic_net:
         driver: bridge
