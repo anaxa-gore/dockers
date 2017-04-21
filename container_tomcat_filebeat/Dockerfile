@@ -14,3 +14,4 @@ RUN dpkg -i filebeat-5.3.0-amd64.deb
 ADD filebeat.yml /etc/filebeat
 
 CMD ["catalina.sh", "run"]
+CMD ["/etc/init.d/filebeat", "start"]
