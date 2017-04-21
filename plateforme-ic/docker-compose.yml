@@ -239,8 +239,8 @@ services:
             - "5005:5000"
         links:
             - elasticsearch
-        volumes:
-            - ${ROOT_SHARED_DATA}/logstash/pipeline:/usr/share/logstash/pipeline
+        #volumes:
+        #    - ${ROOT_SHARED_DATA}/logstash/pipeline:/usr/share/logstash/pipeline
         networks:
             - ic_net
     
