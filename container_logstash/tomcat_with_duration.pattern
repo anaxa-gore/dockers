@@ -1,1 +1,1 @@
-TOMCAT_WITH_DURATION %{IPORHOST:clientip} (?: %{USER:ident}|-) (?: %{USER:auth}|-) \[%{HTTPDATE:timestamp}\] "(?:%{WORD:verb} %{NOTSPACE:request}(?: HTTP/%{NUMBER:httpversion})?|%{DATA:rawrequest})" %{NUMBER:response} %{NUMBER:data_size} %{NUMBER:duration}
+TOMCAT_WITH_DURATION %{IPORHOST:clientip} (?: %{USER:ident}|-) (?: %{USER:auth}|-) \[%{HTTPDATE:timestamp}\] "(?:%{WORD:verb} %{NOTSPACE:request}(?: HTTP/%{NUMBER:httpversion})?|%{DATA:rawrequest})" %{NUMBER:response:int} %{NUMBER:data_size:int} %{NUMBER:duration:int}
