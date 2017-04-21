@@ -15,7 +15,7 @@ filebeat.prospectors:
 # you can use different prospectors for various configurations.
 # Below are the prospector specific configurations.
 
-- input_type: log
+- input_type: tomcat_with_duration
 
   # Paths that should be crawled and fetched. Glob based paths.
   paths:

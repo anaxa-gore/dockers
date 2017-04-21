@@ -13,4 +13,5 @@ RUN dpkg -i filebeat-5.3.0-amd64.deb
 
 ADD filebeat.yml /etc/filebeat
 
-CMD ["bash", "-c", "/etc/init.d/filebeat start && catalina.sh run"]
+# On lance filebeat et Tomcat
+CMD ["bash", "-c", "/etc/init.d/filebeat start && catalina.sh run"] 
