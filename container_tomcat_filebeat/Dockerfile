@@ -12,6 +12,5 @@ RUN curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-5.
 RUN dpkg -i filebeat-5.3.0-amd64.deb
 
 ADD filebeat.yml /etc/filebeat
-RUN ["/etc/init.d/filebeat", "start"]
 
-CMD ["catalina.sh", "run"]
+CMD ["bash", "-c", "/etc/init.d/filebeat start && catalina.sh run"]
