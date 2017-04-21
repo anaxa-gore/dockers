@@ -19,7 +19,7 @@ filebeat.prospectors:
 
   # Paths that should be crawled and fetched. Glob based paths.
   paths:
-    - /usr/local/tomcat/*access_log*.txt
+    - /usr/local/tomcat/logs/*access_log*.txt
     #- c:\programdata\elasticsearch\logs\*
 
   # Exclude lines. A list of regular expressions to match. It drops the lines that are
@@ -90,7 +90,7 @@ name: MyFirstTomcat
 #----------------------------- Logstash output --------------------------------
 output.logstash:
   # The Logstash hosts
-  hosts: ["logstash:5044"]
+  hosts: ["logstash:5074"]
 
   # Optional SSL. By default is off.
   # List of root certificates for HTTPS server verifications
