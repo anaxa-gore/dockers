@@ -26,7 +26,7 @@
            directory="logs"
            prefix="localhost_access_log"
            suffix=".txt"
-           format="%h %l %u %t "%r" %s %b %D"/>
+           format='%h %l %u %t "%r" %s %b %D'/>
     <!-- Uncomment this to disable session persistence across Tomcat restarts -->
     <!--
     <Manager pathname="" />
