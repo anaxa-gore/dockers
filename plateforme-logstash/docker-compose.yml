@@ -31,14 +31,20 @@ services:
             - logstash_net
             
     logstash:
-        image: docker.elastic.co/logstash/logstash:5.3.0
+        #image: docker.elastic.co/logstash/logstash:5.3.0
+        build: ../container_logstash
         ports:
             - "8080:8080"
             - "5000:5000"
         links:
             - elasticsearch
-        volumes:
-            - ${ROOT_SHARED_DATA}/logstash/pipeline:/usr/share/logstash/pipeline
+        networks:
+            - logstash_net
+            
+    tomcat:
+        build: ../container_tomcat_filebeat
+        ports:
+            - "9595:8080"
         networks:
             - logstash_net
     

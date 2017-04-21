@@ -191,12 +191,11 @@ services:
             
     ########## Tomcat pour déploiement application
     tomcat:
-        build: ../tomcat_filebeat/
+        build: ../container_tomcat_filebeat/
         ports:
             - "9595:8080"
         networks:
             - ic_net
-    
     
 networks:
     ic_net:
