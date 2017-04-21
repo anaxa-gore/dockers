@@ -8,7 +8,7 @@ ADD server.xml /usr/local/tomcat/conf
 ADD manager-context.xml /usr/local/tomcat/webapps/manager/META-INF/context.xml
 
 
-# RUN curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-5.3.0-amd64.deb
-# RUN dpkg -i filebeat-5.3.0-amd64.deb
+RUN curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-5.3.0-amd64.deb
+RUN dpkg -i filebeat-5.3.0-amd64.deb
 
 CMD ["catalina.sh", "run"]
