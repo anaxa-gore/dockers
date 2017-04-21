@@ -15,12 +15,13 @@ filebeat.prospectors:
 # you can use different prospectors for various configurations.
 # Below are the prospector specific configurations.
 
-- input_type: tomcat_with_duration
+- input_type: log
 
   # Paths that should be crawled and fetched. Glob based paths.
   paths:
     - /usr/local/tomcat/logs/*access_log*.txt
     #- c:\programdata\elasticsearch\logs\*
+  document_type: tomcat_with_duration
 
   # Exclude lines. A list of regular expressions to match. It drops the lines that are
   # matching any regular expression from the list.
