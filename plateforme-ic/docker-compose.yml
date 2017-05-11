@@ -172,7 +172,7 @@ services:
     taiga:
         build: taiga/
         ports:
-            - "80:80"
+            - "80100:80"
         links:
             - postgres
         environment:

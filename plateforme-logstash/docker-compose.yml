@@ -26,7 +26,7 @@ services:
             - ELASTICSEARCH_USERNAME=elastic
             - ELASTICSEARCH_PASSWORD=changeme
             - XPACK_SECURITY_ENABLED=false
-            - XPACK_MONITORING_ENABLED=false
+            - XPACK_MONITORING_ENABLED=true
         networks:
             - logstash_net
             
