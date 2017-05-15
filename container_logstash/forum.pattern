@@ -1,1 +1,1 @@
-FORUM_FORMAT %{WORD:nomappli};%{WORD:contexte};%{WORD:loglevel};(%{WORD:classe})?;(%{WORD:methode})?;%{TIMESTAMP_ISO8601:date};%{DATA:message};%{USER:login};%{IPORHOST:serverip};%{WORD:hashpage}
+FORUM_FORMAT %{WORD:nomappli};%{WORD:contexte};%{WORD:loglevel};(%{WORD:classe})?;(%{WORD:methode})?;%{TIMESTAMP_ISO8601:date};%{DATA:log_message};%{USER:login};%{IPORHOST:serverip};%{WORD:hashpage}
