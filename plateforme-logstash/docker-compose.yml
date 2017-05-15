@@ -36,6 +36,8 @@ services:
         ports:
             - "8080:8080"
             - "5000:5000"
+            #Port d'écoute des beats
+            - "5074:5074" 
         links:
             - elasticsearch
         networks:
