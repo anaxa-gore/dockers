@@ -21,6 +21,7 @@ services:
             - ${ROOT_SHARED_DATA}/nexus:/nexus-data
      
     ########## Qualité du code : SONARQUBE
+    # La base de données est également utilisée pour XStudio
     db_sonar:
         image: mysql:5.7
         networks:
@@ -184,7 +185,7 @@ services:
             
     ########## Tomcat pour déploiement application
     tomcat:
-        build: ../container_tomcat_filebeat/
+        build: ../container_tomcat_filebeat_xstudio/
         ports:
             - "9595:8080"
         networks:

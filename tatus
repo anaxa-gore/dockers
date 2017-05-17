@@ -1,0 +1,918 @@
+[33mcommit e5bde97edfa3f682dcffe1272448eaa49b2100bc[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Wed May 17 15:02:45 2017 +0200
+
+    Pas de fichier volumineux dans le Git
+
+[33mcommit 3a836f24eddd7c8b1df33b2ca712c230fc1d146e[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Wed May 17 14:40:12 2017 +0200
+
+    Ajout des fichiers de configuration XStudio
+
+[33mcommit 2f791c8260574d70af3d2837a63455548e80aa67[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Wed May 17 14:31:44 2017 +0200
+
+    Changement du nom de répertoire pour prise en compte de XStudio
+
+[33mcommit 654cbb0a2536aa6aa9f144adbcb409622aec2e6b[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Wed May 17 14:29:44 2017 +0200
+
+    Ajout de XStudio dans tomcat
+
+[33mcommit b169f5017168f7167681a9b73f1e6bdb44df49df[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Wed May 17 14:11:56 2017 +0200
+
+    Suppression des composants inutilisés
+
+[33mcommit 0c787a270b27e568418c53a697097f978dd6566f[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Mon May 15 17:18:51 2017 +0200
+
+    Logs au format JSON
+
+[33mcommit 298f196f3b4f889557e6a15dcb2d502b263cd89e[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Mon May 15 16:35:29 2017 +0200
+
+    Changement du terme message en log_message
+
+[33mcommit b85a73e8dc2282bf2584633bbee7d8cfcc23619e[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Mon May 15 16:08:27 2017 +0200
+
+    Correction config des patterns grok
+
+[33mcommit 6e41d5c27dd22b5dbf5755a72cd1a59ef2f19492[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Mon May 15 15:50:39 2017 +0200
+
+    Index différent par beat
+
+[33mcommit 9ad33acaaa47b41ec4d67779c3fb8ca71ba1b9f9[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Mon May 15 15:47:21 2017 +0200
+
+    Formats pour forum
+
+[33mcommit 702b6b3a5421821b725b780f6f68345c10bfb465[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Mon May 15 15:37:10 2017 +0200
+
+    Formats pour forum
+
+[33mcommit 420724fec9a8d0d3bc71d7bd85c164c5a31f45dc[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Mon May 15 15:36:06 2017 +0200
+
+    Formats pour forum
+
+[33mcommit a26f12e811859c6cbc8b05f3889d1d882e89f65e[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Mon May 15 15:06:26 2017 +0200
+
+    Map port d'écoute des beats
+
+[33mcommit 3fb41b0eff109149c09744618f6e14343e6ba5c6[m
+Author: BONAVIA Thomas <A4811584@apave.grp>
+Date:   Thu May 11 14:10:24 2017 +0200
+
+    Changement de numéro de port
+
+[33mcommit afd41f8ecbb8c8725c62791017faf175928fc13b[m
+Author: BONAVIA Thomas <A4811584@apave.grp>
+Date:   Thu May 11 14:07:28 2017 +0200
+
+    Changement de numéro de port
+
+[33mcommit 3d4d40a88f5e5a94b6694ba5377b8cbe9e1fa734[m
+Author: BONAVIA Thomas <A4811584@apave.grp>
+Date:   Thu May 11 14:06:04 2017 +0200
+
+    Changement de numéro de port
+
+[33mcommit e41becfc1375b47726b8d049343b7c672a899690[m
+Author: BONAVIA Thomas <A4811584@apave.grp>
+Date:   Thu May 11 14:04:26 2017 +0200
+
+    Changement de numéro de port + monitoring
+
+[33mcommit 934ecf09af856b057f16177a401b09ee259e41b0[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 25 14:16:31 2017 +0200
+
+    Modification de port sur Jenkins
+
+[33mcommit fe13bebcb3455242414e60b736ada9078ff1fe29[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Mon Apr 24 09:36:04 2017 +0200
+
+    Prise en charge du pattern Tomcat
+
+[33mcommit 8c17a63aeda0359a6c05b1c1b60322ebabad84f6[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Apr 21 18:55:42 2017 +0200
+
+    Prise en charge du pattern Tomcat
+
+[33mcommit 8b014e92b45368eccb29623a9ce23b4d7f4453c3[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Apr 21 18:49:47 2017 +0200
+
+    Prise en charge du pattern Tomcat
+
+[33mcommit 651bb7505f4a05ead8866b0bbd75b7ba87613951[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Apr 21 18:38:32 2017 +0200
+
+    Prise en charge du pattern Tomcat
+
+[33mcommit 0fb8fb8f0ea3ffe2046f8965acc929fe4f0a289e[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Apr 21 18:32:00 2017 +0200
+
+    Prise en charge du pattern Tomcat
+
+[33mcommit 9c7e69f17995ccd04045d4e2470e23eac40a1123[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Apr 21 17:36:39 2017 +0200
+
+    Prise en charge du pattern Tomcat
+
+[33mcommit 7faa49822b5412756794375831cfca0be5da2f70[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Apr 21 17:25:19 2017 +0200
+
+    Prise en charge du pattern Tomcat
+
+[33mcommit 27b4d1ea4ce8fd7158ffaa0c8e51a47b15d2fd5a[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Apr 21 17:21:44 2017 +0200
+
+    Prise en charge du pattern Tomcat
+
+[33mcommit 47a26aa007f7fa5b9ff51ae79d8ddb9cadd8246b[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Apr 21 17:18:49 2017 +0200
+
+    Prise en charge du pattern Tomcat
+
+[33mcommit b61c2bc4b066fb20e6d626ed7dd44e3b4a05d7dd[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Apr 21 17:13:39 2017 +0200
+
+    Prise en charge du pattern Tomcat
+
+[33mcommit e2d99629c3e1b9eb7c6356c6f31e13db2ae888d7[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Apr 21 17:00:28 2017 +0200
+
+    Prise en charge du pattern Tomcat
+
+[33mcommit d3eee3efabd20f84426bf7ac0bfba49a224d37f6[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Apr 21 16:53:39 2017 +0200
+
+    Prise en charge du pattern Tomcat
+
+[33mcommit 8fc98f559a82333d11417ea5ec2dc1e4016b1380[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Apr 21 16:53:30 2017 +0200
+
+    Prise en charge du pattern Tomcat
+
+[33mcommit 0b1327f7e5e442d0cd901558a2d76070408d4476[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Apr 21 16:33:41 2017 +0200
+
+    Démarrage de filebeat au démarrage du container
+
+[33mcommit 1002389169bfe0ce5ebe3819f12c69050c0c56e7[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Apr 21 16:26:23 2017 +0200
+
+    Démarrage de filebeat au démarrage du container
+
+[33mcommit 58c4cb08f7f354632a11cea2c4121d6c74a87135[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Apr 21 16:14:43 2017 +0200
+
+    Démarrage de filebeat au démarrage du container
+
+[33mcommit f0c146a49239ccd0948843e7df3d0e8f48643748[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Apr 21 16:13:44 2017 +0200
+
+    Démarrage de filebeat au démarrage du container
+
+[33mcommit ab10cabfa4c927c366286b8b0b53957f5d90f248[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Apr 21 16:03:43 2017 +0200
+
+    variables d'environnement logstash
+
+[33mcommit 95da506a8112086da0e32f935fe7add2be51dc59[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Apr 21 15:22:03 2017 +0200
+
+    variables d'environnement logstash
+
+[33mcommit 232134b64be8a5d9ed1e7057da42ada64ff614d3[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Apr 21 15:13:39 2017 +0200
+
+    rationnalisation des containers
+
+[33mcommit 6d0686c3437d7219422d487a8764352311a00cc1[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Apr 21 15:09:41 2017 +0200
+
+    rationnalisation des containers
+
+[33mcommit 690474fbb8847100bf72a9e2f7bf27f524f2dfa3[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Apr 21 12:48:40 2017 +0200
+
+    Full stack Logstash
+
+[33mcommit 08424f8d2d98290890f1e1149015fa848b61b57a[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Apr 21 12:43:55 2017 +0200
+
+    Seulmeent ElasticSearch
+
+[33mcommit e30affbdc085f5fd2836e788d2421d85a0f04ae3[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Apr 21 12:40:31 2017 +0200
+
+    Seulmeent ElasticSearch
+
+[33mcommit c69384c2c64436f82661938decdb7d31d391779d[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Apr 21 12:25:14 2017 +0200
+
+    Ajout de la stack logs dans la plateforme d'IC
+
+[33mcommit afa41b1dec4f4a4e755f401113e72c068ff8d5e5[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Apr 21 12:19:22 2017 +0200
+
+    Ajout de la stack logs dans la plateforme d'IC
+
+[33mcommit 087083e1028a80d6dcd41fdeedff49f21dec4332[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Apr 21 10:41:36 2017 +0200
+
+    Ajout de FileBeat dans container Tomcat
+
+[33mcommit c2267be711bb8697bd73ab0013bdf6c67597af88[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Apr 21 10:31:37 2017 +0200
+
+    Configuration de Tomcat pouravoir des logs indiquant les temps de réponse des services
+
+[33mcommit 75af76325f837f1a1969ad3a759a3cc97dcf095f[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Apr 21 10:30:48 2017 +0200
+
+    Configuration de Tomcat pouravoir des logs indiquant les temps de réponse des services
+
+[33mcommit 9b04ca94c0b4345c9e7108dae6561a8fe7fb4c06[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Apr 21 10:22:42 2017 +0200
+
+    Configuration de Tomcat pouravoir des logs indiquant les temps de réponse des services
+
+[33mcommit 4ee3187201fc99758876374dde99817390da79a4[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Apr 21 10:18:57 2017 +0200
+
+    Configuration de Tomcat pouravoir des logs indiquant les temps de réponse des services
+
+[33mcommit 952e59e7e2b42919c46f2362a210c9a3ebce8d8f[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Apr 21 10:12:20 2017 +0200
+
+    Configuration de Tomcat pouravoir des logs indiquant les temps de réponse des services
+
+[33mcommit 02264a9f5d36c84391d6677355a8c5e88f1e13e8[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Apr 21 10:05:06 2017 +0200
+
+    Configuration de Tomcat pouravoir des logs indiquant les temps de réponse des services
+
+[33mcommit 8bb03d943dfab67f34dd79532364754e3cc631a9[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Thu Apr 20 19:12:22 2017 +0200
+
+    Rétragradage de version de Tomcat pour remote deploy
+
+[33mcommit 7343e3cc87fcd2270ee0909e0ac293a8048831db[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Thu Apr 20 19:07:21 2017 +0200
+
+    Augmentation de la taille max de fichier uploadable
+
+[33mcommit a794d39687be79f6374c3977a3e8cc69fdae22a8[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Thu Apr 20 19:05:19 2017 +0200
+
+    Ajout du droit permettant de deployer les war de façon distante
+
+[33mcommit f1178b93029b995c9a9226c0ee290ede5d241e95[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Thu Apr 20 18:51:02 2017 +0200
+
+    Ajout du droit permettant de deployer les war de façon distante
+
+[33mcommit 9ccd9b75672e174924142454dc235ad76919c463[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Thu Apr 20 18:45:04 2017 +0200
+
+    Ajout du droit permettant de deployer les war de façon distante
+
+[33mcommit aeed76303462453a3d43ca218b54848c9d71b25d[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Thu Apr 20 18:30:08 2017 +0200
+
+    Ajout de Jenkins dans le réseau
+
+[33mcommit 844999f4dc687f04c6461159613cab6c9f59307e[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Thu Apr 20 18:17:11 2017 +0200
+
+    Configuration ouverture admin
+
+[33mcommit 7efc9a53c64480eb0d00b099b3cab8a6f8e44b94[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Thu Apr 20 18:15:53 2017 +0200
+
+    Configuration ouverture admin
+
+[33mcommit d70a6cc9009a4e41f8980cd0bf12c251871f4379[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Thu Apr 20 17:19:02 2017 +0200
+
+    Configuration ouverture admin
+
+[33mcommit 93365d9a27d3c1ac4781182f48131f5f44b29c17[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Thu Apr 20 17:16:39 2017 +0200
+
+    Configuration ouverture admin
+
+[33mcommit 6f0a523e3e48ba23f20a36ffc81ee61ba458b0e4[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Thu Apr 20 17:13:08 2017 +0200
+
+    Configuration ouverture admin
+
+[33mcommit bc3f089d20a0fba431a392cbd4e8a102b6d166ab[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Thu Apr 20 17:10:31 2017 +0200
+
+    Ajout d'un fichier de conf des utilisateurs
+
+[33mcommit 8f90cadd7370d30e651f3d9a8e2ed0ccea2e4c4d[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Thu Apr 20 16:48:42 2017 +0200
+
+    Ajout d'un fichier de conf des utilisateurs
+
+[33mcommit f95ded9f89ac3860743e11ae0cbcc8833ff04de5[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Thu Apr 20 16:48:10 2017 +0200
+
+    Ajout d'un fichier de conf des utilisateurs
+
+[33mcommit 11cf594716bdc4b573d9093e2272ec3fcf40aa1e[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Thu Apr 20 16:42:12 2017 +0200
+
+    Suppression de l'installation de FileBeats
+
+[33mcommit 261cb250e8d842ce59eaa56a42dab839b0424e40[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Thu Apr 20 16:37:25 2017 +0200
+
+    Suppression de l'installation de FileBeats
+
+[33mcommit ddfcfcf5cb550e0ba0973a0c90863e571e2b21f8[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Thu Apr 20 16:35:43 2017 +0200
+
+    Suppression de l'installation de FileBeats
+
+[33mcommit b48e1169427a59d8fefca6ece4735d21b2aa10c1[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Thu Apr 20 16:31:12 2017 +0200
+
+    Image tomcat standard7
+
+[33mcommit c24195bb0313072fbe1fcb360b8e43ab1eb6a6a1[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Thu Apr 20 16:26:55 2017 +0200
+
+    Suppression de l'installation de FileBeats
+
+[33mcommit 0a8054a5caca88b53b9ac9d712bcfa248477849f[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Thu Apr 20 16:25:51 2017 +0200
+
+    Suppression du sudo pour l'installation de FileBeats
+
+[33mcommit 87ce3f1b618aded1bcb03081f6a5dd5e2a0aff79[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Thu Apr 20 16:22:18 2017 +0200
+
+    Ajout d'une image Tomcat avec FileBeats
+
+[33mcommit 4f9c302e938cc481c02af2fba8395eb39803d04a[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 11 15:44:57 2017 +0200
+
+    Modifications pour plugin Slack
+
+[33mcommit 5f701017cd7529fe6199336c7e8d59bf8cb01c30[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 11 15:37:14 2017 +0200
+
+    Modifications pour plugin Slack
+
+[33mcommit 4e7f3402af8e579f0a3b925cdc6d6709bcee45d0[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 11 15:30:12 2017 +0200
+
+    Modifications pour plugin Slack
+
+[33mcommit fbdcdbbdd9599bf2fa24b406bc2cf008e6ea3451[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 11 15:23:26 2017 +0200
+
+    Modifications pour plugin Slack
+
+[33mcommit cd903628a175240d4d5ac8df0e3ed2aa3041e0d8[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 11 15:18:22 2017 +0200
+
+    Modifications pour plugin Slack
+
+[33mcommit d651996359e77d61235c06ab3bc65c21ebf0f9bb[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 11 15:14:33 2017 +0200
+
+    Modifications pour plugin Slack
+
+[33mcommit 2b5f909778f83fd9e9f107ff56c08642924ff396[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 11 15:12:50 2017 +0200
+
+    Modifications pour plugin Slack
+
+[33mcommit 6a8802ed33c4a0fa9109611ad4375eedb75cce45[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 11 15:10:18 2017 +0200
+
+    Modifications pour plugin Slack
+
+[33mcommit b0331fc87caa3315bf06f8df6eab1fbc6a860372[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 11 15:08:04 2017 +0200
+
+    Modifications pour plugin Slack
+
+[33mcommit 56e89359870000931e8976b622480a08f09b78e0[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 11 15:04:03 2017 +0200
+
+    Modifications pour plugin Slack
+
+[33mcommit 79339015743c86f3e14fffa41b9065f4ed010c63[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 11 15:02:13 2017 +0200
+
+    Modifications pour plugin Slack
+
+[33mcommit 63a2537c6188ac90db18c1e8e70e39482904af27[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 11 14:58:13 2017 +0200
+
+    Modifications pour plugin Slack
+
+[33mcommit bc0b143f791a955edc7215c7930bd4cfa6f1564e[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 11 14:57:17 2017 +0200
+
+    Modifications pour plugin Slack
+
+[33mcommit 29ae984decd4b09dc07f0c874d39efad53742d9f[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 11 14:51:24 2017 +0200
+
+    Modifications pour plugin Slack
+
+[33mcommit fd94e1772e15de69ee29eebeb86e9800d8dacd63[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 11 14:49:44 2017 +0200
+
+    Passage de Taiga sur le port 8056
+
+[33mcommit bfea039548c9e559c9cce72497593dcdbbb66aaf[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 11 14:49:33 2017 +0200
+
+    Passage de Taiga sur le port 80
+
+[33mcommit 1fc688b3e772e1c684ce90dfbc96a77bef4bf8be[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 11 10:15:05 2017 +0200
+
+    Passage de Taiga sur le port 80
+
+[33mcommit c23bfc49229d5f5ba35ca0dcae3a2208c8cf7c1f[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 11 10:13:36 2017 +0200
+
+    Passage de Taiga sur le port 80
+
+[33mcommit 05e7d726d34dd9105d1fd8fe3d833d4c378617aa[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 11 10:10:39 2017 +0200
+
+    Ajout de slack à Taiga
+
+[33mcommit 0ae7f543b44403bff5244b8f64b7f38ec4e2368d[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 11 10:02:56 2017 +0200
+
+    Ajout de slack à Taiga
+
+[33mcommit 8fb41e194187ff0917cbbe6d7783dd9b8fbf1b63[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 11 09:56:16 2017 +0200
+
+    Ajout de slack à Taiga
+
+[33mcommit 7e0f0c87920f8e888d4c6482d7c3c872fdd3f01f[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 11 09:55:28 2017 +0200
+
+    Ajout de slack à Taiga
+
+[33mcommit 7dd07eb0e829308f0fb3f705b61e90faf7f16948[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 11 09:48:00 2017 +0200
+
+    Ajout de slack à Taiga
+
+[33mcommit ae18e3194f3380791f116d5c29681d5394fb8f1b[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 11 09:40:57 2017 +0200
+
+    Ajout de slack à Taiga
+
+[33mcommit 773ac03f07d2bcf3f5f217f673fb5311caa17b6c[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 11 09:21:12 2017 +0200
+
+    Ajout de slack à Taiga
+
+[33mcommit 71b2c4ed9bd2354a5cd4a761ab3f4da2501a2b0d[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Mon Apr 10 18:44:16 2017 +0200
+
+    Ajout de slack à Taiga
+
+[33mcommit 938279754ed68998bea8308056b06d6b5dd12271[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Mon Apr 10 17:58:25 2017 +0200
+
+    Mise à jour pour gitlab
+
+[33mcommit 34417a9e83e2b062fd881631c58f4163627afefd[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Mon Apr 10 16:43:05 2017 +0200
+
+    Mise à jour du compose pour Taiga
+
+[33mcommit ce0362ef0422401bb6c2c841c3917b314ab94cd0[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Mon Apr 10 16:39:56 2017 +0200
+
+    Mise à jour du compose pour Taiga
+
+[33mcommit 971c5e985d3265349dbf3e31aac8d7e928edddc6[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Mon Apr 10 15:45:00 2017 +0200
+
+    Corrections Taiga
+
+[33mcommit 0e9d9c2dcf3f1a840cb201ac10663fc578f42579[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Mon Apr 10 15:11:20 2017 +0200
+
+    Corrections
+
+[33mcommit 5691ba311220f3fef1f044b05e03b6969f0fcc37[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Mon Apr 10 14:18:22 2017 +0200
+
+    Ajout des fichiers supplémentaires pour Taiga
+
+[33mcommit 9e6fbf81925049795702395217053f7603dfb8e4[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Mon Apr 10 14:16:46 2017 +0200
+
+    Chnagement d'images Taiga
+
+[33mcommit 9ae8faa8a1f20c8bf8b976be538db73c6ef4b8de[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Mon Apr 10 14:15:54 2017 +0200
+
+    Chnagement d'images Taiga
+
+[33mcommit f21024752094e1d86b999611306b6fb2465d0d77[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Mon Apr 10 13:42:18 2017 +0200
+
+    Corrcetions Taiga
+
+[33mcommit 24f9161af835f3db77f24f6e18a37775ce6fa2ed[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Mon Apr 10 13:41:04 2017 +0200
+
+    Corrcetions Taiga
+
+[33mcommit dcec30ce7fa0bd0b6922f17938ca0b02860c140f[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Mon Apr 10 13:38:54 2017 +0200
+
+    Corrcetions Taiga
+
+[33mcommit 4826191f86c225680ed91e1a126e781ae29c02ad[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Mon Apr 10 12:28:28 2017 +0200
+
+    Ajout du hostname pour la base Taiga
+
+[33mcommit f2f56765dca4618b3a450f0193ec39bdf1405686[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Mon Apr 10 10:16:54 2017 +0200
+
+    Ajout de Taiga en gestion de projet
+
+[33mcommit 4dc6e9607ae8bc0c1be506fc3e53bc7d1365a967[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Mon Apr 10 10:14:41 2017 +0200
+
+    Ajout de Taiga en gestion de projet
+
+[33mcommit 90a72344c023be50fc9f1355df1d334a63ab1786[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Mon Apr 10 10:12:29 2017 +0200
+
+    Ajout de Taiga en gestion de projet
+
+[33mcommit 0b10928978b8aec8a627df4956354cd381bb0992[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Thu Apr 6 15:13:00 2017 +0200
+
+    GitLab + Mattermost externe
+
+[33mcommit 47c9bd7912af84ed358e3e8a970efa415d13bb44[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Thu Apr 6 11:15:53 2017 +0200
+
+    Ré activation de GitLab
+
+[33mcommit 7f3e941cf582a237dfe49cd413735fcc62e4991b[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Thu Apr 6 10:53:24 2017 +0200
+
+    Correction exposition des ports mattermost
+
+[33mcommit 4f86d676c727c0228c2971f65811f01e82287bdf[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Thu Apr 6 10:47:11 2017 +0200
+
+    Repasser à mattermost
+
+[33mcommit 4bd7f05c09b53d4d573c101fb99ebee324f57839[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Thu Apr 6 10:37:03 2017 +0200
+
+    Ajout du plugin Slack ^Mantis légèrement modifié pour Rocket.Chat
+
+[33mcommit f66ffc496f05f2763239edafde740f0789acdc70[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Wed Apr 5 17:53:47 2017 +0200
+
+    Désactivation du GitLab
+
+[33mcommit 2b32f4289d786edfcc89d19d64bddb5781ce0464[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Wed Apr 5 14:46:58 2017 +0200
+
+    Remise de Mantis
+
+[33mcommit d2ef8b682b1c85c3836a754eb17248a1bffa4175[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Wed Apr 5 14:46:18 2017 +0200
+
+    Nouveau port pour rocket
+
+[33mcommit 28df039b5731b1fc55e2d754f86665e621e3a156[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Wed Apr 5 14:43:56 2017 +0200
+
+    Remise de tocket
+
+[33mcommit 6cba6f5858f2610e3fb151506123f13e4fe6ae7a[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 4 19:15:44 2017 +0200
+
+    Sauvegarde du hosts dans un volume
+
+[33mcommit ac53eacb38acf2385cd813cf59597f02424aa40f[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 4 18:26:13 2017 +0200
+
+    Mapper le port 22 ailleurs...
+
+[33mcommit 450fc6d333e424f512c482ace7ad361fa80352a3[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 4 18:24:58 2017 +0200
+
+    Désactivation du mattermost non embarqué dans GitLab
+
+[33mcommit 3105a6036c301bf69c0bb20de85f1dd042bebfc0[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 4 18:00:07 2017 +0200
+
+    Changement des mappings de port pour Gitlab
+
+[33mcommit af06c80c07ca35b6a7faaad595ae831413f7d1e0[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 4 17:59:03 2017 +0200
+
+    Ajout de Gitlab en CVS + ticketing
+
+[33mcommit ddf2d4192683e400b92a8cfb650d5ede0fc38684[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 4 15:17:05 2017 +0200
+
+    Activation des incoming webhooks dans mattermost
+
+[33mcommit f8297391e3cf41bdb931c0dd7a92e58552f445fe[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 4 15:13:18 2017 +0200
+
+    Configuration base de données mattermost
+
+[33mcommit eb663c687fcb4ce4f27d0f98e7607b56b54d0d78[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 4 15:07:35 2017 +0200
+
+    Configuration mattermost sans nginx
+
+[33mcommit 0634fa0ce6d5f68c10070038cce097b7161c738a[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 4 14:55:46 2017 +0200
+
+    Ajout des différents services mattermost au réseau docker
+
+[33mcommit f4b0efa774c992b0b4027d714eaee92666267241[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 4 14:53:05 2017 +0200
+
+    Correction configuration mattermost
+
+[33mcommit 4a7882f55decb2242b9a932828a1cd44bf2ef4ba[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 4 14:52:31 2017 +0200
+
+    Correction configuration mattermost
+
+[33mcommit 9a94a586d9ef67b9a5e63a78251c9d80d370262c[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Apr 4 14:48:12 2017 +0200
+
+    Ajout de mattermost en outil collaboratif
+
+[33mcommit f3ad294ca31d91bfb1fadf6c5f6ae66e8489ce2d[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Mon Apr 3 17:00:15 2017 +0200
+
+    sauvegarde des plugins Redmine installés dans un volume
+
+[33mcommit 7676222a5aceb607ca914ec4c05952456a5483c4[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Mon Apr 3 16:43:37 2017 +0200
+
+    Correction variables d'environnement redmine
+
+[33mcommit 2e701d7f523eb9389f14c8a2a1b38155ebee05ea[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Mon Apr 3 16:42:11 2017 +0200
+
+    Ajout d'un container redmine
+
+[33mcommit be228ed350ec21d39344643967dba61355fb57b2[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Mar 31 17:37:57 2017 +0200
+
+    Modification des volumes Sonar
+
+[33mcommit bef1b51a842a3bab91a0d238c4f4767323d63bc8[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Mar 31 16:06:05 2017 +0200
+
+    Partage des réperoires de plugins sur mantis
+
+[33mcommit 7b4df6f3bb9d902af5abb25453716ed97d789953[m
+Merge: c5cdedc ad827ba
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Mar 31 15:37:17 2017 +0200
+
+    Resolved merge conflicts
+
+[33mcommit c5cdedc3cc676b59e45b4b4c2ccde14d68b88e5e[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Mar 31 15:33:43 2017 +0200
+
+    Nettoyage des volumes Sonar
+
+[33mcommit 632427f0d02035a778927fd61dce84cf58ddd9d5[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Mar 31 15:32:19 2017 +0200
+
+    Utilisation sur un serveur distant et pas sous Windows
+
+[33mcommit ad827bade9ee308f358b83c3e8f789e91e81b78d[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Fri Mar 31 15:28:25 2017 +0200
+
+    Ajout de mantis
+
+[33mcommit f93b9b47945c321899935de4484f92b5768a14f0[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Thu Mar 30 16:04:23 2017 +0200
+
+    Configuration du pipeline vers elasticsearch
+
+[33mcommit 477a69e7a80443196b796f2cc275ddd25ce66648[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Thu Mar 30 15:44:58 2017 +0200
+
+    Un logstash fonctionnel
+
+[33mcommit 028b259b2e00381ec48010a88acaf60680001163[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Thu Mar 30 13:46:14 2017 +0200
+
+    Premier jet Logstash/Elastic/Kibana
+
+[33mcommit 04beaefff5f921ba66e347572830a1188a1eedae[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Wed Mar 29 14:02:49 2017 +0200
+
+    Présentation projet
+
+[33mcommit 27c91426de0862524f6acc4210e099880706cb63[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Wed Mar 29 13:57:45 2017 +0200
+
+    Utilisation du projet
+
+[33mcommit 878c6201328d45dd29a8a1697703521b154604e9[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Wed Mar 29 13:43:52 2017 +0200
+
+    Compression des données sauvegardées lors de l'arrêt de la machine
+
+[33mcommit 3cf5bf769a10c2d2bde744e08e57cb2ca8b798e4[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Mar 28 16:39:25 2017 +0200
+
+    Passage à Nexus 3
+
+[33mcommit 1f21444576112ea917bc9fed8562460c501115f8[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Tue Mar 28 12:33:04 2017 +0200
+
+    Ajout d'un script d'arrêt/redémarrage de la machine docker pour sauvegarde des données
+
+[33mcommit 15dae496d59a94a977df3ca5465041aaf7dd4c88[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Thu Mar 23 12:45:22 2017 +0100
+
+    Ajout de rocket.chat
+
+[33mcommit b9032d2b9ea7d5e960ae1f804a87b0665351c0e8[m
+Author: Thomas Bonavia <thomas.bonavia@apave.com>
+Date:   Thu Mar 23 10:11:37 2017 +0100
+
+    Initialisation

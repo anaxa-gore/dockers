@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="6.0+" codebase="http://tomcat:8080/xqual" href="xstudio/xstudio.jnlp">
+   <information>
+      <title>XQual XStudio</title>
+      <icon href="visuals/xstudio_jnlp_icon_64x64.png" width="64" height="64"/>
+      <icon kind="shortcut" href="visuals/xstudio_jnlp_icon_64x64.png" width="64" height="64"/>
+      <icon kind="shortcut" href="visuals/xstudio_jnlp_icon_32x32.png" width="32" height="32"/>
+      <vendor>XQual</vendor>
+      <homepage href="http://www.xqual.com" />
+      <description>XStudio is a Test Management solution</description>
+      <offline-allowed />
+   </information>
+   <update check="always" policy="always" />
+   <resources>
+      <j2se version="1.7+" href="http://java.sun.com/products/autodl/j2se" initial-heap-size="112m" max-heap-size="768m" />
+
+      <jar href="xstudio/xstudio_signed.jar"                                         main="true"  download="eager"/>
+      <jar href="xstudio/localization_signed.jar"                                    main="false" download="eager"/>
+      <jar href="xstudio/dictionaries_signed.jar"                                    main="false" download="eager"/>
+
+      <jar href="lib/javamail-1_4/mail_signed.jar"                                   main="false" download="eager"/>
+      <jar href="lib/jcalendar-1.3.2/lib/jcalendar-1.3.2_signed.jar"                 main="false" download="eager"/>
+      <jar href="lib/miglayout-5.0d1/miglayout-5.0d1-swing_signed.jar"               main="false" download="eager"/>
+      <jar href="lib/jortho-1.0/jortho_signed.jar"                                   main="false" download="eager"/>
+      <jar href="lib/jfreechart-1.0.10/lib/jcommon-1.0.13_signed.jar"                main="false" download="eager"/>
+      <jar href="lib/jfreechart-1.0.10/lib/jfreechart-1.0.10_signed.jar"             main="false" download="eager"/>
+      <jar href="lib/jgrapht-0.8.0/jgrapht-jdk1.6_signed.jar"                        main="false" download="eager"/>
+      <jar href="lib/jgraph-5.13.0.4/lib/jgraph_signed.jar"                          main="false" download="eager"/>
+      <jar href="lib/apache-xmlrpc-3.1.3/lib/ws-commons-util-1.0.2_signed.jar"       main="false" download="eager"/>
+      <jar href="lib/apache-xmlrpc-3.1.3/lib/xmlrpc-common-3.1.3_signed.jar"         main="false" download="eager"/>
+      <jar href="lib/apache-xmlrpc-3.1.3/lib/xmlrpc-client-3.1.3_signed.jar"         main="false" download="eager"/>
+      <jar href="lib/apache-xmlrpc-3.1.3/lib/xmlrpc-server-3.1.3_signed.jar"         main="false" download="eager"/>
+      <jar href="lib/snmp4j-1.10.2/dist/snmp4j-1.10.2_signed.jar"                    main="false" download="eager"/>
+      <jar href="lib/jexcelapi_2_6_12/jxl_signed.jar"                                main="false" download="eager"/>
+      <jar href="lib/jcifs-1.3.17/jcifs-1.3.17_signed.jar"                           main="false" download="eager"/>
+      <jar href="lib/oracle-11g-R2/ojdbc6_signed.jar"                                main="false" download="eager"/>
+      <jar href="lib/jsch-0.1.54/jsch-0.1.54_signed.jar"                             main="false" download="eager"/>
+      
+      <jar href="lib/docx4j-community-3.3.1/docx4j-3.3.1_signed.jar"                                             main="false" download="eager"/>
+      <jar href="lib/docx4j-community-3.3.1/dependencies/serializer-2.7.2_signed.jar"                            main="false" download="eager"/>
+      <jar href="lib/docx4j-community-3.3.1/dependencies/slf4j-api-1.7.21_signed.jar"                            main="false" download="eager"/>
+      <jar href="lib/docx4j-community-3.3.1/dependencies/xmlgraphics-commons-2.1_signed.jar"                     main="false" download="eager"/>
+      <jar href="lib/docx4j-community-3.3.1/dependencies/commons-io-2.4_signed.jar"                              main="false" download="eager"/>
+      <jar href="lib/docx4j-community-3.3.1/dependencies/commons-logging-1.1.3_signed.jar"                       main="false" download="eager"/>
+      <jar href="lib/docx4j-community-3.3.1/dependencies/guava-19.0_signed.jar"                                  main="false" download="eager"/>
+      <jar href="lib/docx4j-community-3.3.1/dependencies/avalon-framework-impl-4.3.1_signed.jar"                 main="false" download="eager"/>
+      <jar href="lib/docx4j-community-3.3.1/dependencies/avalon-framework-api-4.3.1_signed.jar"                  main="false" download="eager"/>
+      <jar href="lib/docx4j-community-3.3.1/dependencies/xalan-2.7.2_signed.jar"                                 main="false" download="eager"/>
+      <jar href="lib/docx4j-community-3.3.1/optional/ImportXHTML/docx4j-ImportXHTML-nightly-20170319_signed.jar" main="false" download="eager"/>
+      <jar href="lib/docx4j-community-3.3.1/optional/ImportXHTML/itext-2.1.7_signed.jar"                         main="false" download="eager"/>
+      <jar href="lib/docx4j-community-3.3.1/optional/ImportXHTML/xhtmlrenderer-3.0.0_signed.jar"                 main="false" download="eager"/>
+      <jar href="lib/docx4j-community-3.3.1/optional/export-fo/docx4j-export-fo-3.3.0_signed.jar"                main="false" download="eager"/>
+      <jar href="lib/docx4j-community-3.3.1/optional/export-fo/fop-2.1_signed.jar"                               main="false" download="eager"/>
+      <jar href="lib/batik-1.8/lib/batik-anim-1.8_signed.jar"                                                    main="false" download="eager"/>
+      <jar href="lib/batik-1.8/lib/batik-awt-util-1.8_signed.jar"                                                main="false" download="eager"/>
+      <jar href="lib/batik-1.8/lib/batik-bridge-1.8_signed.jar"                                                  main="false" download="eager"/>
+      <jar href="lib/batik-1.8/lib/batik-css-1.8_signed.jar"                                                     main="false" download="eager"/>
+      <jar href="lib/batik-1.8/lib/batik-dom-1.8_signed.jar"                                                     main="false" download="eager"/>
+      <jar href="lib/batik-1.8/lib/batik-svg-dom-1.8_signed.jar"                                                 main="false" download="eager"/>
+      <jar href="lib/batik-1.8/lib/batik-svggen-1.8_signed.jar"                                                  main="false" download="eager"/>
+      <jar href="lib/batik-1.8/lib/batik-util-1.8_signed.jar"                                                    main="false" download="eager"/>
+	   
+      <jar href="lib/imgscalr-4.2/imgscalr-lib-4.2_signed.jar"                       main="false" download="eager"/>
+      <jar href="lib/jtidy-r938/jtidy-r938_signed.jar"                               main="false" download="eager"/>
+      <jar href="lib/org-json-20120521/org.json-20120521_signed.jar"                 main="false" download="eager"/>
+      <jar href="lib/tomcat-7.0/servlet-api_signed.jar"                              main="false" download="eager"/>
+
+      <property name="jnlp.com.xqual.xstudio.version" value="3.1sp3"/>
+   </resources>
+
+   <security>
+      <all-permissions />
+   </security>
+   <application-desc main-class="com.xqual.xstudio.gui.CStudioMain" >
+      <argument>--id</argument>
+      <argument>none</argument>
+      
+      <argument>--forceIpv4</argument>
+      <argument>true</argument>
+      
+      <argument>--overrideLf</argument>
+      <argument>none</argument>
+      
+      <argument>--options</argument>
+      <argument>none</argument>
+   </application-desc>
+</jnlp>
