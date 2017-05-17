@@ -20,13 +20,6 @@ services:
         volumes:
             - ${ROOT_SHARED_DATA}/nexus:/nexus-data
      
-    #nexus2:
-    #    image: sonatype/nexus
-    #    ports:
-    #        - "8081:8081"
-    #    volumes:
-    #        - ${ROOT_SHARED_DATA}/nexus2:/sonatype-work
-    
     ########## Qualité du code : SONARQUBE
     db_sonar:
         image: mysql:5.7
@@ -143,51 +136,51 @@ services:
             - ic_net
     
     ########## Gestion de tickets : MANTIS
-    mantis:
-        image: chessmasterrr/mantis:latest
-        links:
-            - db_sonar
-        networks:
-            - ic_net
-        ports:
-            - "5000:80"
-        volumes:
-            - ${ROOT_SHARED_DATA}/mantis/main:/var/www/html/config
-            - ${ROOT_SHARED_DATA}/mantis/plugins:/var/www/html/plugins
+    #mantis:
+    #    image: chessmasterrr/mantis:latest
+    #    links:
+    #        - db_sonar
+    #    networks:
+    #        - ic_net
+    #    ports:
+    #        - "5000:80"
+    #    volumes:
+    #        - ${ROOT_SHARED_DATA}/mantis/main:/var/www/html/config
+    #        - ${ROOT_SHARED_DATA}/mantis/plugins:/var/www/html/plugins
 
     ########## Gestion de tickets / Gestion de projet : TAIGA.IO
-    postgres:
-        image: postgres:alpine
-        environment:
-            - POSTGRES_USER=taiga
-            - POSTGRES_PASSWORD=taiga
-        ports:
-            - "5433:5432"
-        volumes:
-            - ${ROOT_DATA}/postgres_taiga:/var/lib/postgresql/data
-            - /etc/localtime:/etc/localtime:ro
-        networks:
-            - ic_net
-            
-    taiga:
-        build: taiga/
-        ports:
-            - "5252:80"
-        links:
-            - postgres
-        environment:
-            - TAIGA_HOSTNAME=plateforme.ic.com
-            - TAIGA_DB_HOST=postgres
-            - TAIGA_DB_NAME=taiga
-            - TAIGA_DB_USER=taiga
-            - TAIGA_DB_PASSWORD=taiga
-        volumes:
-            - ${ROOT_DATA}/taiga/media:/usr/local/taiga/media
-            - ${ROOT_DATA}/taiga/static:/usr/local/taiga/static
-            - ${ROOT_DATA}/taiga/logs:/usr/local/taiga/logs
-            - ${ROOT_DATA}/taiga/conf:/taiga
-        networks:
-            - ic_net
+    #postgres:
+    #    image: postgres:alpine
+    #    environment:
+    #        - POSTGRES_USER=taiga
+    #        - POSTGRES_PASSWORD=taiga
+    #    ports:
+    #        - "5433:5432"
+    #    volumes:
+    #        - ${ROOT_DATA}/postgres_taiga:/var/lib/postgresql/data
+    #        - /etc/localtime:/etc/localtime:ro
+    #    networks:
+    #        - ic_net
+    #        
+    #taiga:
+    #    build: taiga/
+    #    ports:
+    #        - "5252:80"
+    #    links:
+    #        - postgres
+    #    environment:
+    #        - TAIGA_HOSTNAME=plateforme.ic.com
+    #        - TAIGA_DB_HOST=postgres
+    #        - TAIGA_DB_NAME=taiga
+    #        - TAIGA_DB_USER=taiga
+    #        - TAIGA_DB_PASSWORD=taiga
+    #    volumes:
+    #        - ${ROOT_DATA}/taiga/media:/usr/local/taiga/media
+    #        - ${ROOT_DATA}/taiga/static:/usr/local/taiga/static
+    #        - ${ROOT_DATA}/taiga/logs:/usr/local/taiga/logs
+    #        - ${ROOT_DATA}/taiga/conf:/taiga
+    #    networks:
+    #        - ic_net
             
     ########## Tomcat pour déploiement application
     tomcat:
