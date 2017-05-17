@@ -12,7 +12,7 @@
 %>
 
 <?xml version="1.0" encoding="utf-8"?>
-<jnlp spec="6.0+" codebase="http://tomcat:8080/xqual" href="xstudio/xstudio.jsp<%= idArg %>">
+<jnlp spec="6.0+" codebase="http://srv0270a.apave.grp:9595/xqual" href="xstudio/xstudio.jsp<%= idArg %>">
    <information>
       <title>XQual XStudio</title>
       <icon href="visuals/xstudio_jnlp_icon_64x64.png" width="64" height="64"/>

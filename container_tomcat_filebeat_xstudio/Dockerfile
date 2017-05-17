@@ -20,6 +20,7 @@ ADD xqual_config/xstudio.jsp /usr/local/tomcat/webapps/xqual/xstudio/
 # Installation & configuration des beats
 RUN curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-5.3.0-amd64.deb
 RUN dpkg -i filebeat-5.3.0-amd64.deb
+
 ADD filebeat.yml /etc/filebeat
 
 # On lance filebeat et Tomcat

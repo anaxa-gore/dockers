@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<jnlp spec="6.0+" codebase="http://tomcat:8080/xqual" href="xstudio/xagent.jnlp">
+<jnlp spec="6.0+" codebase="http://srv0270a.apave.grp:9595/xqual" href="xstudio/xagent.jnlp">
    <information>
       <title>XQual XAgent</title>
       <icon href="visuals/xagent_jnlp_icon_64x64.png" width="64" height="64"/>
