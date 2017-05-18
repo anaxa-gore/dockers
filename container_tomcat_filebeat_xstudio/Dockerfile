@@ -22,9 +22,9 @@ ADD xqual_config/requirement.conf /usr/local/tomcat/webapps/xqual/xstudio/
 ADD xqual_config/xstudio.conf /usr/local/tomcat/webapps/xqual/xstudio/
 ADD xqual_config/plugin.conf /usr/local/tomcat/webapps/xqual/xstudio/
 
-RUN cp /var/lib/tomcat7/webapps/xqual/xstudio/*.conf /var/lib/tomcat7/webapps/xqual/
-RUN cp -r /var/lib/tomcat7/webapps/xqual/xstudio/jdbc/*/*.jar /var/lib/tomcat7/webapps/xqual/WEB-INF/lib/
-ADD xqual_config/xstudio_web.conf /var/lib/tomcat7/webapps/xqual/xstudio.conf
+RUN cp /usr/local/tomcat/webapps/xqual/xstudio/*.conf /usr/local/tomcat/webapps/xqual/
+RUN cp -r /usr/local/tomcat/webapps/xqual/xstudio/jdbc/*/*.jar /usr/local/tomcat/webapps/xqual/WEB-INF/lib/
+ADD xqual_config/xstudio_web.conf /usr/local/tomcat/webapps/xqual/xstudio.conf
 
 # Installation & configuration des beats
 RUN curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-5.3.0-amd64.deb
