@@ -119,6 +119,8 @@ services:
             - MM_PASSWORD=mattermost
             - MM_DBNAME=mattermost
             - DB_HOST=db_mattermost
+        ports:
+            - "8065:8065"
         networks:
             - ic_net
     
