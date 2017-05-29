@@ -1,7 +1,6 @@
 {
     "ServiceSettings": {
-        "SiteURL": ""
-        "ListenAddress": "0.0.0.0:8065",
+        "ListenAddress": ":80",
         "MaximumLoginAttempts": 10,
         "SegmentDeveloperKey": "",
         "GoogleDeveloperKey": "",
