@@ -3,7 +3,8 @@ version: "2"
 services:
     ########## Serveur d'automatisation : JENKINS
     jenkins:
-        image: jenkins:latest
+        #image: jenkins:latest
+        build: jenkins/
         ports: 
             - "8092:8080"
             - "50000:50000"
