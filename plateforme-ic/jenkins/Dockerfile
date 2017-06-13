@@ -3,5 +3,5 @@ MAINTAINER Thomas Bonavia <thomas.bonavia@apave.com>
 
 USER root
 RUN apt-get update
-RUN apt-get install xvfb
+RUN apt-get -qq install xvfb
 USER jenkins
