@@ -141,7 +141,8 @@ services:
     
     ########## Gestion de tickets : MANTIS
     mantis:
-        image: chessmasterrr/mantis:latest
+        #image: chessmasterrr/mantis:latest
+        build: mantis/
         links:
             - db_sonar
         networks:
