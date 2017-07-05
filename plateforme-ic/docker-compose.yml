@@ -155,7 +155,6 @@ services:
         volumes:
             - ${ROOT_SHARED_DATA}/mantis/main:/var/www/html/config
             - ${ROOT_SHARED_DATA}/mantis/plugins:/var/www/html/plugins
-            - ${ROOT_SHARED_DATA}/mantis/config:/etc/php5/cli
 
     ########## Gestion de tickets / Gestion de projet : TAIGA.IO
     #postgres:
