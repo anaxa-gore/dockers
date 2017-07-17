@@ -139,22 +139,33 @@ services:
         networks:
             - ic_net
     
+    ########## Gestion de tickets : REDMINE
+    #redmine:
+    #    image: redmine:3.3.4
+    #    networks:
+    #        - ic_net
+    #    links: 
+    #        - db_sonar
+    #    environment:
+    #        - REDMINE_DB_MYSQL=db_sonar
+    #        - REDMINE_DB_PASSWORD=
+    
     ########## Gestion de tickets : MANTIS
-    mantis:
+    #mantis:
         #image: chessmasterrr/mantis:latest
-        build: mantis/
-        links:
-            - db_sonar
-        networks:
-            - ic_net
-        environment:
-            - MYSQL_ROOT_PASSWORD=@Soleil1
-            - MYSQL_DATABASE=mantis
-        ports:
-            - "5000:80"
-        volumes:
-            - ${ROOT_SHARED_DATA}/mantis/main:/var/www/html/config
-            - ${ROOT_SHARED_DATA}/mantis/plugins:/var/www/html/plugins
+    #    build: mantis/
+    #    links:
+    #        - db_sonar
+    #    networks:
+    #        - ic_net
+    #    environment:
+    #        - MYSQL_ROOT_PASSWORD=@Soleil1
+    #        - MYSQL_DATABASE=mantis
+    #    ports:
+    #        - "5000:80"
+    #    volumes:
+    #        - ${ROOT_SHARED_DATA}/mantis/main:/var/www/html/config
+    #        - ${ROOT_SHARED_DATA}/mantis/plugins:/var/www/html/plugins
 
     ########## Gestion de tickets / Gestion de projet : TAIGA.IO
     #postgres:

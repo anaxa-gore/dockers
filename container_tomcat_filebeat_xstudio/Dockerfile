@@ -9,7 +9,7 @@ ADD server.xml /usr/local/tomcat/conf
 ADD manager-context.xml /usr/local/tomcat/webapps/manager/META-INF/context.xml
 
 # Installation de XStudio
-RUN wget http://xstudio.alwaysdata.net/support/releases/3.1sp3/xstudio_v3_1sp3_web_package.zip -O /usr/local/tomcat/webapps/xstudio.zip
+RUN wget http://xstudio.alwaysdata.net/support/releases/3.1sp6/xstudio_v3_1sp6_web_package.zip -O /usr/local/tomcat/webapps/xstudio.zip
 RUN unzip /usr/local/tomcat/webapps/xstudio.zip -d /usr/local/tomcat/webapps/xqual/
 RUN rm /usr/local/tomcat/webapps/xstudio.zip
 
