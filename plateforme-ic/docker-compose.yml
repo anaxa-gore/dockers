@@ -131,7 +131,7 @@ services:
             - mattermost
         ports:
             - "2424:80"
-            - "443:443"
+            - "4430:443"
         restart: unless-stopped
         volumes:
             - ${ROOT_SHARED_DATA}/mattermost_web/cert:/cert:ro
@@ -213,13 +213,15 @@ services:
     efserver:
         image: ecdocker/eflow-ce
         ports:
-            - "8000:8080"
+            - "8080:8080"
             - "9990:9990"
             - "7800:7800"
             - "7070:80"
-            - "4000:443"
+            - "443:443"
             - "8443:8443"
             - "8200:8200"
+        networks:
+            - ic_net
     
 networks:
     ic_net:
