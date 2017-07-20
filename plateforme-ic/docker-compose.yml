@@ -210,18 +210,18 @@ services:
             - ic_net
     
     ########## ElectricFlow pour le déploiement automatique !
-    efserver:
-        image: ecdocker/eflow-ce
-        ports:
-            - "8080:8080"
-            - "9990:9990"
-            - "7800:7800"
-            - "7070:80"
-            - "443:443"
-            - "8443:8443"
-            - "8200:8200"
-        networks:
-            - ic_net
+    #efserver:
+    #    image: ecdocker/eflow-ce
+    #    ports:
+    #        - "8080:8080"
+    #        - "9990:9990"
+    #        - "7800:7800"
+    #        - "7070:80"
+    #        - "443:443"
+    #        - "8443:8443"
+    #        - "8200:8200"
+    #    networks:
+    #        - ic_net
     
 networks:
     ic_net:
