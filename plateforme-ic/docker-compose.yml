@@ -220,8 +220,6 @@ services:
             - "4000:443"
             - "8443:8443"
             - "8200:8200"
-        networks:
-            - ic_net
     
 networks:
     ic_net:
