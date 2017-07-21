@@ -141,7 +141,8 @@ services:
     
     ########## Gestion de tickets : REDMINE
     redmine:
-        image: redmine:3.4.1
+        #image: redmine:3.4.1
+        build: redmine/
         networks:
             - ic_net
         ports:
