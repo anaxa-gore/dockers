@@ -141,7 +141,7 @@ services:
     
     ########## Gestion de tickets : REDMINE
     redmine:
-        image: redmine:3.3.4
+        image: redmine:3.4.1
         networks:
             - ic_net
         ports:
@@ -150,6 +150,7 @@ services:
             - db_sonar
         environment:
             - REDMINE_DB_MYSQL=db_sonar
+            - REDMINE_DB_USERNAME=redmine
             - REDMINE_DB_PASSWORD=redmine
     
     ########## Gestion de tickets : MANTIS
