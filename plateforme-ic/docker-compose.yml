@@ -144,6 +144,8 @@ services:
         image: redmine:3.3.4
         networks:
             - ic_net
+        ports:
+            - "5050:3000"
         links: 
             - db_sonar
         environment:
