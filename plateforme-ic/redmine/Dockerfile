@@ -11,7 +11,7 @@ ADD redmine_agile-1_4_4-light.zip /usr/src/redmine/plugins
 RUN unzip /usr/src/redmine/plugins/redmine_agile-1_4_4-light.zip -d /usr/src/redmine/plugins
 RUN gem install bundler
 RUN bundle install --without development test --no-deployment
-RUN bundle exec rake redmine:plugins NAME=redmine_agile RAILS_ENV=production
+#RUN bundle exec rake redmine:plugins NAME=redmine_agile RAILS_ENV=production
 
 # Installation du hook gitlab
 RUN git clone https://github.com/phlegx/redmine_gitlab_hook.git /usr/src/redmine/plugins/redmine_gitlab_hook
