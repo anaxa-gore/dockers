@@ -16,4 +16,4 @@ RUN bundle install --without development test --no-deployment
 # Installation du hook gitlab
 ADD redmine_gitlab_hook.zip /usr/src/redmine/plugins
 RUN unzip /usr/src/redmine/plugins/redmine_gitlab_hook.zip -d /usr/src/redmine/plugins
-#RUN bundle exec rake redmine:plugins NAME=redmine_gitlab_hook RAILS_ENV=production
+RUN bundle exec rake redmine:plugins NAME=redmine_gitlab_hook RAILS_ENV=production
