@@ -15,4 +15,4 @@ RUN bundle install --without development test --no-deployment
 
 # Installation du hook gitlab
 RUN git clone https://github.com/phlegx/redmine_gitlab_hook.git /usr/src/redmine/plugins/redmine_gitlab_hook
-RUN bundle exec rake redmine:plugins NAME=redmine_gitlab_hook RAILS_ENV=production
+#RUN bundle exec rake redmine:plugins NAME=redmine_gitlab_hook RAILS_ENV=production
