@@ -19,3 +19,10 @@ RUN unzip /usr/src/redmine/plugins/redmine_gitlab_hook.zip -d /usr/src/redmine/p
 #RUN bundle exec rake redmine:plugins NAME=redmine_gitlab_hook RAILS_ENV=production
 
 RUN mkdir /usr/src/redmine/repositories
+RUN chmod 777 /usr/src/redmine/repositories
+
+USER redmine
+
+RUN mkdir ~/.ssh
+ADD id_rsa ~/.ssh/id_rsa
+ADD id_rsa.pub ~/.ssh/id_rsa.pub
