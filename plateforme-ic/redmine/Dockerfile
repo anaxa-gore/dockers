@@ -4,9 +4,9 @@ RUN apt-get update
 RUN apt-get -qq install unzip 
 
 #RUN gem sources -a http://rubygems.org
-RUN gem sources -l
-RUN gem query -b svg-graph
-#RUN gem install bundler
+#RUN gem sources -l
+#RUN gem query -b svg-graph
+RUN gem install bundler
 #RUN bundle install --without development test --no-deployment
 
 ADD circle_theme-2_1_2.zip /usr/src/redmine/public/themes
