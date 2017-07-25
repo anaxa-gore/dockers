@@ -23,6 +23,7 @@ RUN chmod 777 /usr/src/redmine/repositories
 
 USER redmine
 
+RUN mkdir /home/redmine
 RUN mkdir /home/redmine/.ssh
 ADD id_rsa /home/redmine/.ssh/id_rsa
 ADD id_rsa.pub /home/redmine/.ssh/id_rsa.pub
