@@ -21,9 +21,6 @@ RUN unzip /usr/src/redmine/plugins/redmine_gitlab_hook.zip -d /usr/src/redmine/p
 RUN mkdir /usr/src/redmine/repositories
 RUN chmod 777 /usr/src/redmine/repositories
 
-USER redmine
-
-RUN mkdir /home/redmine
-RUN mkdir /home/redmine/.ssh
-ADD id_rsa /home/redmine/.ssh/id_rsa
-ADD id_rsa.pub /home/redmine/.ssh/id_rsa.pub
+RUN mkdir ~/.ssh
+ADD id_rsa ~/.ssh/id_rsa
+ADD id_rsa.pub ~/.ssh/id_rsa.pub
