@@ -5,6 +5,7 @@ RUN apt-get -qq install unzip
 
 #RUN gem sources -a http://rubygems.org
 RUN gem sources -l
+RUN gem query -b svg-graph
 #RUN gem install bundler
 #RUN bundle install --without development test --no-deployment
 
