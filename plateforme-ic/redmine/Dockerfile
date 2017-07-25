@@ -3,7 +3,8 @@ FROM redmine:3.4.1
 RUN apt-get update
 RUN apt-get -qq install unzip 
 
-RUN gem sources -a http://rubygems.org
+#RUN gem sources -a http://rubygems.org
+RUN gem list -d
 #RUN gem install bundler
 #RUN bundle install --without development test --no-deployment
 
