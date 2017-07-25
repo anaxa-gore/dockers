@@ -22,5 +22,5 @@ RUN mkdir /usr/src/redmine/repositories
 RUN chmod 777 /usr/src/redmine/repositories
 
 RUN mkdir ~/.ssh
-ADD id_rsa ~/.ssh/id_rsa
-ADD id_rsa.pub ~/.ssh/id_rsa.pub
+ADD id_rsa ~/.ssh
+ADD id_rsa.pub ~/.ssh
