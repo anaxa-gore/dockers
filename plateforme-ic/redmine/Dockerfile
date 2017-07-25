@@ -1,4 +1,4 @@
-FROM redmine:latest
+FROM redmine:3.4.1
 
 RUN apt-get update
 RUN apt-get -qq install unzip 
