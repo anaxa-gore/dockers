@@ -153,6 +153,7 @@ services:
             - REDMINE_DB_MYSQL=db_sonar
             - REDMINE_DB_USERNAME=redmine
             - REDMINE_DB_PASSWORD=redmine
+            - REDMINE_PLUGINS_MIGRATE=true
     
     ########## Gestion de tickets : MANTIS
     #mantis:
