@@ -4,7 +4,7 @@ RUN apt-get update
 RUN apt-get -qq install unzip 
 
 #RUN gem sources -a http://rubygems.org
-RUN gem list -d | grep svg 
+RUN gem sources -l
 #RUN gem install bundler
 #RUN bundle install --without development test --no-deployment
 
