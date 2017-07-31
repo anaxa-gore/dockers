@@ -1,4 +1,4 @@
-FROM jenkins:2.60.1
+FROM jenkins:latest
 MAINTAINER Thomas Bonavia <thomas.bonavia@apave.com>
 
 USER root
