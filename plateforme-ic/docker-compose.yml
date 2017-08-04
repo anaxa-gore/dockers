@@ -79,72 +79,72 @@ services:
     
     
     ########## Outils collaboratifs : ROCKET.CHAT ou MATTERMOST
-    #db_rocket:
-    #    image: mongo:latest
-    #    ports:
-    #        - "27017:27017"
-    #    volumes:
-    #        - ${ROOT_DATA}/mongo:/data/db
-    #    command: mongod --smallfiles
-    
-    #rocket:
-    #    image: rocket.chat:latest
-    #    links:
-    #        - db_rocket
-    #    ports:
-    #        - "800:3000"
-    #    volumes:
-    #        - ${ROOT_SHARED_DATA}/rocket.chat/uploads:/app/uploads
-    #    environment:
-    #        - PORT=3000
-    #        - MONGO_URL=mongodb://db_rocket:27017/rocketchat
-    
-    db_mattermost:
-        image: postgres:alpine
+    db_rocket:
+        image: mongo:latest
         ports:
-            - "5432:5432"
-        environment:
-            - POSTGRES_USER=mattermost
-            - POSTGRES_PASSWORD=mattermost
+            - "27017:27017"
         volumes:
-            - ${ROOT_DATA}/postgres:/var/lib/postgresql/data
-            - /etc/localtime:/etc/localtime:ro
-        networks:
-            - ic_net
+            - ${ROOT_DATA}/mongo:/data/db
+        command: mongod --smallfiles
     
-    mattermost:
-        build: mattermost/app
+    rocket:
+        image: rocket.chat:latest
         links:
-            - db_mattermost
-        restart: unless-stopped
+            - db_rocket
+        ports:
+            - "800:3000"
         volumes:
-            - ${ROOT_SHARED_DATA}/mattermost/config:/mattermost/config:rw
-            - ${ROOT_SHARED_DATA}/mattermost/data:/mattermost/data:rw
-            - ${ROOT_SHARED_DATA}/mattermost/logs:/mattermost/logs:rw
-            - /etc/localtime:/etc/localtime:ro
+            - ${ROOT_SHARED_DATA}/rocket.chat/uploads:/app/uploads
         environment:
-            - MM_USERNAME=mattermost
-            - MM_PASSWORD=mattermost
-            - MM_DBNAME=mattermost
-            - DB_HOST=db_mattermost
-        ports:
-            - "8065:8065"
-        networks:
-            - ic_net
+            - PORT=3000
+            - MONGO_URL=mongodb://db_rocket:27017/rocketchat
     
-    mattermost_web:
-        build: mattermost/web
-        links: 
-            - mattermost
-        ports:
-            - "2424:80"
-            - "4430:443"
-        restart: unless-stopped
-        volumes:
-            - ${ROOT_SHARED_DATA}/mattermost_web/cert:/cert:ro
-            - /etc/localtime:/etc/localtime:ro
-        networks:
-            - ic_net
+    #db_mattermost:
+    #    image: postgres:alpine
+    #    ports:
+    #        - "5432:5432"
+    #    environment:
+    #        - POSTGRES_USER=mattermost
+    #        - POSTGRES_PASSWORD=mattermost
+    #    volumes:
+    #        - ${ROOT_DATA}/postgres:/var/lib/postgresql/data
+    #        - /etc/localtime:/etc/localtime:ro
+    #    networks:
+    #        - ic_net
+    #
+    #mattermost:
+    #    build: mattermost/app
+    #    links:
+    #        - db_mattermost
+    #    restart: unless-stopped
+    #    volumes:
+    #        - ${ROOT_SHARED_DATA}/mattermost/config:/mattermost/config:rw
+    #        - ${ROOT_SHARED_DATA}/mattermost/data:/mattermost/data:rw
+    #        - ${ROOT_SHARED_DATA}/mattermost/logs:/mattermost/logs:rw
+    #        - /etc/localtime:/etc/localtime:ro
+    #    environment:
+    #        - MM_USERNAME=mattermost
+    #        - MM_PASSWORD=mattermost
+    #        - MM_DBNAME=mattermost
+    #        - DB_HOST=db_mattermost
+    #    ports:
+    #        - "8065:8065"
+    #    networks:
+    #        - ic_net
+    #
+    #mattermost_web:
+    #    build: mattermost/web
+    #    links: 
+    #        - mattermost
+    #    ports:
+    #        - "2424:80"
+    #         - "4430:443"
+    #    restart: unless-stopped
+    #    volumes:
+    #        - ${ROOT_SHARED_DATA}/mattermost_web/cert:/cert:ro
+    #        - /etc/localtime:/etc/localtime:ro
+    #    networks:
+    #        - ic_net
     
     ########## Gestion de tickets : REDMINE
     redmine:
