@@ -23,7 +23,7 @@ services:
         volumes:
             - ${ROOT_SHARED_DATA}/nexus:/nexus-data
         environment:
-            - CONTEXT_PATH=/nexus
+            - CONTEXT_PATH=/my-nexus
             
     apache_nexus:
         build: apache/
