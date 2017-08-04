@@ -15,15 +15,13 @@ services:
             
     ########## Repository de données
     nexus:
-        image: sonatype/nexus3
+        build: nexus/
         links:
             - apache_nexus
         ports:
             - "8081:8081"
         volumes:
             - ${ROOT_SHARED_DATA}/nexus:/nexus-data
-        environment:
-            - CONTEXT_PATH=/my-nexus
             
     apache_nexus:
         build: apache/
