@@ -23,10 +23,10 @@ services:
         volumes:
             - ${ROOT_SHARED_DATA}/nexus:/nexus-data
             
-    apache_nexus:
-        build: apache/
-        ports: 
-            - "7878:80"
+    #apache_nexus:
+    #    build: apache/
+    #    ports: 
+    #        - "7878:80"
      
     ########## Qualité du code : SONARQUBE
     # La base de données est également utilisée pour XStudio
