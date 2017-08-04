@@ -16,8 +16,8 @@ services:
     ########## Repository de données
     nexus:
         image: sonatype/nexus3
-        links:
-            - apache_nexus
+        #links:
+        #    - apache_nexus
         ports:
             - "8081:8081"
         volumes:
