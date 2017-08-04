@@ -15,7 +15,7 @@ services:
             
     ########## Repository de données
     nexus:
-        build: nexus/
+        image: sonatype/nexus3
         links:
             - apache_nexus
         ports:
