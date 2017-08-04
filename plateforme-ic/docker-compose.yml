@@ -25,7 +25,8 @@ services:
             
     apache_nexus:
         build: apache/
-        ports: "7878:80"
+        ports: 
+            - "7878:80"
      
     ########## Qualité du code : SONARQUBE
     # La base de données est également utilisée pour XStudio
