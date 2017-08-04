@@ -22,6 +22,8 @@ services:
             - "8081:8081"
         volumes:
             - ${ROOT_SHARED_DATA}/nexus:/nexus-data
+        environment:
+            - CONTEXT_PATH=/nexus
             
     apache_nexus:
         build: apache/
