@@ -5,6 +5,7 @@ services:
     jenkins:
         #image: jenkins:latest
         build: jenkins/
+        image: jenkins.pic
         ports: 
             - "8092:8080"
             - "50000:50000"
@@ -93,7 +94,7 @@ services:
         links:
             - db_rocket
         ports:
-            - "800:3000"
+            - "3000:3000"
         volumes:
             - ${ROOT_SHARED_DATA}/rocket.chat/uploads:/app/uploads
         environment:
@@ -151,6 +152,7 @@ services:
     redmine:
         #image: redmine:3.4.1
         build: redmine/
+        image: redmine.pic
         networks:
             - ic_net
         ports:
@@ -216,6 +218,7 @@ services:
     ########## Tomcat pour déploiement application
     tomcat:
         build: ../container_tomcat_filebeat_xstudio/
+        image: tomcat.filebeat.xstudio.pic
         ports:
             - "9595:8080"
         networks:
