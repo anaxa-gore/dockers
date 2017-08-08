@@ -171,6 +171,8 @@ services:
             - REDMINE_DB_USERNAME=redmine
             - REDMINE_DB_PASSWORD=redmine
             - REDMINE_PLUGINS_MIGRATE=true  # Prend en compte la mise à jour des plugins
+        volumes:
+            - ${ROOT_SHARED_DATA}/redmine/repositories:/home/repositories
     
     ########## Gestion de tickets : MANTIS
     #mantis:
