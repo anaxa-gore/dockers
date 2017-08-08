@@ -158,7 +158,7 @@ services:
     ########## Gestion de tickets : REDMINE
     redmine:
         build: redmine/
-        image: redmine.pic:2.0
+        image: redmine.pic:3.0
         container_name: pic.redmine
         networks:
             - ic_net
@@ -170,7 +170,7 @@ services:
             - REDMINE_DB_MYSQL=db_sonar
             - REDMINE_DB_USERNAME=redmine
             - REDMINE_DB_PASSWORD=redmine
-            - REDMINE_PLUGINS_MIGRATE=true
+            - REDMINE_PLUGINS_MIGRATE=true  # Prend en compte la mise à jour des plugins
     
     ########## Gestion de tickets : MANTIS
     #mantis:
