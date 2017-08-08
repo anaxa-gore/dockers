@@ -227,6 +227,7 @@ services:
     tomcat:
         build: ../container_tomcat_filebeat_xstudio/
         image: tomcat.filebeat.xstudio.pic
+        container_name: pic.xstudio.filebeat
         ports:
             - "9595:8080"
         networks:
