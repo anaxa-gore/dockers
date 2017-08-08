@@ -6,6 +6,7 @@ services:
         #image: jenkins:latest
         build: jenkins/
         image: jenkins.pic
+        container_name: pic.jenkins
         ports: 
             - "8092:8080"
             - "50000:50000"
@@ -17,6 +18,7 @@ services:
     ########## Repository de données
     nexus:
         image: sonatype/nexus3
+        container_name: pic.nexus
         #links:
         #    - apache_nexus
         ports:
@@ -33,6 +35,7 @@ services:
     # La base de données est également utilisée pour XStudio
     db_sonar:
         image: mysql:5.7
+        container_name: pic.mysql.sonar-redmine
         networks:
             - ic_net
         ports:
@@ -47,6 +50,7 @@ services:
             
     sonarqube:
         image: sonarqube:alpine
+        container_name: pic.sonar
         links:
             - db_sonar
         networks:
@@ -67,6 +71,7 @@ services:
     ########## Version Control
     gitlab:
         image: gitlab/gitlab-ce:latest
+        container_name: pic.gitlab
         ports:
             - "1212:80"
             #- "443:443"
@@ -82,6 +87,7 @@ services:
     ########## Outils collaboratifs : ROCKET.CHAT ou MATTERMOST
     db_rocket:
         image: mongo:latest
+        container_name: pic.mongo.rocket
         ports:
             - "27017:27017"
         volumes:
@@ -91,6 +97,7 @@ services:
     rocket:
         build: rocket.chat/
         image: rocket.pic
+        container_name: pic.rocket
         links:
             - db_rocket
         ports:
@@ -153,6 +160,7 @@ services:
         #image: redmine:3.4.1
         build: redmine/
         image: redmine.pic
+        container_name: pic.redmine
         networks:
             - ic_net
         ports:
