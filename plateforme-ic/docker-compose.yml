@@ -157,9 +157,8 @@ services:
     
     ########## Gestion de tickets : REDMINE
     redmine:
-        #image: redmine:3.4.1
         build: redmine/
-        image: redmine.pic
+        image: redmine.pic:1.0
         container_name: pic.redmine
         networks:
             - ic_net
