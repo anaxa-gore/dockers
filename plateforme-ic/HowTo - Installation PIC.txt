@@ -11,7 +11,7 @@ Procédure installation différentes briques de la plateforme d'intégration
     INSTALLATION DES PLUGINS
     -> Administrer Jenkins -> Gestion des plugins -> Onglet "disponibles"
         - Installer le plugin "Blue Ocean"
-        - Installer le plugin de Gestionnaire de notification ("RocketChat Notifier" ou "Mattermost Notification Plugin")
+        - Installer le plugin de Gestionnaire de notification ("RocketChat Notifier")
         - Installer le plugin "Pipeline Maven Integration Plugin"
         - Installer le plugin "Pipeline NPM Integration Plugin"
         - Installer le plugin "NodeJS Plugin"
@@ -83,29 +83,6 @@ Procédure installation différentes briques de la plateforme d'intégration
                         user=admin                                                                      => utilisateur Nexus
                         email=admin@admin.com
                 Submit
-                
-
----------- Configuration de Mattermost dans Jenkins
-    - Mattermost
-        -> System Console -> Custom Integrations
-            Enable Incoming Webhooks : true
-            Enable integrations to override usernames : true
-            Enable integrations to override profile picture icons : true
-        -> Integrations -> Incoming Webhooks
-            Add Incoming Webhooks
-                Display Name : Jenkins
-                Description : Jenkins Build Notifications
-                Channel : Off-topic
-            Save
-            COPIER URL
-    - Jenkins
-        -> Administrer Jenkins -> Configurer le système -> "Global Mattermost Notifier Settings"
-            Endpoint : URL COPIE PRECEDEMMENT
-            Channel : 
-            Icon to use : https://wiki.jenkins-ci.org/download/attachments/2916393/headshot.png?version=1&modificationDate=1302753947000&api=v2
-            Build Server URL : <Valeur par défaut>
-            
-        Enregistrer
         
 ---------- Configuration de Rocket.Chat dans Jenkins
     - Rocket.Chat
@@ -252,36 +229,9 @@ Procédure installation différentes briques de la plateforme d'intégration
     A NOTER : POUR CHANGER LE CHANNEL PAR PROJET, dans chaque projet :
         -> Configuration -> Messenger
             Messenger Channel : <Nom du chan à utiliser>
-            
----------- Configuration de l'authentification Mattermost via GitLab OAuth
-    - GitLab
-        -> Admin area -> Applications
-            Name : Authentication Mattermost
-            Redirect URI :  
-                http://srv0270a.apave.grp:2424/login/gitlab/complete
-                http://srv0270a.apave.grp:2424/signup/gitlab/complete          (http://srv0270a.apave.grp:2424 = Mattermost URL - derrière serveur web)
-                
-            Submit
-            
-            COPIER "Application Id" ET "Secret"
-    
-    - Mattermost
-        -> ... -> System Console -> GENERAL -> Configuration
-            Site URL : http://srv0270a.apave.grp:2424                           (URL correspondant aux Redirect URI fournis dans GitLab)
-        -> ... -> System Console -> AUTHENTICATION / GitLab
-            Enable authentication with GitLab : true
-            Application ID : <Application ID copié précédemment>
-            Application Secret Key : <Secret copié précédemment>
-            
-            User API EndPoint : http://srv0270a.apave.grp:1212/api/v3/user (GitLab URL)      
-            Auth EndPoint : http://srv0270a.apave.grp:1212/oauth/authorize (GitLab URL)      
-            Token EndPoint : http://srv0270a.apave.grp:1212/oauth/token (GitLab URL)      
-      
-
       
 RAF :
     OK - Gestion des droits dans Jenkins via l'authentification GitLab ???
-    - Gestion des notifications dans Mattermost ???
     
     - Politique de stockage des artefacts en snapshots pour ne pas stocker un fichier à chaque post
     - Gestion du <distributionManagement> dans un pom parent pour tous
