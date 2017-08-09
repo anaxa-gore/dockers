@@ -3,8 +3,37 @@ Procédure installation différentes briques de la plateforme d'intégration
 - Installer GIT
     En ligne de commande :
     -> git config --global 
+==================================================================================================
+================================= Installation de GitLab =========================================
+==================================================================================================
+TODO
 
-- Installation de Jenkins
+==================================================================================================
+================================= Installation de REDMINE ========================================
+==================================================================================================
+TODO
+
+==================================================================================================
+================================= Installation de Rocket.Chat ====================================
+==================================================================================================
+TODO
+
+==================================================================================================
+================================= Installation de SonarQube ======================================
+==================================================================================================
+TODO
+
+==================================================================================================
+================================= Installation de Nexus ==========================================
+==================================================================================================
+TODO
+    
+==================================================================================================
+================================= Installation de Jenkins ========================================
+==================================================================================================
+    Références :
+        Scaling Jenkins - https://jenkins.io/doc/book/architecting-for-scale/
+
     - Installer les plugins suggérés
     - Créer un compte administrateur
     
@@ -32,16 +61,16 @@ Procédure installation différentes briques de la plateforme d'intégration
     -> Administrer Jenkins -> Configuration globale des outils
         - JDK -> Ajouter JDK 
             Nom : jdk8
-            Install automatically : OUI
+            Install automatically : OUI / Ou installer manuellement la bonne version
         - SonarQube Scanner -> Ajouter SonarQube Scanner
             Name : sonar
-            Install automatically : OUI
+            Install automatically : OUI / Ou installer manuellement la bonne version
         - Maven -> Ajouter Maven
             Nom : M3
-            Install automatically : OUI
+            Install automatically : OUI / Ou installer manuellement la bonne version
         - NodeJS -> Ajouter NodeJS
             Nom : nodejs
-            Install automatically : OUI
+            Install automatically : OUI / Ou installer manuellement la bonne version
         Enregister
 
 ---------- Configuration de Nexus dans Jenkins
