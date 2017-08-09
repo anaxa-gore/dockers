@@ -15,6 +15,6 @@ RUN bundle install --without development test
 RUN git clone git://github.com/alphanodes/redmine_messenger.git plugins/redmine_messenger
 
 # Install du plugin GitLab pour mise à jour temps réel du repository
-RUN git clone git://github.com/phlegx/redmine_gitlab_hook.git plugins/gitlab
+RUN git clone git://github.com/phlegx/redmine_gitlab_hook.git plugins/redmine_gitlab_hook
 
 RUN mkdir /home/repositories
