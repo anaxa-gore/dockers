@@ -8,8 +8,8 @@ services:
         container_name: pic.proxy
         ports: 
             - "80:80"
-        #volumes:
-        #    - ${ROOT_DATA}/
+        volumes:
+            - ${ROOT_DATA}/proxy_conf:/usr/local/apache2/conf
         networks:
             - ic_net
 
