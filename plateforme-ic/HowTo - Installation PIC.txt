@@ -21,7 +21,22 @@ TODO
 ==================================================================================================
 ================================= Installation de SonarQube ======================================
 ==================================================================================================
+    Références :
+        Pré-requis : https://docs.sonarqube.org/display/SONAR/Requirements
+    
+    INSTALLATION DES PLUGINS
+    -> Administration -> System -> Update Center
+        - Installer le plugin "C#"
+        - Installer le plugin "SonarJS"
+        - Installer le plugin "SonarJava"
+        - Installer le plugin "SonarPHP"
+        - Installer le plugin "SonarPython"
+        - Installer le plugin "LDAP"
+        
+---------- Configuration de l'authentification LDAP
+    -> https://docs.sonarqube.org/display/PLUG/LDAP+Plugin
 TODO
+
 
 ==================================================================================================
 ================================= Installation de Nexus ==========================================
