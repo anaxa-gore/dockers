@@ -32,6 +32,7 @@ TODO
 ================================= Installation de Jenkins ========================================
 ==================================================================================================
     Références :
+        Installer Jenkins (éléments de sizing) - https://jenkins.io/doc/book/getting-started/installing/
         Scaling Jenkins - https://jenkins.io/doc/book/architecting-for-scale/
 
     - Installer les plugins suggérés
