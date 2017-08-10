@@ -11,18 +11,19 @@ TODO
 
 ## Installation de SonarQube <image src="./logos/sonar.png" width="32">
 ### Références :
+
 - [Pré-requis](https://docs.sonarqube.org/display/SONAR/Requirements)
 - [Sécurisation derrière un proxy](https://docs.sonarqube.org/display/SONAR/Securing+the+Server+Behind+a+Proxy)
     
 ### Installation des plugins
 `-> Administration -> System -> Update Center`
-
-- Installer le plugin "C#"
-- Installer le plugin "SonarJS"
-- Installer le plugin "SonarJava"
-- Installer le plugin "SonarPHP"
-- Installer le plugin "SonarPython"
-- Installer le plugin "LDAP"
+Installer les plugins suivants :
+- "C#"
+- "SonarJS"
+- "SonarJava"
+- "SonarPHP"
+- "SonarPython"
+- "LDAP"
         
 ### Configuration de l'authentification LDAP
     -> https://docs.sonarqube.org/display/PLUG/LDAP+Plugin
@@ -30,7 +31,7 @@ TODO
 
 
 ## Installation de Nexus <image src="./logos/nexus.png" width="32">
-    ### Références
+### Références
         Pré-requis : https://help.sonatype.com/display/HSC/System+Requirements+-+NXRM+3
 
 TODO
@@ -45,19 +46,20 @@ TODO
 - Installer les plugins suggérés
 - Créer un compte administrateur
     
-    INSTALLATION DES PLUGINS
-    -> Administrer Jenkins -> Gestion des plugins -> Onglet "disponibles"
-        - Installer le plugin "Blue Ocean"
-        - Installer le plugin de Gestionnaire de notification ("RocketChat Notifier")
-        - Installer le plugin "Pipeline Maven Integration Plugin"
-        - Installer le plugin "Pipeline NPM Integration Plugin"
-        - Installer le plugin "NodeJS Plugin"
-        - Installer le plugin "SonarQube Scanner for Jenkins"
-        - Installer le plugin "Gitlab Plugin"
-        - Installer le plugin "Gitlab Authentication Plugin"             => Si Authentification via Gitlab => Possibilité de gérer les droits également de cette manière (A VOIR)
-        - Installer le plugin "Role-based Authorization Strategy"
-        - Installer le plugin "Xvfb plugin" (TIBCO 5)
-        - Installer le plugin "Active Directory plugin"
+### Installation des plugins
+`-> Administrer Jenkins -> Gestion des plugins -> Onglet "disponibles"`
+
+- Installer le plugin "Blue Ocean"
+- Installer le plugin de Gestionnaire de notification ("RocketChat Notifier")
+- Installer le plugin "Pipeline Maven Integration Plugin"
+- Installer le plugin "Pipeline NPM Integration Plugin"
+- Installer le plugin "NodeJS Plugin"
+- Installer le plugin "SonarQube Scanner for Jenkins"
+- Installer le plugin "Gitlab Plugin"
+- Installer le plugin "Gitlab Authentication Plugin"             => Si Authentification via Gitlab => Possibilité de gérer les droits également de cette manière (A VOIR)
+- Installer le plugin "Role-based Authorization Strategy"
+- Installer le plugin "Xvfb plugin" (TIBCO 5)
+- Installer le plugin "Active Directory plugin"
     
     ACTIVATION DE LA GESTION DES ROLES
     -> Administrer Jenkins -> Configurer le système
