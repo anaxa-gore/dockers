@@ -17,6 +17,7 @@ TODO
     
 ### Installation des plugins
 `-> Administration -> System -> Update Center`
+
 Installer les plugins suivants :
 - "C#"
 - "SonarJS"
@@ -32,7 +33,8 @@ Installer les plugins suivants :
 
 ## Installation de Nexus <image src="./logos/nexus.png" width="32">
 ### Références
-        Pré-requis : https://help.sonatype.com/display/HSC/System+Requirements+-+NXRM+3
+
+- [Pré-requis](https://help.sonatype.com/display/HSC/System+Requirements+-+NXRM+3)
 
 TODO
     
@@ -43,23 +45,25 @@ TODO
 - [Scaling Jenkins](https://jenkins.io/doc/book/architecting-for-scale/)
 - [Sécurisation derrière un proxy](https://wiki.jenkins.io/display/JENKINS/Running+Jenkins+behind+Apache)
 
+### Installation 
 - Installer les plugins suggérés
 - Créer un compte administrateur
     
 ### Installation des plugins
 `-> Administrer Jenkins -> Gestion des plugins -> Onglet "disponibles"`
 
-- Installer le plugin "Blue Ocean"
-- Installer le plugin de Gestionnaire de notification ("RocketChat Notifier")
-- Installer le plugin "Pipeline Maven Integration Plugin"
-- Installer le plugin "Pipeline NPM Integration Plugin"
-- Installer le plugin "NodeJS Plugin"
-- Installer le plugin "SonarQube Scanner for Jenkins"
-- Installer le plugin "Gitlab Plugin"
-- Installer le plugin "Gitlab Authentication Plugin"             => Si Authentification via Gitlab => Possibilité de gérer les droits également de cette manière (A VOIR)
-- Installer le plugin "Role-based Authorization Strategy"
-- Installer le plugin "Xvfb plugin" (TIBCO 5)
-- Installer le plugin "Active Directory plugin"
+Installer les plugins suivants :
+- "Blue Ocean"
+- "RocketChat Notifier"
+- "Pipeline Maven Integration Plugin"
+- "Pipeline NPM Integration Plugin"
+- "NodeJS Plugin"
+- "SonarQube Scanner for Jenkins"
+- "Gitlab Plugin"
+- "Gitlab Authentication Plugin"             => Si Authentification via Gitlab => Possibilité de gérer les droits également de cette manière (A VOIR)
+- "Role-based Authorization Strategy"
+- "Xvfb plugin" (TIBCO 5)
+- "Active Directory plugin"
     
     ACTIVATION DE LA GESTION DES ROLES
     -> Administrer Jenkins -> Configurer le système
