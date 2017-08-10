@@ -9,10 +9,10 @@ TODO
 ## Installation de Rocket.chat
 TODO
 
-## Installation de SonarQube
+## Installation de SonarQube ![Sonar](https://chocolatey.org/content/packageimages/msbuild-sonarqube-runner.3.0.0.png)
 ### Références :
-- Pré-requis - https://docs.sonarqube.org/display/SONAR/Requirements
-- Sécurisation derrière un proxy - https://docs.sonarqube.org/display/SONAR/Securing+the+Server+Behind+a+Proxy
+- [Pré-requis](https://docs.sonarqube.org/display/SONAR/Requirements)
+- [Sécurisation derrière un proxy](https://docs.sonarqube.org/display/SONAR/Securing+the+Server+Behind+a+Proxy)
     
 ### Installation des plugins
 `-> Administration -> System -> Update Center`
