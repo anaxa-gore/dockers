@@ -98,6 +98,8 @@ services:
         volumes:
             - ${ROOT_DATA}/mongo:/data/db
         command: mongod --smallfiles
+        networks:
+            - ic_net
     
     rocket:
         build: rocket.chat/
