@@ -1,12 +1,12 @@
 # Procédure installation PIC en environnement PROD
 
-## Installation de GitLab
+## Installation de GitLab <image src="./logos/gitlab.png" width="32">
 TODO
 
-## Installation de REDMINE
+## Installation de REDMINE <image src="./logos/redmine.png" width="32">
 TODO
 
-## Installation de Rocket.chat
+## Installation de Rocket.chat <image src="./logos/rocket.png" width="32">
 TODO
 
 ## Installation de SonarQube <image src="./logos/sonar.png" width="32">
@@ -28,13 +28,13 @@ TODO
     -> Plusieurs serveurs LDAP : https://docs.sonarqube.org/display/PLUG/Multiple+Servers
 
 
-## Installation de Nexus 
+## Installation de Nexus <image src="./logos/nexus.png" width="32">
     ### Références
         Pré-requis : https://help.sonatype.com/display/HSC/System+Requirements+-+NXRM+3
 
 TODO
     
-## Installation de Jenkins
+## Installation de Jenkins <image src="./logos/jenkins.png" width="32">
 ### Références :
         - Installer Jenkins (éléments de sizing) - https://jenkins.io/doc/book/getting-started/installing/
         - Scaling Jenkins - https://jenkins.io/doc/book/architecting-for-scale/
