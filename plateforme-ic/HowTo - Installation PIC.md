@@ -1,8 +1,5 @@
-Procédure installation différentes briques de la plateforme d'intégration
+# Procédure installation différentes briques de la plateforme d'intégration
 
-- Installer GIT
-    En ligne de commande :
-    -> git config --global 
 ==================================================================================================
 ================================= Installation de GitLab =========================================
 ==================================================================================================
@@ -37,12 +34,14 @@ TODO
 ---------- Configuration de l'authentification LDAP
     -> https://docs.sonarqube.org/display/PLUG/LDAP+Plugin
     -> Plusieurs serveurs LDAP : https://docs.sonarqube.org/display/PLUG/Multiple+Servers
-TODO
+
 
 
 ==================================================================================================
 ================================= Installation de Nexus ==========================================
 ==================================================================================================
+    https://help.sonatype.com/display/HSC/System+Requirements+-+NXRM+3
+
 TODO
     
 ==================================================================================================
