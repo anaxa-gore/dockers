@@ -37,12 +37,13 @@ TODO
     
 ## Installation de Jenkins <image src="./logos/jenkins.png" width="32">
 ### Références :
-        - Installer Jenkins (éléments de sizing) - https://jenkins.io/doc/book/getting-started/installing/
-        - Scaling Jenkins - https://jenkins.io/doc/book/architecting-for-scale/
-        - Sécurisation derrière un proxy - https://wiki.jenkins.io/display/JENKINS/Running+Jenkins+behind+Apache
 
-    - Installer les plugins suggérés
-    - Créer un compte administrateur
+- [Installer Jenkins (éléments de sizing)](https://jenkins.io/doc/book/getting-started/installing/)
+- [Scaling Jenkins](https://jenkins.io/doc/book/architecting-for-scale/)
+- [Sécurisation derrière un proxy](https://wiki.jenkins.io/display/JENKINS/Running+Jenkins+behind+Apache)
+
+- Installer les plugins suggérés
+- Créer un compte administrateur
     
     INSTALLATION DES PLUGINS
     -> Administrer Jenkins -> Gestion des plugins -> Onglet "disponibles"
