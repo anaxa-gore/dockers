@@ -1,4 +1,4 @@
-# Procédure installation différentes briques de la plateforme d'intégration
+# Procédure installation PIC en environnement PROD
 
 ## Installation de GitLab
 TODO
@@ -10,7 +10,7 @@ TODO
 TODO
 
 ## Installation de SonarQube
-    ### Références :
+### Références :
         - Pré-requis - https://docs.sonarqube.org/display/SONAR/Requirements
         - Sécurisation derrière un proxy - https://docs.sonarqube.org/display/SONAR/Securing+the+Server+Behind+a+Proxy
     
@@ -35,7 +35,7 @@ TODO
 TODO
     
 ## Installation de Jenkins
-    ### Références :
+### Références :
         - Installer Jenkins (éléments de sizing) - https://jenkins.io/doc/book/getting-started/installing/
         - Scaling Jenkins - https://jenkins.io/doc/book/architecting-for-scale/
         - Sécurisation derrière un proxy - https://wiki.jenkins.io/display/JENKINS/Running+Jenkins+behind+Apache
