@@ -1,28 +1,20 @@
 # Procédure installation différentes briques de la plateforme d'intégration
 
-==================================================================================================
-================================= Installation de GitLab =========================================
-==================================================================================================
+## Installation de GitLab
 TODO
 
-==================================================================================================
-================================= Installation de REDMINE ========================================
-==================================================================================================
+## Installation de REDMINE
 TODO
 
-==================================================================================================
-================================= Installation de Rocket.Chat ====================================
-==================================================================================================
+## Installation de Rocket.chat
 TODO
 
-==================================================================================================
-================================= Installation de SonarQube ======================================
-==================================================================================================
-    Références :
-        Pré-requis - https://docs.sonarqube.org/display/SONAR/Requirements
-        Sécurisation derrière un proxy - https://docs.sonarqube.org/display/SONAR/Securing+the+Server+Behind+a+Proxy
+## Installation de SonarQube
+    ### Références :
+        - Pré-requis - https://docs.sonarqube.org/display/SONAR/Requirements
+        - Sécurisation derrière un proxy - https://docs.sonarqube.org/display/SONAR/Securing+the+Server+Behind+a+Proxy
     
-    INSTALLATION DES PLUGINS
+### Installation des plugins
     -> Administration -> System -> Update Center
         - Installer le plugin "C#"
         - Installer le plugin "SonarJS"
@@ -31,26 +23,22 @@ TODO
         - Installer le plugin "SonarPython"
         - Installer le plugin "LDAP"
         
----------- Configuration de l'authentification LDAP
+### Configuration de l'authentification LDAP
     -> https://docs.sonarqube.org/display/PLUG/LDAP+Plugin
     -> Plusieurs serveurs LDAP : https://docs.sonarqube.org/display/PLUG/Multiple+Servers
 
 
-
-==================================================================================================
-================================= Installation de Nexus ==========================================
-==================================================================================================
-    https://help.sonatype.com/display/HSC/System+Requirements+-+NXRM+3
+## Installation de Nexus 
+    ### Références
+        Pré-requis : https://help.sonatype.com/display/HSC/System+Requirements+-+NXRM+3
 
 TODO
     
-==================================================================================================
-================================= Installation de Jenkins ========================================
-==================================================================================================
-    Références :
-        Installer Jenkins (éléments de sizing) - https://jenkins.io/doc/book/getting-started/installing/
-        Scaling Jenkins - https://jenkins.io/doc/book/architecting-for-scale/
-        Sécurisation derrière un proxy - https://wiki.jenkins.io/display/JENKINS/Running+Jenkins+behind+Apache
+## Installation de Jenkins
+    ### Références :
+        - Installer Jenkins (éléments de sizing) - https://jenkins.io/doc/book/getting-started/installing/
+        - Scaling Jenkins - https://jenkins.io/doc/book/architecting-for-scale/
+        - Sécurisation derrière un proxy - https://wiki.jenkins.io/display/JENKINS/Running+Jenkins+behind+Apache
 
     - Installer les plugins suggérés
     - Créer un compte administrateur
