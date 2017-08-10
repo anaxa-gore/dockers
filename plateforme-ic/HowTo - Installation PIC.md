@@ -11,11 +11,11 @@ TODO
 
 ## Installation de SonarQube
 ### Références :
-        - Pré-requis - https://docs.sonarqube.org/display/SONAR/Requirements
-        - Sécurisation derrière un proxy - https://docs.sonarqube.org/display/SONAR/Securing+the+Server+Behind+a+Proxy
+- Pré-requis - https://docs.sonarqube.org/display/SONAR/Requirements
+- Sécurisation derrière un proxy - https://docs.sonarqube.org/display/SONAR/Securing+the+Server+Behind+a+Proxy
     
 ### Installation des plugins
-    `-> Administration -> System -> Update Center`
+`-> Administration -> System -> Update Center`
         - Installer le plugin "C#"
         - Installer le plugin "SonarJS"
         - Installer le plugin "SonarJava"
