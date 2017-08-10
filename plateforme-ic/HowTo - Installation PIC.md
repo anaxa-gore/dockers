@@ -16,6 +16,7 @@ TODO
     
 ### Installation des plugins
 `-> Administration -> System -> Update Center`
+
 - Installer le plugin "C#"
 - Installer le plugin "SonarJS"
 - Installer le plugin "SonarJava"
