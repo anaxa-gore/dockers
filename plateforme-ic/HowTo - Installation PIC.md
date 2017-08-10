@@ -13,6 +13,7 @@ TODO
 ### Références :
 
 - [Pré-requis](https://docs.sonarqube.org/display/SONAR/Requirements)
+- [Installation](https://help.sonatype.com/display/HSC/Installation+-+NXRM+3)
 - [Sécurisation derrière un proxy](https://docs.sonarqube.org/display/SONAR/Securing+the+Server+Behind+a+Proxy)
     
 ### Installation des plugins
@@ -46,6 +47,7 @@ TODO
 - [Sécurisation derrière un proxy](https://wiki.jenkins.io/display/JENKINS/Running+Jenkins+behind+Apache)
 
 ### Installation 
+TODO
 - Installer les plugins suggérés
 - Créer un compte administrateur
     
@@ -66,6 +68,7 @@ Installer les plugins suivants :
 - "Active Directory plugin"
     
     ACTIVATION DE LA GESTION DES ROLES
+    TODO
     -> Administrer Jenkins -> Configurer le système
     
     CONFIGURATION DES OUTILS
