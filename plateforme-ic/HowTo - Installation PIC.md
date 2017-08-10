@@ -1,9 +1,9 @@
 # Procédure installation PIC en environnement PROD
 
-## Installation de GitLab <image src="./logos/gitlab.png" width="32">
+## Installation de Gitlab <image src="./logos/gitlab.png" width="32">
 TODO
 
-## Installation de REDMINE <image src="./logos/redmine.png" width="32">
+## Installation de Redmine <image src="./logos/redmine.png" width="32">
 TODO
 
 ## Installation de Rocket.chat <image src="./logos/rocket.png" width="32">
@@ -16,12 +16,12 @@ TODO
     
 ### Installation des plugins
 `-> Administration -> System -> Update Center`
-        - Installer le plugin "C#"
-        - Installer le plugin "SonarJS"
-        - Installer le plugin "SonarJava"
-        - Installer le plugin "SonarPHP"
-        - Installer le plugin "SonarPython"
-        - Installer le plugin "LDAP"
+- Installer le plugin "C#"
+- Installer le plugin "SonarJS"
+- Installer le plugin "SonarJava"
+- Installer le plugin "SonarPHP"
+- Installer le plugin "SonarPython"
+- Installer le plugin "LDAP"
         
 ### Configuration de l'authentification LDAP
     -> https://docs.sonarqube.org/display/PLUG/LDAP+Plugin
