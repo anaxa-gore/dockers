@@ -9,7 +9,7 @@ TODO
 ## Installation de Rocket.chat
 TODO
 
-## Installation de SonarQube <image src="./logos/sonar.png" width="64">
+## Installation de SonarQube <image src="./logos/sonar.png" width="32">
 ### Références :
 - [Pré-requis](https://docs.sonarqube.org/display/SONAR/Requirements)
 - [Sécurisation derrière un proxy](https://docs.sonarqube.org/display/SONAR/Securing+the+Server+Behind+a+Proxy)
