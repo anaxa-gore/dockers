@@ -7,6 +7,11 @@ TODO
 TODO
 
 ## Installation de Rocket.chat <image src="./logos/rocket.png" width="32">
+### Références :
+
+- [Pré-requis](https://rocket.chat/docs/installation/minimum-requirements)
+
+
 TODO
 
 ## Installation de SonarQube <image src="./logos/sonar.png" width="32">
