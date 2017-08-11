@@ -2,17 +2,14 @@ version: "2"
 
 services:
     ########## Reverse-Proxy : Apache
-    apache_proxy:
-        build: apache/
-        image: proxy.pic
-        container_name: pic.proxy
-        ports: 
-            - "80:80"
-        networks:
-            - ic_net
-        extra_hosts:
-            - proxy.rocket.com:172.29.96.211
-            - proxy.nexus.com:172.29.96.211
+    #apache_proxy:
+    #    build: apache/
+    #    image: proxy.pic
+    #    container_name: pic.proxy
+    #    ports: 
+    #        - "80:80"
+    #    networks:
+    #        - ic_net
 
     ########## Serveur d'automatisation : JENKINS
     jenkins:
