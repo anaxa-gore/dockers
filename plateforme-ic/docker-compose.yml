@@ -7,7 +7,7 @@ services:
         image: proxy.pic
         container_name: pic.proxy
         volumes:
-            - ${ROOT_DATA}/proxy/hosts:/etc/hosts
+            - ${ROOT_DATA}/proxy_conf/:/etc/
         ports: 
             - "80:80"
         networks:
