@@ -12,6 +12,7 @@ services:
             - ic_net
         extra_hosts:
             - proxy.rocket.com:172.29.96.211
+            - proxy.gitlab.com:172.29.96.211
 
     ########## Serveur d'automatisation : JENKINS
     jenkins:
