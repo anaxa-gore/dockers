@@ -10,7 +10,7 @@ TODO
 ### Références :
 
 - [Pré-requis](https://rocket.chat/docs/installation/minimum-requirements)
-- [Une installation très complète un peu complexe](http://www.akitaonrails.com/2016/08/09/moving-away-from-slack-into-rocket-chat-good-enough)
+- [Une installation très complète & un peu complexe](http://www.akitaonrails.com/2016/08/09/moving-away-from-slack-into-rocket-chat-good-enough)
 
 TODO
 
