@@ -68,10 +68,10 @@ Installer les plugins suivants :
 - NodeJS Plugin
 - SonarQube Scanner for Jenkins
 - Gitlab Plugin
-- Gitlab Authentication Plugin             => Si Authentification via Gitlab => Possibilité de gérer les droits également de cette manière (A VOIR)
 - Role-based Authorization Strategy
 - Xvfb plugin (TIBCO 5)
 - Active Directory plugin
+    
     
     ACTIVATION DE LA GESTION DES ROLES
     TODO
