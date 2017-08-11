@@ -61,17 +61,17 @@ TODO
 `-> Administrer Jenkins -> Gestion des plugins -> Onglet "disponibles"`
 
 Installer les plugins suivants :
-- "Blue Ocean"
-- "RocketChat Notifier"
-- "Pipeline Maven Integration Plugin"
-- "Pipeline NPM Integration Plugin"
-- "NodeJS Plugin"
-- "SonarQube Scanner for Jenkins"
-- "Gitlab Plugin"
-- "Gitlab Authentication Plugin"             => Si Authentification via Gitlab => Possibilité de gérer les droits également de cette manière (A VOIR)
-- "Role-based Authorization Strategy"
-- "Xvfb plugin" (TIBCO 5)
-- "Active Directory plugin"
+- Blue Ocean
+- RocketChat Notifier
+- Pipeline Maven Integration Plugin
+- Pipeline NPM Integration Plugin
+- NodeJS Plugin
+- SonarQube Scanner for Jenkins
+- Gitlab Plugin
+- Gitlab Authentication Plugin             => Si Authentification via Gitlab => Possibilité de gérer les droits également de cette manière (A VOIR)
+- Role-based Authorization Strategy
+- Xvfb plugin (TIBCO 5)
+- Active Directory plugin
     
     ACTIVATION DE LA GESTION DES ROLES
     TODO
