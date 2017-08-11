@@ -6,6 +6,8 @@ services:
         build: apache/
         image: proxy.pic
         container_name: pic.proxy
+        volumes:
+            - ${ROOT_DATA}/proxy/hosts:/etc/hosts
         ports: 
             - "80:80"
         networks:
