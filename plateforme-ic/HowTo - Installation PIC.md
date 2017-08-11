@@ -10,7 +10,7 @@ TODO
 ### Références :
 
 - [Pré-requis](https://rocket.chat/docs/installation/minimum-requirements)
-
+- [Une installation très complète un peu complexe](http://www.akitaonrails.com/2016/08/09/moving-away-from-slack-into-rocket-chat-good-enough)
 
 TODO
 
@@ -42,6 +42,7 @@ Installer les plugins suivants :
 ### Références
 
 - [Pré-requis](https://help.sonatype.com/display/HSC/System+Requirements+-+NXRM+3)
+- [Eléments de sizing](http://blog.sonatype.com/2012/04/how-can-we-prove-that-nexus-can-scale/)
 
 TODO
     
