@@ -25,16 +25,17 @@ TODO
 `-> Administration -> System -> Update Center`
 
 Installer les plugins suivants :
-- "C#"
-- "SonarJS"
-- "SonarJava"
-- "SonarPHP"
-- "SonarPython"
-- "LDAP"
+- C#
+- SonarJS
+- SonarJava
+- SonarPHP
+- SonarPython
+- LDAP
         
 ### Configuration de l'authentification LDAP
-    -> https://docs.sonarqube.org/display/PLUG/LDAP+Plugin
-    -> Plusieurs serveurs LDAP : https://docs.sonarqube.org/display/PLUG/Multiple+Servers
+
+- [Installation & Configuration](https://docs.sonarqube.org/display/PLUG/LDAP+Plugin)
+- [Plusieurs serveurs LDAP](https://docs.sonarqube.org/display/PLUG/Multiple+Servers)
 
 
 ## Installation de Nexus <image src="./logos/nexus.png" width="32">
