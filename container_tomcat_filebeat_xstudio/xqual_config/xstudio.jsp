@@ -78,7 +78,7 @@
       <jar href="lib/org-json-20120521/org.json-20120521_signed.jar"                 main="false" download="eager"/>
       <jar href="lib/tomcat-7.0/servlet-api_signed.jar"                              main="false" download="eager"/>
 
-      <property name="jnlp.com.xqual.xstudio.version" value="3.1sp6"/>
+      <property name="jnlp.com.xqual.xstudio.version" value="3.1sp7"/>
    </resources>
 
    <security>
