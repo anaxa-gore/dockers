@@ -39,7 +39,9 @@ services:
     ########## Qualité du code : SONARQUBE
     # La base de données est également utilisée pour XStudio
     db_sonar:
-        image: mysql:5.7
+        #image: mysql:5.7
+        build: mysql/
+        image: mysql.pic
         container_name: pic.mysql.sonar-redmine
         networks:
             - ic_net
