@@ -1,5 +1,5 @@
 #This property file shouldn't be edited manually (i.e. passwords are encrypted).
-#Fri Jul 21 15:49:30 CEST 2017
+#Tue Aug 01 09:17:04 CEST 2017
 database.connection.authentication=Standard (see username and password below)
 database.connection.password=69B5D2A2D42EC656AA16A9D6D37D8D61
 database.connection.template=jdbc\:mysql\://database_server/database_name
@@ -13,7 +13,7 @@ feature.bugtracking.certificate=
 feature.bugtracking.filter.issuetypes=
 feature.bugtracking.filter.projects=
 feature.bugtracking.filter.status=
-feature.bugtracking.selection=Redmine (REST)
+feature.bugtracking.selection=Integrated
 feature.bugtracking.urlnewbug=http\://srv0270a.apave.grp\:5050/projects/project_id/issues/new?tracker_id\=1
 feature.bugtracking.urlpattern=http\://srv0270a.apave.grp\:5050/issues/bug_id
 feature.bugtracking.urlxmlrpcserver=http\://srv0270a.apave.grp\:5050
