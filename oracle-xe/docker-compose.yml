@@ -6,5 +6,5 @@ services:
         ports:
             - "49160:22"
             - "1521:1521"
-        environments:
+        environment:
             - ORACLE_ALLOW_REMOTE=true
