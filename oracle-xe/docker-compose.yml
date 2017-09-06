@@ -1,0 +1,10 @@
+version: "2"
+
+services:
+    xe:
+        image: wnameless/oracle-xe-11g
+        ports:
+            - "49160:22"
+            - "1521:1521"
+        environments:
+            - ORACLE_ALLOW_REMOTE=true
