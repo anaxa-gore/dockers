@@ -14,7 +14,8 @@ RUN tar -xvf /tmp/xstudio/xstudio_v3_1sp7_linux.tar -C /tmp/xstudio/
 
 # Changement du mot de passe root
 #RUN echo "root:root" | chpasswd
-RUN useradd -ms /bin/bash xstudio -p xstudio
+RUN useradd -ms /bin/bash xstudio
+RUN echo "xstudio:xstudio" | chpasswd
 
 ADD start.sh /
 RUN chmod +x /start.sh
