@@ -246,6 +246,13 @@ services:
         networks:
             - ic_net
     
+    agent_xstudio:
+        build: ../container_xstudio_fat/
+        image: xstudio_agent.pic
+        container_name: pic.xstudio_agent
+        networks:
+            - ic_net
+    
 networks:
     ic_net:
         driver: bridge
