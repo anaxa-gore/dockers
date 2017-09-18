@@ -14,7 +14,7 @@ RUN wget http://xstudio.alwaysdata.net/support/releases/3.1sp7/xstudio_v3_1sp7_l
 RUN unzip /tmp/xstudio/xstudio_v3_1sp7_linux.tar.zip -d /tmp/xstudio/
 RUN tar -xvf /tmp/xstudio/xstudio_v3_1sp7_linux.tar -C /tmp/xstudio/
 
-ADD ../container_tomcat_filebeat_xstudio/xqual_config/xstudio.conf /tmp/xstudio/xstudio/
+ADD xstudio.conf /tmp/xstudio/xstudio/
 
 # Changement du mot de passe root
 #RUN echo "root:root" | chpasswd
