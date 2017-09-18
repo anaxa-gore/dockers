@@ -17,7 +17,7 @@ RUN rm /usr/local/tomcat/webapps/xstudio.zip
 RUN mkdir /tmp/xstudio
 RUN wget http://xstudio.alwaysdata.net/support/releases/3.1sp7/xstudio_v3_1sp7_linux.tar.zip -O /tmp/xstudio/xstudio_v3_1sp7_linux.tar.zip
 RUN unzip /tmp/xstudio/xstudio_v3_1sp7_linux.tar.zip -d /tmp/xstudio/
-RUN tar -xvzf /tmp/xstudio/xstudio_v3_1sp7_linux.tar -C /tmp/xstudio/
+RUN tar -xvf /tmp/xstudio/xstudio_v3_1sp7_linux.tar -C /tmp/xstudio/
 
 ADD xqual_config/xagent.jnlp /usr/local/tomcat/webapps/xqual/xstudio/
 ADD xqual_config/xstudio.jnlp /usr/local/tomcat/webapps/xqual/xstudio/
