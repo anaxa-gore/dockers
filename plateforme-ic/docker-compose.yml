@@ -252,6 +252,7 @@ services:
         container_name: pic.xstudio_agent
         networks:
             - ic_net
+        tty: true
     
 networks:
     ic_net:
