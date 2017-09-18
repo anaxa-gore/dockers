@@ -3,6 +3,7 @@ MAINTAINER Thomas Bonavia <thomas.bonavia@apave.com>
 
 RUN apt-get update
 RUN apt-get install -qq unzip
+RUN apt-get install -qq wget
 
 # Installation de XStudio Fat Client pour XContinuousIntegration
 RUN mkdir /tmp/xstudio
