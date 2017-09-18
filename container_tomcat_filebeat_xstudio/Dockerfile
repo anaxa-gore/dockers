@@ -13,6 +13,12 @@ RUN wget http://xstudio.alwaysdata.net/support/releases/3.1sp7/xstudio_v3_1sp7_w
 RUN unzip /usr/local/tomcat/webapps/xstudio.zip -d /usr/local/tomcat/webapps/xqual/
 RUN rm /usr/local/tomcat/webapps/xstudio.zip
 
+# Installation de XStudio Fat Client pour XContinuousIntegration
+RUN mkdir /tmp/xstudio
+RUN wget http://xstudio.alwaysdata.net/support/releases/3.1sp7/xstudio_v3_1sp7_linux.tar.zip -O /tmp/xstudio/xstudio_fat.tar.zip
+RUN unzip /tmp/xstudio/xstudio_fat.tar.zip -d /tmp/xstudio/
+RUN tar -xvzf /tmp/xstudio/xstudio_fat.tar -C /tmp/xstudio/
+
 ADD xqual_config/xagent.jnlp /usr/local/tomcat/webapps/xqual/xstudio/
 ADD xqual_config/xstudio.jnlp /usr/local/tomcat/webapps/xqual/xstudio/
 ADD xqual_config/xstudio.jsp /usr/local/tomcat/webapps/xqual/xstudio/
