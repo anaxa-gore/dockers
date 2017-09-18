@@ -5,6 +5,8 @@ RUN apt-get update
 RUN apt-get install -qq unzip
 RUN apt-get install -qq wget
 RUN apt-get install -qq ssh
+RUN apt-get install -qq openjdk-8-jdk
+RUN apt-get install -qq git
 
 # Installation de XStudio Fat Client pour XContinuousIntegration
 RUN mkdir /tmp/xstudio
@@ -15,6 +17,7 @@ RUN tar -xvf /tmp/xstudio/xstudio_v3_1sp7_linux.tar -C /tmp/xstudio/
 # Changement du mot de passe root
 #RUN echo "root:root" | chpasswd
 RUN useradd -ms /bin/bash xstudio
+RUN adduser xstudio root
 RUN echo "xstudio:xstudio" | chpasswd
 
 ADD start.sh /
