@@ -17,7 +17,7 @@ RUN git clone git://github.com/alphanodes/redmine_messenger.git plugins/redmine_
 # Install du plugin GitLab pour mise à jour temps réel du repository
 RUN git clone git://github.com/phlegx/redmine_gitlab_hook.git plugins/redmine_gitlab_hook
 
-# Installation du plugin de notification Rocket.Chat
+# Installation du plugin de synchronisation LDAP
 RUN git clone https://github.com/thorin/redmine_ldap_sync.git plugins/redmine_ldap_sync
 
 RUN mkdir /home/repositories
