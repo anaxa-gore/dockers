@@ -5,7 +5,7 @@ TODO
 
 ## Installation de Redmine <image src="./logos/redmine.png" width="32">
 TODO
-- Installation du plugin [Circle](https://www.redmineup.com/pages/fr/themes/circle)
+- Installation du thème [Circle](https://www.redmineup.com/pages/fr/themes/circle)
 - Installation du plugin [Agile](https://www.redmineup.com/pages/fr/plugins/agile)
 - Installation du plugin [LDAP](http://www.redmine.org/plugins/redmine_ldap_sync)
 
