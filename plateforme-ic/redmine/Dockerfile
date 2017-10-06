@@ -6,7 +6,12 @@ RUN apt-get -qq install unzip
 ADD circle_theme-2_1_2.zip /usr/src/redmine/public/themes
 RUN unzip /usr/src/redmine/public/themes/circle_theme-2_1_2.zip -d /usr/src/redmine/public/themes
 
-# Installation du plugin Agile (light)
+# Installation du plugin Tags (light)
+ADD redmineup_tags-2_0_1-light.zip /usr/src/redmine/plugins
+RUN unzip /usr/src/redmine/plugins/redmineup_tags-2_0_1-light.zip -d /usr/src/redmine/plugins
+RUN bundle install --without development test
+
+# Installation du plugin Agile
 ADD redmine_agile-1_4_4-pro.zip /usr/src/redmine/plugins
 RUN unzip /usr/src/redmine/plugins/redmine_agile-1_4_4-pro.zip -d /usr/src/redmine/plugins
 RUN bundle install --without development test
