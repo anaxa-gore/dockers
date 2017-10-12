@@ -26,54 +26,54 @@ services:
             - ic_net
             
     ########## Repository de données
-    nexus:
-        image: sonatype/nexus3
-        container_name: pic.nexus
+    #nexus:
+    #    image: sonatype/nexus3
+    #    container_name: pic.nexus
         #links:
         #    - apache_nexus
-        ports:
-            - "8081:8081"
-        volumes:
-            - ${ROOT_SHARED_DATA}/nexus:/nexus-data
+    #    ports:
+    #        - "8081:8081"
+    #    volumes:
+    #        - ${ROOT_SHARED_DATA}/nexus:/nexus-data
      
     ########## Qualité du code : SONARQUBE
     # La base de données est également utilisée pour XStudio
-    db_sonar:
-        #image: mysql:5.7
-        build: mysql/
-        image: mysql.pic
-        container_name: pic.mysql
-        networks:
-            - ic_net
-        ports:
-            - "3306:3306"
-        volumes:
-            - ${ROOT_SHARED_DATA}/mysql:/var/lib/mysql
-        environment:
-            - MYSQL_ROOT_PASSWORD=@Soleil1
-            - MYSQL_DATABASE=sonar
-            - MYSQL_USER=sonar
-            - MYSQL_PASSWORD=sonar
+    #db_sonar:
+    #    #image: mysql:5.7
+    #    build: mysql/
+    #    image: mysql.pic
+    #    container_name: pic.mysql
+    #    networks:
+    #        - ic_net
+    #    ports:
+    #        - "3306:3306"
+    #    volumes:
+    #        - ${ROOT_SHARED_DATA}/mysql:/var/lib/mysql
+    #    environment:
+    #        - MYSQL_ROOT_PASSWORD=@Soleil1
+    #        - MYSQL_DATABASE=sonar
+    #        - MYSQL_USER=sonar
+    #        - MYSQL_PASSWORD=sonar
             
-    sonarqube:
-        image: sonarqube:alpine
-        container_name: pic.sonar
-        links:
-            - db_sonar
-        networks:
-            - ic_net
-        ports:
-            - "9009:9000"
-            - "9092:9092"
-        environment:
-            - SONARQUBE_JDBC_USERNAME=sonar
-            - SONARQUBE_JDBC_PASSWORD=sonar
-            - SONARQUBE_JDBC_URL=jdbc:mysql://db_sonar:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
-        volumes:
-            - ${ROOT_SHARED_DATA}/sonarqube/conf:/opt/sonarqube/conf
-            - ${ROOT_SHARED_DATA}/sonarqube/data:/opt/sonarqube/data
-            - ${ROOT_SHARED_DATA}/sonarqube/extensions:/opt/sonarqube/extensions
-            #- ${ROOT_SHARED_DATA}/sonarqube/plugins:/opt/sonarqube/lib/bundled-plugins
+    #sonarqube:
+    #    image: sonarqube:alpine
+    #    container_name: pic.sonar
+    #    links:
+    #        - db_sonar
+    #    networks:
+    #        - ic_net
+    #    ports:
+    #        - "9009:9000"
+    #        - "9092:9092"
+    #    environment:
+    #        - SONARQUBE_JDBC_USERNAME=sonar
+    #        - SONARQUBE_JDBC_PASSWORD=sonar
+    #        - SONARQUBE_JDBC_URL=jdbc:mysql://db_sonar:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+    #    volumes:
+    #        - ${ROOT_SHARED_DATA}/sonarqube/conf:/opt/sonarqube/conf
+    #        - ${ROOT_SHARED_DATA}/sonarqube/data:/opt/sonarqube/data
+    #        - ${ROOT_SHARED_DATA}/sonarqube/extensions:/opt/sonarqube/extensions
+    #        #- ${ROOT_SHARED_DATA}/sonarqube/plugins:/opt/sonarqube/lib/bundled-plugins
 
     ########## Version Control
     gitlab:
@@ -92,32 +92,32 @@ services:
     
     
     ########## Outils collaboratifs : ROCKET.CHAT ou MATTERMOST
-    db_rocket:
-        image: mongo:latest
-        container_name: pic.mongo.rocket
-        ports:
-            - "27017:27017"
-        volumes:
-            - ${ROOT_DATA}/mongo:/data/db
-        command: mongod --smallfiles
-        networks:
-            - ic_net
+    #db_rocket:
+    #    image: mongo:latest
+    #    container_name: pic.mongo.rocket
+    #    ports:
+    #        - "27017:27017"
+    #    volumes:
+    #        - ${ROOT_DATA}/mongo:/data/db
+    #    command: mongod --smallfiles
+    #    networks:
+    #        - ic_net
     
-    rocket:
-        build: rocket.chat/
-        image: rocket.pic
-        container_name: pic.rocket
-        links:
-            - db_rocket
-        ports:
-            - "3000:3000"
-        volumes:
-            - ${ROOT_SHARED_DATA}/rocket.chat/uploads:/app/uploads
-        environment:
-            - PORT=3000
-            - MONGO_URL=mongodb://db_rocket:27017/rocketchat
-        networks:
-            - ic_net
+    #rocket:
+    #    build: rocket.chat/
+    #    image: rocket.pic
+    #    container_name: pic.rocket
+    #    links:
+    #        - db_rocket
+    #    ports:
+    #        - "3000:3000"
+    #    volumes:
+    #        - ${ROOT_SHARED_DATA}/rocket.chat/uploads:/app/uploads
+    #    environment:
+    #        - PORT=3000
+    #        - MONGO_URL=mongodb://db_rocket:27017/rocketchat
+    #    networks:
+    #        - ic_net
     
     #db_mattermost:
     #    image: postgres:alpine
@@ -167,23 +167,23 @@ services:
     #        - ic_net
     
     ########## Gestion de tickets : REDMINE
-    redmine:
-        build: redmine/
-        image: redmine.pic:3.0
-        container_name: pic.redmine
-        networks:
-            - ic_net
-        ports:
-            - "5050:3000"
-        links: 
-            - db_sonar
-        environment:
-            - REDMINE_DB_MYSQL=db_sonar
-            - REDMINE_DB_USERNAME=redmine
-            - REDMINE_DB_PASSWORD=redmine
-            - REDMINE_PLUGINS_MIGRATE=true  # Prend en compte la mise à jour des plugins
-        volumes:
-            - ${ROOT_SHARED_DATA}/redmine/repositories:/home/repositories
+    #redmine:
+    #    build: redmine/
+    #    image: redmine.pic:3.0
+    #    container_name: pic.redmine
+    #    networks:
+    #        - ic_net
+    #    ports:
+    #        - "5050:3000"
+    #    links: 
+    #        - db_sonar
+    #    environment:
+    #        - REDMINE_DB_MYSQL=db_sonar
+    #        - REDMINE_DB_USERNAME=redmine
+    #        - REDMINE_DB_PASSWORD=redmine
+    #        - REDMINE_PLUGINS_MIGRATE=true  # Prend en compte la mise à jour des plugins
+    #    volumes:
+    #        - ${ROOT_SHARED_DATA}/redmine/repositories:/home/repositories
     
     ########## Gestion de tickets : MANTIS
     #mantis:
@@ -237,22 +237,22 @@ services:
     #        - ic_net
             
     ########## Tomcat pour déploiement application
-    tomcat:
-        build: ../container_tomcat_filebeat_xstudio/
-        image: tomcat.filebeat.xstudio.pic
-        container_name: pic.xstudio.filebeat
-        ports:
-            - "9595:8080"
-        networks:
-            - ic_net
+    #tomcat:
+    #    build: ../container_tomcat_filebeat_xstudio/
+    #    image: tomcat.filebeat.xstudio.pic
+    #    container_name: pic.xstudio.filebeat
+    #    ports:
+    #        - "9595:8080"
+    #    networks:
+    #        - ic_net
     
-    agent_xstudio:
-        build: ../container_xstudio_fat/
-        image: xstudio_agent.pic
-        container_name: pic.xstudio_agent
-        networks:
-            - ic_net
-        tty: true
+    #agent_xstudio:
+    #    build: ../container_xstudio_fat/
+    #    image: xstudio_agent.pic
+    #    container_name: pic.xstudio_agent
+    #    networks:
+    #        - ic_net
+    #    tty: true
     
 networks:
     ic_net:
