@@ -42,7 +42,7 @@ services:
         #image: mysql:5.7
         build: mysql/
         image: mysql.pic
-        container_name: pic.mysql.sonar-redmine
+        container_name: pic.mysql
         networks:
             - ic_net
         ports:
