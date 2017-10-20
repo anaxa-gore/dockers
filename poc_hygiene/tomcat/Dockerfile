@@ -1,4 +1,4 @@
-FROM tomcat:8.5
+FROM tomcat:8.5.12
 MAINTAINER Thomas Bonavia <thomas.bonavia@apave.com>
 
 # Configuration de Tomcat
