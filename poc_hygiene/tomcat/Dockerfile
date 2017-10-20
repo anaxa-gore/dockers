@@ -9,5 +9,8 @@ MAINTAINER Thomas Bonavia <thomas.bonavia@apave.com>
 
 ENV PATH /usr/local/tomcat/bin:${PATH}
 
+RUN echo ${PATH}
+RUN echo ${CATALINA_HOME}
+
 CMD ["catalina.sh", "run"]
 #CMD ["bash", "-c", "catalina.sh run"] 
