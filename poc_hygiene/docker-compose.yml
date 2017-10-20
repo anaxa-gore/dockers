@@ -29,7 +29,7 @@ services:
         image: mariadb:10.3
         container_name: poc.silem.mariadb
         networks:
-            - poc.silem
+            - poc_silem
         ports:
             - "8300:3306"
         volumes:
