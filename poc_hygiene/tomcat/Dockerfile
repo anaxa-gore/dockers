@@ -7,7 +7,7 @@ MAINTAINER Thomas Bonavia <thomas.bonavia@apave.com>
 #ADD server.xml /usr/local/tomcat/conf
 #ADD manager-context.xml /usr/local/tomcat/webapps/manager/META-INF/context.xml
 
-ENV PATH /usr/local/tomcat/bin:${PATH}
+ENV PATH /usr/local/tomcat/bin
 
 RUN echo ${PATH}
 RUN echo ${CATALINA_HOME}
