@@ -3,8 +3,9 @@ version: "2"
 services:
     ########## TOMCAT
     tomcat:
-        build: tomcat/
-        image: poc.silem.tomcat
+        #build: tomcat/
+        #poc.silem.tomcat
+        image: tomcat:latest 
         container_name: poc.silem.tomcat
         ports: 
             - "8800:8080"
