@@ -7,4 +7,5 @@ MAINTAINER Thomas Bonavia <thomas.bonavia@apave.com>
 #ADD server.xml /usr/local/tomcat/conf
 #ADD manager-context.xml /usr/local/tomcat/webapps/manager/META-INF/context.xml
 
+CMD ["catalina.sh", "run"]
 #CMD ["bash", "-c", "catalina.sh run"] 
