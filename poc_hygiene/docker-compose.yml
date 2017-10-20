@@ -1,0 +1,45 @@
+version: "2"
+
+services:
+    ########## TOMCAT
+    tomcat:
+        build: tomcat/
+        image: poc.silem.tomcat
+        container_name: poc.silem.tomcat
+        ports: 
+            - "8800:8080"
+        volumes:
+            - ${ROOT_DATA}/poc_silem/catalina_home:/usr/local/tomcat
+        networks:
+            - poc_silem
+            
+    ########## APACHE
+    apache:
+        image: apache:2.2
+        container_name: poc.silem.apache
+        ports:
+            - "8100:80"
+        volumes:
+            - ${ROOT_DATA}/poc_silem/htdocs:/usr/local/apache2/htdocs
+        networks:
+            - poc_silem
+            
+    ########## MARIADB
+    maria:
+        image: mariadb:10.3
+        container_name: poc.silem.mariadb
+        networks:
+            - poc.silem
+        ports:
+            - "8300:3306"
+        volumes:
+            - ${ROOT_SHARED_DATA}/poc_silem/mysql:/var/lib/mysql
+        environment:
+            - MYSQL_ROOT_PASSWORD=silem_hygiene
+            - MYSQL_DATABASE=silem_hygiene
+            - MYSQL_USER=silem_hygiene
+            - MYSQL_PASSWORD=silem_hygiene
+              
+networks:
+    poc_silem:
+        driver: bridge
