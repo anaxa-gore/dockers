@@ -75,7 +75,7 @@ Installer les plugins suivants :
 - Role-based Authorization Strategy
 - Xvfb plugin (TIBCO 5)
 - Active Directory plugin
-    
+- Pipeline Utility Steps Plugin
     
     ACTIVATION DE LA GESTION DES ROLES
     TODO
