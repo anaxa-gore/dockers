@@ -15,7 +15,17 @@ TODO
 - [Pré-requis](https://rocket.chat/docs/installation/minimum-requirements)
 - [Une installation très complète & un peu complexe](http://www.akitaonrails.com/2016/08/09/moving-away-from-slack-into-rocket-chat-good-enough)
 
-TODO
+### Configuration de l'authentification LDAP
+`-> Administration -> LDAP `
+- Activer : **Oui**
+- Login Fallback : **OUI**
+- Hôte : **adresse LDAP**
+- Port : **389**
+- Domaine de base : **dc=dc,dc=grp**
+- Utilisateur pour la recherche dans le domaine : **Utilisateur compte de service>**
+- Mot de passe pour la recherche dans le domaine : **Mot de passe compte de service>**
+- Catégorie d'objet pour la recherche dans le domaine : **CN=Person,CN=Schema,CN=Configuration,DC=dc,DC=grp**
+- Champs du nom d'utilisateur : **name**
 
 ## Installation de SonarQube <image src="./logos/sonar.png" width="32">
 ### Références :
@@ -203,7 +213,7 @@ Installer les plugins suivants :
 `-> Administrer Jenkins -> Configurer le système -> "Global RocketChat Notifier Settings"`
 - Endpoint : **url de Rocket.Chat**
 - Channel : 
-- Icon to use : **https://wiki.jenkins-ci.org/download/attachments/2916393/headshot.png?version=1&modificationDate=1302753947000&api=v2**
+- Icon to use : **URL Image Jenkins**
 - Build Server URL : **Valeur par défaut**
 
 `Enregistrer`
@@ -253,25 +263,6 @@ Installer les plugins suivants :
         -> TIBCO 5 : Installer Xvfb (yum install xorg-X11-server-Xvfb) sur l'environnement de dev TIBCO
         -> Installer git sur l'environnement de dev TIBCO
 
----------- Configuration de l'authentification Jenkins via GitLab OAuth
-    - GitLab
-        -> Admin area -> Applications
-            Name : Authentication Jenkins
-            Redirect URI : http://srv0270a.apave.grp:8092/securityRealm/finishLogin (http://srv0270a.apave.grp:8092 = Jenkins URL)
-            
-            Submit
-            
-            COPIER "Application Id" ET "Secret"
-    
-    - Jenkins
-        -> Administrer Jenkins -> Configurer la sécurité globale -> Royaume de la sécurité (Realm)
-            Cocher "Gitlab Authentication Plugin"
-            Gitlab Web URI : http://srv0270a.apave.grp:1212 (GitLab URL)
-            Gitlab API URI : http://srv0270a.apave.grp:1212 (GitLab URL)
-            Client ID : "Application Id" copié précédemment
-            Client Secret : "Secret" copié précédemment
-            
-            
 ---------- Configuration de Jenkins pour build onPush dans GitLab    =>     VERIFIER QUE C'EST BIEN NECESSAIRE
     - GitLab :
         Se connecter en tant qu'administrateur
@@ -292,18 +283,6 @@ Installer les plugins suivants :
             
         Enregistrer
        
----------- Configuration de l'authentification Rocket.Chat via LDAP
-    - Rocket.Chat
-        -> Administration -> LDAP 
-            Activer : Oui
-            Login Fallback : OUI
-            Hôte : <adresse LDAP>
-            Port : 389
-            Domaine de base : dc=apave,dc=grp
-            Utilisateur pour la recherche dans le domaine : <Utilisateur compte de service>
-            Mot de passe pour la recherche dans le domaine : <Mot de passe compte de service>
-            Catégorie d'objet pour la recherche dans le domaine : CN=Person,CN=Schema,CN=Configuration,DC=apave,DC=grp
-            Champs du nom d'utilisateur : name
 
 ---------- Installation de Redmine
     - Theme Circle (https://www.redmineup.com/pages/fr/themes/circle) 
