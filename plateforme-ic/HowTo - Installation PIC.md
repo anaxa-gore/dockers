@@ -73,7 +73,6 @@ Installer les plugins suivants :
 - SonarQube Scanner for Jenkins
 - Gitlab Plugin
 - Role-based Authorization Strategy
-- Xvfb plugin (TIBCO 5)
 - Active Directory plugin
 - Pipeline Utility Steps Plugin
     
@@ -81,99 +80,157 @@ Installer les plugins suivants :
     TODO
     -> Administrer Jenkins -> Configurer le système
     
-    CONFIGURATION DES OUTILS
-    -> Administrer Jenkins -> Configurer le système
-        - Global Config user.name Value : Jenkins
-        - Global Config user.email Value : jenkins@apave.com
-    -> Administrer Jenkins -> Configuration globale des outils
-        - JDK -> Ajouter JDK 
-            Nom : jdk8
-            Install automatically : OUI / Ou installer manuellement la bonne version
-        - SonarQube Scanner -> Ajouter SonarQube Scanner
-            Name : sonar
-            Install automatically : OUI / Ou installer manuellement la bonne version
-        - Maven -> Ajouter Maven
-            Nom : M3
-            Install automatically : OUI / Ou installer manuellement la bonne version
-        - NodeJS -> Ajouter NodeJS
-            Nom : nodejs
-            Install automatically : OUI / Ou installer manuellement la bonne version
-        Enregister
+### Configuration des outils
+`-> Administrer Jenkins -> Configurer le système -> Git plugin`
+- Global Config user.name Value : Jenkins
+- Global Config user.email Value : jenkins@apave.com
+        
+`-> Administrer Jenkins -> Configuration globale des outils`
+- `JDK -> Ajouter JDK`
+    - Nom : **jdk8**
+    - Install automatically : OUI / Ou installer manuellement la bonne version
+- `SonarQube Scanner -> Ajouter SonarQube Scanner`
+    - Name : **sonar**
+    - Install automatically : OUI / Ou installer manuellement la bonne version
+- `Maven -> Ajouter Maven`
+    - Nom : **M3**
+    - Install automatically : OUI / Ou installer manuellement la bonne version
+- `NodeJS -> Ajouter NodeJS`
+    - Nom : **nodejs**
+    - Install automatically : OUI / Ou installer manuellement la bonne version
 
----------- Configuration de Nexus dans Jenkins
-    - Jenkins
-        -> Administrer Jenkins -> Configuration files -> Add a new Config -> "Global Maven settings.xml"
-        ID : globalMaven
-        Submit
-            Name : globalMaven
-            -> Server Credentials
-            Ajouter
-                ServerId: releases
-                Credentials: 
-                    -> Ajouter -> Jenkins
-                        Nom d'utilisateur : <NexusUser>
-                        Mot de passe : <NexusUserPwd>
-                        ID : Nexus
-                        Description : Nexus
-                Credentials : Nexus
-            Ajouter
-                ServerId: snapshots
-                Credentials: Nexus        
-                    
-            Submit
+#### Configuration de Nexus dans Jenkins
+`-> Administrer Jenkins -> Configuration files -> Add a new Config`
+- Type de fichier : **Global Maven settings.xml**
+- ID : **globalMaven**
+    
+    `Submit`
 
----------- Configuration de NPM dans Jenkins
-    - Jenkins
-        -> Administrer Jenkins -> Configuration Files -> Add New Config -> "Fichier Npm de configuration"
-        ID : npmrc
-        Submit
-            Name: npmrc
-            -> NPM Registry -> "Ajouter"
-                URL: http://srv0270a.apave.grp:8081/repository/apave-web-snapshots/ (Nexus URL)
-                Credentials : Nexus
+    
+- Name : **globalMaven**
+- `Server Credentials -> Ajouter`
+    - ServerId: **releases**
+    - Credentials: 
+        - `-> Ajouter -> Jenkins`
+            - Nom d'utilisateur : **--NexusUser--**
+            - Mot de passe : **--NexusUserPwd--**
+            - ID : **Nexus**
+            - Description : **Nexus**
+            - Credentials : **Nexus**
                 
-                Content :
-                    AJOUTER EN FIN DE Fichier
-                        registry=http://srv0270a.apave.grp:8081/repository/apave-web-snapshots/
-                        _auth=YWRtaW46YWRtaW4xMjM=                                                      => echo -n 'admin:admin123' | openssl base64 où <admin = user nexus> & <admin123 = pwd user nexus>
-                        user=admin                                                                      => utilisateur Nexus
-                        email=admin@admin.com
-                Submit
+- `Server Credentials -> Ajouter`
+    - ServerId: **snapshots**
+    - Credentials: **Nexus**
+    
+    
+- Content :
+
+```xml
+<!-- Utilisation du scanner sonar -->
+<pluginGroups>
+    <pluginGroup>org.sonarsource.scanner.maven</pluginGroup>
+</pluginGroups>
+
+<!-- Utilisation du Nexus interne plutôt que des repositories externes. -->
+<mirrors>
+    <mirror>
+      <id>central</id>
+      <name>central</name>
+      <url>http://srv:8081/repository/maven-public/</url> <!-- Adresse du Nexus -->
+      <mirrorOf>*</mirrorOf>
+    </mirror>
+</mirrors>
+
+<!-- Profil générant le déclenchement de Sonar lors d'un build => Utilisé par défaut -->
+<profiles>
+    <profile>
+        <id>sonar</id>
+        <activation>
+            <activeByDefault>true</activeByDefault>
+        </activation>
+        <properties>
+            <!-- Adresse du serveur Sonar -->
+            <sonar.host.url
+              http://srv:9009
+            </sonar.host.url>
+        </properties>
+    </profile>
+</profiles>
+<activeProfiles>
+    <activeProfile>sonar</activeProfile>
+</activeProfiles>
+```
+    
+    `Submit`
+
+#### Configuration de NPM dans Jenkins
+`-> Administrer Jenkins -> Configuration Files -> Add New Config`
+- Type de fichier : **Fichier Npm de configuration**
+- ID : **npmrc**
+    
+    `Submit`
+            
+            
+- Name: **npmrc**
+- `-> NPM Registry -> Ajouter`
+    - URL: **http://srv:8081/repository/internal-web/** (URL Nexus pour stockage des artefacts Web)
+    - Credentials : **Nexus**
+    - Content (Ajouter en fin de fichier) :
+    ```
+        registry=http://srv:8081/repository/internal-web/
+        _auth=YWRtaW46YWRtaW4xMjM=          => echo -n 'user:passwd' | openssl base64 où <user = user nexus> & <passwd = pwd user nexus>
+        user=admin                          => utilisateur Nexus
+        email=admin@admin.com
+    ``` 
+    
+    `Submit`
         
----------- Configuration de Rocket.Chat dans Jenkins
-    - Rocket.Chat
-        -> Administration -> Integrations -> Nouvelle intégration -> Webhook entrant
-            Activé : Oui
-            Nom : Jenkins
-            Publié en tant que : jenkins (un utilisateur de service)
-            Alias : Jenkins
-            
-            Save
-            COPIER  "Webhook URL"
-    - Jenkins
-        -> Administrer Jenkins -> Configurer le système -> "Global RocketChat Notifier Settings"
-            Endpoint : url de Rocket.Chat
-            Channel : 
-            Icon to use : https://wiki.jenkins-ci.org/download/attachments/2916393/headshot.png?version=1&modificationDate=1302753947000&api=v2
-            Build Server URL : <Valeur par défaut>
-            
-        Enregistrer
+#### Configuration de Rocket.Chat dans Jenkins
+**Dans Rocket.Chat**
+
+`-> Administration -> Integrations -> Nouvelle intégration -> Webhook entrant`
+- Activé : **Oui**
+- Nom : **Jenkins**
+- Publié en tant que : **jenkins** (un utilisateur de service)
+- Alias : **Jenkins**
+
+`Save`
+
+- COPIER  "Webhook URL"
+
+**Dans Jenkins**
+
+`-> Administrer Jenkins -> Configurer le système -> "Global RocketChat Notifier Settings"`
+- Endpoint : **url de Rocket.Chat**
+- Channel : 
+- Icon to use : **https://wiki.jenkins-ci.org/download/attachments/2916393/headshot.png?version=1&modificationDate=1302753947000&api=v2**
+- Build Server URL : **Valeur par défaut**
+
+`Enregistrer`
+
         
----------- Configuration de SonarQube dans Jenkins
-    - SonarQube
-        Login en tant qu'administrateur
-        -> Administrator -> My Account -> Security
-            Generate New Token : Jenkins
-            Generate
-            COPIER LE TOKEN GENERE
+#### Configuration de SonarQube dans Jenkins
+**Dans SonarQube**
+
+`-> Administrator -> My Account -> Security`
+    - Generate New Token : Jenkins
+    - Generate
+    - COPIER LE TOKEN GENERE
+
+**Dans Jenkins**
+
+`-> Administrer Jenkins -> Configurer le système -> SonarQube servers -> Ajouter une installation SonarQube`
+- Nom : **SonarApave**
+- URL du serveur : **http://srv:9009** (Sonar URL)
+- Server authentication token : **VALEUR DU TOKEN COPIE DANS SonarQube**
+
+`Enregistrer`
+
+
+
+
             
-    - Jenkins
-        -> Administrer Jenkins -> Configurer le système -> SonarQube servers
-            Ajouter une installation SonarQube
-                Nom : SonarApave
-                URL du serveur : http://srv0270a.apave.grp:9009 (Sonar URL)
-                Server authentication token : VALEUR DU TOKEN COPIE DANS SonarQube
-        Enregistrer
+
 
 ---------- Configuration du noeud TIBCO dans Jenkins
     - Jenkins
