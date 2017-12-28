@@ -369,7 +369,7 @@ Git doit obligatoirement être installé sur le noeud pour que les builds puisse
 `OK`
 
 - Description : **\<Courte description permettant d'identifier le noeud\>**
-- Nb d'exécuteurs : **\<A remplir en fonction des perfs de la machine\>** (Attention au nommage pour pouvoir facilement retrouver les noeuds par pattern : )
+- Nb d'exécuteurs : **\<A remplir en fonction des perfs de la machine\>** (Attention au nommage pour pouvoir facilement retrouver les noeuds par patterns : [Allocation des noeuds](https://jenkins.io/doc/pipeline/steps/workflow-durable-task-step/#code-node-code-allocate-node))
 - Répertoire de travail : **\<Répertoire dans lequel Jenkins stocke les données sur le noeud\>**
 - Méthode de lancement : **Launch slave agents via SSH**
   - Host : **\<Nom du serveur ou adresse IP\>**
@@ -401,6 +401,10 @@ Configurer éventuellement l'emplacement des différents outils sur le noeud.
                     Description : GiLab Admin
 
         Enregistrer
+
+
+
+
 
 
 ---------- Installation de Redmine
