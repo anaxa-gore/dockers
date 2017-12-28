@@ -15,6 +15,50 @@ TODO
 - [Pré-requis](https://rocket.chat/docs/installation/minimum-requirements)
 - [Une installation très complète & un peu complexe](http://www.akitaonrails.com/2016/08/09/moving-away-from-slack-into-rocket-chat-good-enough)
 
+### Outils annexes
+
+- Installer `graphicsmagick` sur la machine portant Rocket.Chat
+
+### Paramètres des comptes
+`-> Administration -> Comptes`
+- Autoriser la lecture anonyme : **Non**
+- Autoriser l'écriture anonyme : **Non**
+- Autoriser les utilisateurs à supprimer leur propre compte : **Non**
+- Autoriser la modification de profil : **Oui**
+- Autoriser le changement d'avatar : **Oui**
+- Autoriser le changement de nom d'utilisateur : **Oui**
+- Autoriser le changement d'adresse e-mail : **Non**
+- Autoriser le changement de mot de passe : **Non**
+
+### Paramètres généraux
+`-> Administration -> Général`
+
+Vérifier que la valeur soit correcte sur : 
+- URL du site : **adresse + port d'exposition du service Rocket.chat**
+
+### Paramètres LDAP
+`-> Administration -> LDAP`
+- Activer : **Oui**
+- Login Fallback : **Oui**
+- Hôte : **Adresse du LDAP**
+- Port : **Port du LDAP** (389)
+- Chiffrement : **Pas de chiffrement**
+- Domaine de base : **dc=dc,dc=grp**
+- Utiliser la recherche personnalisée dans le domaine : **Non**
+- Utilisateur pour la recherche dans le domaine : **compte de service**
+- Mot de passe pour la recherche dans le domaine : **mot de passe du compte de service**
+- Activer le filtre des utilisateurs sur un groupe LDAP : **Non**
+- ID de l'utilisateur pour la recherche dans le domaine : **sAMAccountName**
+- Classe d'objet pour la recherche dans le domaine : **user**
+- Catégorie d'objet pour la recherche dans le domaine : **CN=Person,CN=Schema,CN=Configuration,DC=dc,DC=grp**
+- Champ du nom d'utilisateur : **cn** (ou autre ?)
+- Champ de l'identifiant unique : **objectGUID**
+- Synchronisation des données : **Oui**
+- Synchronisation de l'avatar utilisateur : **Oui**
+- Domaine par défaut : **dc.grp**
+- Fusionner les utilisateurs existants : **Non**
+- Importer les utilisateurs LDAP : **Non** si les utilisateurs sont importés à la première connexion.
+
 ### Configuration de l'authentification LDAP
 `-> Administration -> LDAP `
 - Activer : **Oui**
@@ -57,8 +101,28 @@ Installer les plugins suivants :
 - [Pré-requis](https://help.sonatype.com/display/HSC/System+Requirements+-+NXRM+3)
 - [Eléments de sizing](http://blog.sonatype.com/2012/04/how-can-we-prove-that-nexus-can-scale/)
 
-TODO
-    
+### Configuration de l'authentification LDAP
+`Server administration and configuration -> Security -> LDAP -> Create Connection`
+- Name : **Nom de la connection à créer** (arbitraire)
+- LDAP server address : **ldap://adresse_de_l_AD:port_de_l_AD**
+- LDAP Location : **dc=dc,dc=grp**
+- Authentication mode : **Simple authentication**
+- Username or DN : **Login et password du compte de service à utiliser**
+
+`Next`
+
+- User ID attribute : **sAMAccountName**
+- Real name attribute : **cn**
+- Email attribute : **mail**
+- Map LDAP groups as roles : **True**
+- Group type : **Dynamic Groups**
+- Group member of attribute : **memberOf**
+
+`Create`
+
+`Server administration and configuration -> Security -> Realms -> Create Connection`
+- Ajouter `LDAP Realm` aux actifs
+
 ## Installation de Jenkins <image src="./logos/jenkins.png" width="32">
 ### Références :
 
@@ -93,7 +157,7 @@ Installer les plugins suivants :
 ### Configuration des outils
 `-> Administrer Jenkins -> Configurer le système -> Git plugin`
 - Global Config user.name Value : Jenkins
-- Global Config user.email Value : jenkins@apave.com
+- Global Config user.email Value : jenkins@grp.com
         
 `-> Administrer Jenkins -> Configuration globale des outils`
 - `JDK -> Ajouter JDK`
@@ -196,17 +260,18 @@ Installer les plugins suivants :
     `Submit`
         
 #### Configuration de Rocket.Chat dans Jenkins
-**Dans Rocket.Chat**
+**Dans Rocket.Chat - Création d'un utilisateur pour Jenkins**
 
-`-> Administration -> Integrations -> Nouvelle intégration -> Webhook entrant`
-- Activé : **Oui**
+`-> Administration -> Utilisateurs -> Ajouter un utilisateur`
 - Nom : **Jenkins**
-- Publié en tant que : **jenkins** (un utilisateur de service)
-- Alias : **Jenkins**
+- Nom d'utilisateur : **jenkins**
+- Mot de passe : **mdp**
+- Changement de mot de passe : **Non**
+- Rôle : **bot**
+- Rejoindre les canaux par défaut : **Non**
+- Envoyer un e-mail de bienvenue : **Non**
 
-`Save`
-
-- COPIER  "Webhook URL"
+`Enregistrer`
 
 **Dans Jenkins**
 
@@ -232,6 +297,7 @@ Installer les plugins suivants :
 `-> Administrer Jenkins -> Configurer le système -> SonarQube servers -> Ajouter une installation SonarQube`
 - Nom : **SonarApave**
 - URL du serveur : **http://srv:9009** (Sonar URL)
+- Server version : **5.3 or higher**
 - Server authentication token : **VALEUR DU TOKEN COPIE DANS SonarQube**
 
 `Enregistrer`
