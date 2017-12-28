@@ -201,6 +201,8 @@ Dans *Rôles globaux*, créer le rôle *utilisateurs authentifiés* et lui assig
 - Vues / Read
 - Gestion des versions / Tag
 
+`Enregistrer`
+
 `-> Administrer Jenkins -> Gérer et assigner les rôles ->  Assigner les rôles`
 
 Ajouter les administrateurs 1 par 1.
@@ -208,6 +210,8 @@ Ajouter les administrateurs 1 par 1.
 Ajouter un groupe nommé *authenticated* et lui affecter le rôle *utilisateurs authentifiés*
 
 Assigner au profil *Anonyme* le rôle *default*
+
+`Enregistrer`
 
 ### Configuration des outils
 `-> Administrer Jenkins -> Configurer le système -> Git plugin`
@@ -233,8 +237,7 @@ Assigner au profil *Anonyme* le rôle *default*
 - Type de fichier : **Global Maven settings.xml**
 - ID : **globalMaven**
 
-    `Submit`
-
+`Submit`
 
 - Name : **globalMaven**
 - `Server Credentials -> Ajouter`
@@ -247,11 +250,10 @@ Assigner au profil *Anonyme* le rôle *default*
             - Description : **Nexus**
             - Credentials : **Nexus**
 
+
 - `Server Credentials -> Ajouter`
     - ServerId: **snapshots**
     - Credentials: **Nexus**
-
-
 - Content :
 
 ```xml
@@ -290,29 +292,28 @@ Assigner au profil *Anonyme* le rôle *default*
 </activeProfiles>
 ```
 
-    `Submit`
+`Submit`
 
 #### Configuration de NPM dans Jenkins
 `-> Administrer Jenkins -> Configuration Files -> Add New Config`
 - Type de fichier : **Fichier Npm de configuration**
 - ID : **npmrc**
 
-    `Submit`
-
+`Submit`
 
 - Name: **npmrc**
 - `-> NPM Registry -> Ajouter`
     - URL: **http://srv:8081/repository/internal-web/** (URL Nexus pour stockage des artefacts Web)
     - Credentials : **Nexus**
     - Content (Ajouter en fin de fichier) :
-    ```
-        registry=http://srv:8081/repository/internal-web/
-        _auth=YWRtaW46YWRtaW4xMjM=          => echo -n 'user:passwd' | openssl base64 où <user = user nexus> & <passwd = pwd user nexus>
-        user=admin                          => utilisateur Nexus
-        email=admin@admin.com
-    ```
+```
+    registry=http://srv:8081/repository/internal-web/
+    _auth=YWRtaW46YWRtaW4xMjM=          => echo -n 'user:passwd' | openssl base64 où <user = user nexus> & <passwd = pwd user nexus>
+    user=admin                          => utilisateur Nexus
+    email=admin@admin.com
+```
 
-    `Submit`
+`Submit`
 
 #### Configuration de Rocket.Chat dans Jenkins
 **Dans Rocket.Chat - Création d'un utilisateur pour Jenkins**
@@ -343,9 +344,9 @@ Assigner au profil *Anonyme* le rôle *default*
 **Dans SonarQube**
 
 `-> Administrator -> My Account -> Security`
-    - Generate New Token : Jenkins
-    - Generate
-    - COPIER LE TOKEN GENERE
+- Generate New Token : Jenkins
+- Generate
+- COPIER LE TOKEN GENERE
 
 **Dans Jenkins**
 
