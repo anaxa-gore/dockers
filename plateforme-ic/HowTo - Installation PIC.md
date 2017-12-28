@@ -26,7 +26,7 @@ TODO
 - Autoriser les utilisateurs à supprimer leur propre compte : **Non**
 - Autoriser la modification de profil : **Oui**
 - Autoriser le changement d'avatar : **Oui**
-- Autoriser le changement de nom d'utilisateur : **Oui**
+- Autoriser le changement de nom d'utilisateur : **Non**
 - Autoriser le changement d'adresse e-mail : **Non**
 - Autoriser le changement de mot de passe : **Non**
 
@@ -72,6 +72,10 @@ Vérifier que la valeur soit correcte sur :
 - Champs du nom d'utilisateur : **name**
 
 ## Installation de SonarQube <image src="./logos/sonar.png" width="32">
+
+Le paramétrage décrit ci-après autorise tous les utilisateurs à voir les rapports sur projets sans aucun droits
+particulier.
+
 ### Références :
 
 - [Pré-requis](https://docs.sonarqube.org/display/SONAR/Requirements)
@@ -95,7 +99,7 @@ Installer les plugins suivants :
 
 - [Installation & Configuration](https://docs.sonarqube.org/display/PLUG/LDAP+Plugin)
 
-
+Configurer un administrateur local
 
 ## Installation de Nexus <image src="./logos/nexus.png" width="32">
 ### Références
@@ -133,7 +137,7 @@ Installer les plugins suivants :
 - [Sécurisation derrière un proxy](https://wiki.jenkins.io/display/JENKINS/Running+Jenkins+behind+Apache)
 
 ### Installation
-TODO
+Au premier démarrage :
 - Installer les plugins suggérés
 - Créer un compte administrateur
 
@@ -152,14 +156,63 @@ Installer les plugins suivants :
 - Active Directory plugin
 - Pipeline Utility Steps Plugin
 
-    ACTIVATION DE LA GESTION DES ROLES
-    TODO
-    -> Administrer Jenkins -> Configurer le système
+### Gestion de l'authentification & des rôles
+La mode de sécurité décrit prend en compte 3 types de profils :
+- les administrateurs
+- les utilisateurs connectés
+- les utilisateurs non connectés
+
+`-> Administrer Jenkins -> Configurer la sécurité globale`
+- Activer la sécurité : **Oui**
+- Royaume pour la sécurité (Realm)
+  - Active Directory : **Oui**  
+  - Nom du domaine : **societe.com**
+  - Domain controller : **ip:port**
+  - Site : **-**
+  - Bind DN : **Utilisateur de service utilisé pour l'AD**
+  - Bind Password : **Mot de passe de l'utilisateur de service**
+- Autorisations
+  - Stratégie basée sur les rôles : **Oui**
+
+`Enregistrer`
+
+`-> Administrer Jenkins -> Gérer et assigner les rôles ->  Gérer les rôles`
+
+Normalement, un rôle *admin* existe par défaut avec tous les droits cochés. Si ce n'est pas le cas, le créer.
+
+Dans *Rôles globaux*, créer le rôle *default* et lui assigner uniquement les droits suivants :
+- Global / Read
+- Job / Read
+- Job / Workspace
+
+Dans *Rôles globaux*, créer le rôle *utilisateurs authentifiés* et lui assigner les droits suivants :
+- Global / Read
+- Identifiants / View
+- Job / build
+- Job / Cancel
+- Job / Discover
+- Job / Read
+- Job / Workspace
+- Historique des builds / Replay
+- Historique des builds / update
+- Vues / Configure
+- Vues / Create
+- Vues / Delete
+- Vues / Read
+- Gestion des versions / Tag
+
+`-> Administrer Jenkins -> Gérer et assigner les rôles ->  Assigner les rôles`
+
+Ajouter les administrateurs 1 par 1.
+
+Ajouter un groupe nommé *authenticated* et lui affecter le rôle *utilisateurs authentifiés*
+
+Assigner au profil *Anonyme* le rôle *default*
 
 ### Configuration des outils
 `-> Administrer Jenkins -> Configurer le système -> Git plugin`
-- Global Config user.name Value : Jenkins
-- Global Config user.email Value : jenkins@grp.com
+- Global Config user.name Value : **Jenkins**
+- Global Config user.email Value : **jenkins@domain.com**
 
 `-> Administrer Jenkins -> Configuration globale des outils`
 - `JDK -> Ajouter JDK`
