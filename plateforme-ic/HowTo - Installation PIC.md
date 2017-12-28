@@ -155,6 +155,7 @@ Installer les plugins suivants :
 - Role-based Authorization Strategy
 - Active Directory plugin
 - Pipeline Utility Steps Plugin
+- Monitoring
 
 ### Gestion de l'authentification & des rôles
 La mode de sécurité décrit prend en compte 3 types de profils :
@@ -358,32 +359,28 @@ Assigner au profil *Anonyme* le rôle *default*
 
 `Enregistrer`
 
+#### Configuration d'un slave Linux dans Jenkins
+Git doit obligatoirement être installé sur le noeud pour que les builds puissent se dérouler correctement.
 
+`-> Administrer Jenkins -> Gérer les noeuds -> Créer un noeud`
+- Nom du noeud : **\<Nom du noeud\>**
+- Permanent agent : **Oui**
 
+`OK`
 
+- Description : **\<Courte description permettant d'identifier le noeud\>**
+- Nb d'exécuteurs : **\<A remplir en fonction des perfs de la machine\>** (Attention au nommage pour pouvoir facilement retrouver les noeuds par pattern : )
+- Répertoire de travail : **\<Répertoire dans lequel Jenkins stocke les données sur le noeud\>**
+- Méthode de lancement : **Launch slave agents via SSH**
+  - Host : **\<Nom du serveur ou adresse IP\>**
+  - Credentials : **\<Choisir l'identifiant du serveur ou en créer un nouveau\>**
+  - Host Key Verification Strategy : **Non verifyin Verification Strategy**
 
+Configurer éventuellement l'emplacement des différents outils sur le noeud.
 
+`Enregistrer`
 
----------- Configuration du noeud TIBCO dans Jenkins
-    - Jenkins
-        -> Administrer Jenkins -> Gérer les noeuds -> Créer un noeud
-            Nom du noeud : tibco
-            Permanent agent : oui
-            OK
-
-            Description : TIBCO Dev
-            Répertoire de travail : /APPLI/dev/tibco/temp_jenkins           (Répertoire à créer sur la plateforme de dev TIBCO)
-            Méthode de lancement : Launch slave agents via SSH
-                Host : <nom_serveur_dev_tibco>
-                Credentials : user/password serveur de dev tibco
-                Host Key Verification Strategy : Non verifyin Verification Strategy
-            Disponibilité : Take this agent online when in demand, and offline when idle
-                Délai d'attente lors d'une demande : 0
-                Délai d'inactivité : 2
-            Enregistrer
-
-        -> TIBCO 5 : Installer Xvfb (yum install xorg-X11-server-Xvfb) sur l'environnement de dev TIBCO
-        -> Installer git sur l'environnement de dev TIBCO
+====================================================================================
 
 ---------- Configuration de Jenkins pour build onPush dans GitLab    =>     VERIFIER QUE C'EST BIEN NECESSAIRE
     - GitLab :
