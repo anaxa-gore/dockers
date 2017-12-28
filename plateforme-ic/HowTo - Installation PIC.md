@@ -33,7 +33,7 @@ TODO
 ### Paramètres généraux
 `-> Administration -> Général`
 
-Vérifier que la valeur soit correcte sur : 
+Vérifier que la valeur soit correcte sur :
 - URL du site : **adresse + port d'exposition du service Rocket.chat**
 
 ### Paramètres LDAP
@@ -77,22 +77,24 @@ Vérifier que la valeur soit correcte sur :
 - [Pré-requis](https://docs.sonarqube.org/display/SONAR/Requirements)
 - [Installation](https://help.sonatype.com/display/HSC/Installation+-+NXRM+3)
 - [Sécurisation derrière un proxy](https://docs.sonarqube.org/display/SONAR/Securing+the+Server+Behind+a+Proxy)
-    
+
 ### Installation des plugins
 `-> Administration -> System -> Update Center`
 
 Installer les plugins suivants :
-- C#
+- SonarC#
 - SonarJS
+- SonarTS
 - SonarJava
 - SonarPHP
 - SonarPython
+- CSS / SCSS / Less
 - LDAP
-        
+
 ### Configuration de l'authentification LDAP
 
 - [Installation & Configuration](https://docs.sonarqube.org/display/PLUG/LDAP+Plugin)
-- [Plusieurs serveurs LDAP](https://docs.sonarqube.org/display/PLUG/Multiple+Servers)
+
 
 
 ## Installation de Nexus <image src="./logos/nexus.png" width="32">
@@ -130,11 +132,11 @@ Installer les plugins suivants :
 - [Scaling Jenkins](https://jenkins.io/doc/book/architecting-for-scale/)
 - [Sécurisation derrière un proxy](https://wiki.jenkins.io/display/JENKINS/Running+Jenkins+behind+Apache)
 
-### Installation 
+### Installation
 TODO
 - Installer les plugins suggérés
 - Créer un compte administrateur
-    
+
 ### Installation des plugins
 `-> Administrer Jenkins -> Gestion des plugins -> Onglet "disponibles"`
 
@@ -149,16 +151,16 @@ Installer les plugins suivants :
 - Role-based Authorization Strategy
 - Active Directory plugin
 - Pipeline Utility Steps Plugin
-    
+
     ACTIVATION DE LA GESTION DES ROLES
     TODO
     -> Administrer Jenkins -> Configurer le système
-    
+
 ### Configuration des outils
 `-> Administrer Jenkins -> Configurer le système -> Git plugin`
 - Global Config user.name Value : Jenkins
 - Global Config user.email Value : jenkins@grp.com
-        
+
 `-> Administrer Jenkins -> Configuration globale des outils`
 - `JDK -> Ajouter JDK`
     - Nom : **jdk8**
@@ -177,26 +179,26 @@ Installer les plugins suivants :
 `-> Administrer Jenkins -> Configuration files -> Add a new Config`
 - Type de fichier : **Global Maven settings.xml**
 - ID : **globalMaven**
-    
+
     `Submit`
 
-    
+
 - Name : **globalMaven**
 - `Server Credentials -> Ajouter`
     - ServerId: **releases**
-    - Credentials: 
+    - Credentials:
         - `-> Ajouter -> Jenkins`
             - Nom d'utilisateur : **--NexusUser--**
             - Mot de passe : **--NexusUserPwd--**
             - ID : **Nexus**
             - Description : **Nexus**
             - Credentials : **Nexus**
-                
+
 - `Server Credentials -> Ajouter`
     - ServerId: **snapshots**
     - Credentials: **Nexus**
-    
-    
+
+
 - Content :
 
 ```xml
@@ -234,17 +236,17 @@ Installer les plugins suivants :
     <activeProfile>sonar</activeProfile>
 </activeProfiles>
 ```
-    
+
     `Submit`
 
 #### Configuration de NPM dans Jenkins
 `-> Administrer Jenkins -> Configuration Files -> Add New Config`
 - Type de fichier : **Fichier Npm de configuration**
 - ID : **npmrc**
-    
+
     `Submit`
-            
-            
+
+
 - Name: **npmrc**
 - `-> NPM Registry -> Ajouter`
     - URL: **http://srv:8081/repository/internal-web/** (URL Nexus pour stockage des artefacts Web)
@@ -255,10 +257,10 @@ Installer les plugins suivants :
         _auth=YWRtaW46YWRtaW4xMjM=          => echo -n 'user:passwd' | openssl base64 où <user = user nexus> & <passwd = pwd user nexus>
         user=admin                          => utilisateur Nexus
         email=admin@admin.com
-    ``` 
-    
+    ```
+
     `Submit`
-        
+
 #### Configuration de Rocket.Chat dans Jenkins
 **Dans Rocket.Chat - Création d'un utilisateur pour Jenkins**
 
@@ -277,13 +279,13 @@ Installer les plugins suivants :
 
 `-> Administrer Jenkins -> Configurer le système -> "Global RocketChat Notifier Settings"`
 - Endpoint : **url de Rocket.Chat**
-- Channel : 
+- Channel :
 - Icon to use : **URL Image Jenkins**
 - Build Server URL : **Valeur par défaut**
 
 `Enregistrer`
 
-        
+
 #### Configuration de SonarQube dans Jenkins
 **Dans SonarQube**
 
@@ -295,7 +297,7 @@ Installer les plugins suivants :
 **Dans Jenkins**
 
 `-> Administrer Jenkins -> Configurer le système -> SonarQube servers -> Ajouter une installation SonarQube`
-- Nom : **SonarApave**
+- Nom : **Sonar<Nom Société>**
 - URL du serveur : **http://srv:9009** (Sonar URL)
 - Server version : **5.3 or higher**
 - Server authentication token : **VALEUR DU TOKEN COPIE DANS SonarQube**
@@ -305,7 +307,7 @@ Installer les plugins suivants :
 
 
 
-            
+
 
 
 ---------- Configuration du noeud TIBCO dans Jenkins
@@ -314,7 +316,7 @@ Installer les plugins suivants :
             Nom du noeud : tibco
             Permanent agent : oui
             OK
-            
+
             Description : TIBCO Dev
             Répertoire de travail : /APPLI/dev/tibco/temp_jenkins           (Répertoire à créer sur la plateforme de dev TIBCO)
             Méthode de lancement : Launch slave agents via SSH
@@ -325,7 +327,7 @@ Installer les plugins suivants :
                 Délai d'attente lors d'une demande : 0
                 Délai d'inactivité : 2
             Enregistrer
-            
+
         -> TIBCO 5 : Installer Xvfb (yum install xorg-X11-server-Xvfb) sur l'environnement de dev TIBCO
         -> Installer git sur l'environnement de dev TIBCO
 
@@ -334,11 +336,11 @@ Installer les plugins suivants :
         Se connecter en tant qu'administrateur
         -> Profile Settings -> Account
         COPIER "Private token"
-    
+
     - Jenkins
         -> Administrer Jenkins -> Configurer le système -> Gitlab
             Connection name : Build on Push
-            Gitlab host URL : http://srv0270a.apave.grp:1212    (GitLab URL)
+            Gitlab host URL : http://srv.grp:1212    (GitLab URL)
             Credentials :
                 Ajouter -> Jenkins
                     Type : GitLab API Token
@@ -346,24 +348,24 @@ Installer les plugins suivants :
                     API token : "Private token" copié précédemment
                     ID : GitlabAdmin
                     Description : GiLab Admin
-            
+
         Enregistrer
-       
+
 
 ---------- Installation de Redmine
-    - Theme Circle (https://www.redmineup.com/pages/fr/themes/circle) 
+    - Theme Circle (https://www.redmineup.com/pages/fr/themes/circle)
         -> Copier/coller dans $redmine$/public/theme
         -> Dézipper dans le même répertoire
-        
+
     PLUGINS (Attention aux noms de répertoires de déploiement des plugins !)
     - Plugin Agile (https://www.redmineup.com/pages/plugins/agile/installation)
     - Plugin Messenger (https://github.com/alphanodes/redmine_messenger#installation)
     - Plugin Gitlab Hook (https://github.com/phlegx/redmine_gitlab_hook)
 
 
-    
+
 ---------- Configuration du plugin Messenger Redmine
-    - Rocket.Chat 
+    - Rocket.Chat
         -> Administration -> Intégrations -> Nouvelle intégration -> Webhook entrant
             Activé : OUI
             Nom : Redmine
@@ -371,78 +373,78 @@ Installer les plugins suivants :
             publié en tant que : rocket.cat
             Alias : Redmine
             URL de l'avatar : https://raw.githubusercontent.com/sciyoshi/redmine-slack/gh-pages/icon.png
-            
+
             SAUVEGARDER LES MODIFICATIONS
             COPIER LE LIEN dans "Webhook URL"
-    
-    - Redmine 
+
+    - Redmine
         -> Administration -> Plugins -> Redmine Messenger / Configurer
             Messenger URL : URL COPIE PRECEDEMMENT
             Messenger icon : https://raw.githubusercontent.com/sciyoshi/redmine-slack/gh-pages/icon.png
             Messenger channel : general
             Messenger username : Redmine
-            
+
             Cocher toutes les cases de notification
-            
+
     A NOTER : POUR CHANGER LE CHANNEL PAR PROJET, dans chaque projet :
         -> Configuration -> Messenger
             Messenger Channel : <Nom du chan à utiliser>
-      
+
 RAF :
     OK - Gestion des droits dans Jenkins via l'authentification GitLab ???
-    
+
     - Politique de stockage des artefacts en snapshots pour ne pas stocker un fichier à chaque post
     - Gestion du <distributionManagement> dans un pom parent pour tous
-    
+
     - Pousser dans Nexus une application Angular2
-    
+
     - Gestion des repositories et du mirroring dans Nexus
-    
-    
+
+
 
 ---------- A la création d'un projet dans GitLab pour bénéficier du build on push
     -> Settings -> Integrations
-        URL : http://srv0270a.apave.grp:8092/project/{NOM_PROJET}
+        URL : http://srv:8092/project/{NOM_PROJET}
         Push Events : OUI
         Enable SSL Verification : NON
-        
+
         Add Webhook
 
 ---------- Initialisation d'un projet dans Redmine
     -> Création du projet
     -> Descendre le repo git en mode mirror dans le répert
-        
-        
----------- Utilisation de l'API REST de Redmine 
-    -> Pour connaitre toutes les routes disponibles 
+
+
+---------- Utilisation de l'API REST de Redmine
+    -> Pour connaitre toutes les routes disponibles
         RAILS_ENV=production rake routes
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 A SUPPRIMER
 Dans la partie <profiles>, ajouter les descriptions des serveurs
     <profile>
@@ -450,13 +452,13 @@ Dans la partie <profiles>, ajouter les descriptions des serveurs
       <repositories>
         <repository>
           <id>snapshots</id>
-          <name>Repository Apave Snapshots</name>
-          <url>http://srv0270a.apave.grp:8081/repository/maven-snapshots/</url>
+          <name>Repository <Nom Société> Snapshots</name>
+          <url>http://srv:8081/repository/maven-snapshots/</url>
         </repository>
         <repository>
           <id>releases</id>
-          <name>Repository Apave Release</name>
-          <url>http://srv0270a.apave.grp:8081/repository/maven-releases/</url>
+          <name>Repository <Nom Société> Release</name>
+          <url>http://srv:8081/repository/maven-releases/</url>
         </repository>
       </repositories>
     </profile>
