@@ -76,7 +76,7 @@ Vérifier que la valeur soit correcte sur :
 Le paramétrage décrit ci-après autorise tous les utilisateurs à voir les rapports sur projets sans aucun droits
 particulier.
 
-### Références :
+### Références
 
 - [Pré-requis](https://docs.sonarqube.org/display/SONAR/Requirements)
 - [Installation](https://help.sonatype.com/display/HSC/Installation+-+NXRM+3)
@@ -129,8 +129,25 @@ Configurer un administrateur local
 `Server administration and configuration -> Security -> Realms -> Create Connection`
 - Ajouter `LDAP Realm` aux actifs
 
+### Configuration des repositories
+@TODO
+
+### Purge des repositories de Snapshots
+`Server administration and configuration -> Tasks -> Create Task -> Remove Snapshots from Maven Repository`
+- Task name : **Nettoyage snapshots**
+- Notification email : **\<email@en_cas_dechec\>**
+- Repository : **\<repo_a_purger\>**
+- Minimim snapshots count : **1**
+- Snapshots retention : **30**
+- Task frequency : **Weekly**
+- Start date : **\<date_de_demmarage\>**
+- Time to run this task : **\<heure_de_declenchement\>**
+- Days to run this task : **\<jours_autorisés\>**
+
+`Create task`
+
 ## Installation de Jenkins <image src="./logos/jenkins.png" width="32">
-### Références :
+### Références
 
 - [Installer Jenkins (éléments de sizing)](https://jenkins.io/doc/book/getting-started/installing/)
 - [Scaling Jenkins](https://jenkins.io/doc/book/architecting-for-scale/)
