@@ -338,7 +338,7 @@ deux groupes de l'AD. Le groupe *Anonyme* permet aux utilisateurs non connectés
     - Nom : **M3**
     - Install automatically : OUI / Ou installer manuellement la bonne version
 - `NodeJS -> Ajouter NodeJS`
-    - Nom : **nodejs**
+    - Nom : **nodejs8.9.4**
     - Install automatically : OUI / Ou installer manuellement la bonne version
 
 #### Configuration de Nexus dans Jenkins
