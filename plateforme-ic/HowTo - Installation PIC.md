@@ -329,9 +329,9 @@ deux groupes de l'AD. Le groupe *Anonyme* permet aux utilisateurs non connectés
 
 `-> Administrer Jenkins -> Configuration globale des outils`
 - `JDK -> Ajouter JDK`
-    - Nom : **jdk8**
+    - Nom : **jdk1.8.0_151**
     - Install automatically : OUI / Ou installer manuellement la bonne version
-- `SonarQube Scanner -> Ajouter SonarQube Scanner`
+- @TODO `SonarQube Scanner -> Ajouter SonarQube Scanner`
     - Name : **sonar**
     - Install automatically : OUI / Ou installer manuellement la bonne version
 - `Maven -> Ajouter Maven`
