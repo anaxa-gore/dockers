@@ -213,6 +213,7 @@ Les repositories supplémentaires suivants sont ajoutés :
 ---
 
 Il faut ensuite ajouter ces deux repositories au *maven-public* :
+
 `Server administration and configuration -> Repository -> Repositories -> maven-public`
 - Member repositories : **Ajouter maven-oracle-bipub & maven-oracle-proxy à la liste *Members***
 
@@ -261,10 +262,11 @@ Installer les plugins suivants :
 - Monitoring
 
 ### Gestion de l'authentification & des rôles
-La mode de sécurité décrit prend en compte 3 types de profils :
-- les administrateurs
-- les utilisateurs connectés
-- les utilisateurs non connectés
+Dans la configuration exposée ci-dessous, les utilisateurs sont authentifiés à travers l'AD
+d'entreprise. Les autorisations sont gérés via des groupes créés dans l'AD auxquels sont associés
+des rôles dans Jenkins. Les groupes créés dans l'AD sont les suivants :
+- GU-RES-PIC-ADMIN-GRP - auquel sont ajoutés les administrateurs de la PIC
+- GU-RES-PIC-USERS-GRP - auquel sont ajoutés les utilisateurs de la PIC
 
 `-> Administrer Jenkins -> Configurer la sécurité globale`
 - Activer la sécurité : **Oui**
@@ -289,7 +291,7 @@ Dans *Rôles globaux*, créer le rôle *default* et lui assigner uniquement les 
 - Job / Read
 - Job / Workspace
 
-Dans *Rôles globaux*, créer le rôle *utilisateurs authentifiés* et lui assigner les droits suivants :
+Dans *Rôles globaux*, créer le rôle *users* et lui assigner les droits suivants :
 - Global / Read
 - Identifiants / View
 - Job / build
@@ -309,11 +311,14 @@ Dans *Rôles globaux*, créer le rôle *utilisateurs authentifiés* et lui assig
 
 `-> Administrer Jenkins -> Gérer et assigner les rôles ->  Assigner les rôles`
 
-Ajouter les administrateurs 1 par 1.
+On crée deux groupes, un pour les utilisateurs et un pour les administrateurs, correspondant auxquels
+deux groupes de l'AD. Le groupe *Anonyme* permet aux utilisateurs non connectés de visualiser l'état des jobs.
 
-Ajouter un groupe nommé *authenticated* et lui affecter le rôle *utilisateurs authentifiés*
+- Ajouter un groupe nommé **GU-RES-PIC-ADMIN-GRP** et lui affecter le rôle **admin**
+- Ajouter un groupe nommé **GU-RES-PIC-USERS-GRP** et lui affecter le rôle **users**
 
-Assigner au profil *Anonyme* le rôle *default*
+
+- Assigner au groupe **Anonyme** le rôle **default**
 
 `Enregistrer`
 
