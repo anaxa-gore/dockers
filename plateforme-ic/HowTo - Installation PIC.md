@@ -10,7 +10,7 @@
 - Installation du plugin [LDAP](http://www.redmine.org/plugins/redmine_ldap_sync)
 
 ## Installation de Rocket.chat <image src="./logos/rocket.png" width="32">
-### Références :
+### Références
 
 - [Pré-requis](https://rocket.chat/docs/installation/minimum-requirements)
 - [Une installation très complète & un peu complexe](http://www.akitaonrails.com/2016/08/09/moving-away-from-slack-into-rocket-chat-good-enough)
@@ -342,6 +342,21 @@ deux groupes de l'AD. Le groupe *Anonyme* permet aux utilisateurs non connectés
     - Install automatically : OUI / Ou installer manuellement la bonne version
 
 #### Configuration de Nexus dans Jenkins
+**Dans NEXUS - Création d'un utilisateur pour Jenkins**
+
+`Server administration and configuration -> Security -> Users -> Create User`
+- ID : **svc-jenkins**
+- First name : **Jenkins**
+- Last name : **Jenkins**
+- Email : **jenkins@jenkins.com** (peu importe)
+- Password : **\<pwd\>**
+- Confirm password : **\<pwd\>**
+- Status : **Active**
+- Roles : **nx-admin**
+
+`Create user`
+
+**Dans Jenkins**
 `-> Administrer Jenkins -> Configuration files -> Add a new Config`
 - Type de fichier : **Global Maven settings.xml**
 - ID : **globalMaven**
@@ -353,6 +368,7 @@ deux groupes de l'AD. Le groupe *Anonyme* permet aux utilisateurs non connectés
     - ServerId: **releases**
     - Credentials:
         - `-> Ajouter -> Jenkins`
+            - Portée : **Système (Jenkins et escales seulement)**
             - Nom d'utilisateur : **--NexusUser--**
             - Mot de passe : **--NexusUserPwd--**
             - ID : **Nexus**
@@ -390,7 +406,7 @@ deux groupes de l'AD. Le groupe *Anonyme* permet aux utilisateurs non connectés
         </activation>
         <properties>
             <!-- Adresse du serveur Sonar -->
-            <sonar.host.url
+            <sonar.host.url>
               http://srv:9009
             </sonar.host.url>
         </properties>
