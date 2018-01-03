@@ -1,10 +1,10 @@
 # Procédure installation PIC en environnement PROD
 
 ## Installation de Gitlab <image src="./logos/gitlab.png" width="32">
-TODO
+@TODO
 
 ## Installation de Redmine <image src="./logos/redmine.png" width="32">
-TODO
+@TODO
 - Installation du thème [Circle](https://www.redmineup.com/pages/fr/themes/circle)
 - Installation du plugin [Agile](https://www.redmineup.com/pages/fr/plugins/agile)
 - Installation du plugin [LDAP](http://www.redmine.org/plugins/redmine_ldap_sync)
@@ -102,6 +102,12 @@ Installer les plugins suivants :
 Configurer un administrateur local
 
 ## Installation de Nexus <image src="./logos/nexus.png" width="32">
+Dans la configuration exposée ci-dessous, les utilisateurs sont authentifiés à travers l'AD
+d'entreprise. Les autorisations sont gérés via des groupes créés dans l'AD auxquels sont associés
+des rôles dans NEXUS. Les groupes créés dans l'AD sont les suivants :
+- GU-RES-PIC-ADMIN-GRP - auquel sont ajoutés les administrateurs de la PIC
+- GU-RES-PIC-USERS-GRP - auquel sont ajoutés les utilisateurs de la PIC
+
 ### Références
 
 - [Pré-requis](https://help.sonatype.com/display/HSC/System+Requirements+-+NXRM+3)
@@ -117,6 +123,8 @@ Configurer un administrateur local
 
 `Next`
 
+- User subtree : **True**
+- Object class : **user**
 - User ID attribute : **sAMAccountName**
 - Real name attribute : **cn**
 - Email attribute : **mail**
@@ -129,8 +137,86 @@ Configurer un administrateur local
 `Server administration and configuration -> Security -> Realms -> Create Connection`
 - Ajouter `LDAP Realm` aux actifs
 
+### Création des Rôles
+On crée deux rôles, un pour les utilisateurs et un pour les administrateurs, correspondant auxquels
+deux groupes de l'AD.
+
+`Server administration and configuration -> Security -> Rôles`
+
+`Create role`
+- Role ID : **GU-RES-PIC-ADMIN-GRP** (nom du groupe des administrateurs dans l'AD)
+- Role Name : **ADMIN**
+- Role description :
+- Privileges : **nx-all**
+
+`Save`
+
+`Create role`
+- Role ID : **GU-RES-PIC-USERS-GRP** (nom du groupe des utilisateurs dans l'AD)
+- Role Name : **USERS**
+- Role description :
+- Privileges : (aucun)
+
+`Save`
+
 ### Configuration des repositories
-@TODO
+Les repositories suivants sont configurés par défaut dans NEXUS et sont utilisés dans la configuration :
+- *maven-central* - sert de proxy vers le répo MAVEN de référence.
+- *maven-snapshots* - sert à collecter l'ensemble des artefacts MAVEN de l'entreprise (en mode snapshots)
+- *maven-releases* - sert à collecter l'ensemble des artefacts MAVEN de l'entreprise (en mode releases)
+- *maven-public* - sert de proxy vers les trois repositories précédemment cités pour avoir un seul point d'entrée. Utilisé par l'ensemble des projets de l'entreprise pour récupérer les dépendances.
+
+---
+
+Les repositories supplémentaires suivants sont ajoutés :
+
+*maven-oracle-proxy* - sert de proxy vers le MAVEN d'oracle
+
+`Server administration and configuration -> Repository -> Repositories -> Create repository -> maven2 (proxy)`
+- Name : **maven-oracle-proxy**
+- Online : **True**
+- Version policy : **Release**
+- Layout policy : **Strict**
+- Remote storage : **https://maven.oracle.com**
+- Use the Nexus truststore : **False**
+- Blocked : **False**
+- Auto blocking enabled : **True**
+- Maximum component age : **-1**
+- Maximum metadata age : **1440**
+- Blob store : **default**
+- Strict content type validation : **True**
+- Not found cache enabled : **True**
+- Not found cache TTL : **1440**
+- Authentication : **True**
+  - Authentication type : **Username**
+  - Username : **\<compte oracle valide\>**
+  - Paswword : **\<mot de passe du compte\>**
+- HTTP Request settings : **True**
+  - Enable circular redirect : **True**
+  - Enable cookies : **True**
+
+`Create repository`
+
+*maven-oracle-bipub* - sert à héberger les librairies BI Publisher
+
+`Server administration and configuration -> Repository -> Repositories -> Create repository -> maven2 (hosted)`
+- Name : **maven-oracle-bipub**
+- Online : **True**
+- Version policy : **Release**
+- Layout policy : **Strict**
+- Blob store : **default**
+- Strict content type validation : **True**
+- Deployment policy : **Disable redeploy**
+
+`Create repository`
+
+---
+
+Il faut ensuite ajouter ces deux repositories au *maven-public* :
+`Server administration and configuration -> Repository -> Repositories -> maven-public`
+- Member repositories : **Ajouter maven-oracle-bipub & maven-oracle-proxy à la liste *Members***
+
+`Save`
 
 ### Purge des repositories de Snapshots
 `Server administration and configuration -> Tasks -> Create Task -> Remove Snapshots from Maven Repository`
