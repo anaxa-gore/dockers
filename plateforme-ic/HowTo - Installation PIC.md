@@ -8,6 +8,7 @@
 - Installation du thème [Circle](https://www.redmineup.com/pages/fr/themes/circle)
 - Installation du plugin [Agile](https://www.redmineup.com/pages/fr/plugins/agile)
 - Installation du plugin [LDAP](http://www.redmine.org/plugins/redmine_ldap_sync)
+- Installation du plugin [Localizable](https://redmine.ociotec.com/projects/localizable) ???
 
 ## Installation de Rocket.chat <image src="./logos/rocket.png" width="32">
 ### Références
@@ -205,19 +206,78 @@ Les repositories supplémentaires suivants sont ajoutés :
 - Version policy : **Release**
 - Layout policy : **Strict**
 - Blob store : **default**
-- Strict content type validation : **True**
+- Strict content type validation : **False**
+- Deployment policy : **Disable redeploy**
+
+`Create repository`
+
+*maven-esb-snapshots* - sert à héberger l'ensemble des artefacts MAVEN de l'ESB (en mode snapshots)
+
+`Server administration and configuration -> Repository -> Repositories -> Create repository -> maven2 (hosted)`
+- Name : **maven-esb-snapshots**
+- Online : **True**
+- Version policy : **Snapshot**
+- Layout policy : **Strict**
+- Blob store : **default**
+- Strict content type validation : **False**
+- Deployment policy : **Allow redeploy**
+
+`Create repository`
+
+*maven-esb-releases* - sert à héberger l'ensemble des artefacts MAVEN de l'ESB (en mode releases)
+
+`Server administration and configuration -> Repository -> Repositories -> Create repository -> maven2 (hosted)`
+- Name : **maven-esb-releases**
+- Online : **True**
+- Version policy : **Release**
+- Layout policy : **Strict**
+- Blob store : **default**
+- Strict content type validation : **False**
+- Deployment policy : **Disable redeploy**
+
+`Create repository`
+
+*maven-etl-snapshots* - sert à héberger l'ensemble des artefacts MAVEN de l'ETL (en mode snapshots)
+
+`Server administration and configuration -> Repository -> Repositories -> Create repository -> maven2 (hosted)`
+- Name : **maven-etl-snapshots**
+- Online : **True**
+- Version policy : **Snapshot**
+- Layout policy : **Strict**
+- Blob store : **default**
+- Strict content type validation : **False**
+- Deployment policy : **Allow redeploy**
+
+`Create repository`
+
+*maven-etl-releases* - sert à héberger l'ensemble des artefacts MAVEN de l'ETL (en mode releases)
+
+`Server administration and configuration -> Repository -> Repositories -> Create repository -> maven2 (hosted)`
+- Name : **maven-etl-releases**
+- Online : **True**
+- Version policy : **Release**
+- Layout policy : **Strict**
+- Blob store : **default**
+- Strict content type validation : **False**
 - Deployment policy : **Disable redeploy**
 
 `Create repository`
 
 ---
 
-Il faut ensuite ajouter ces deux repositories au *maven-public* :
+Il faut ensuite ajouter ces repositories au *maven-public* :
 
 `Server administration and configuration -> Repository -> Repositories -> maven-public`
-- Member repositories : **Ajouter maven-oracle-bipub & maven-oracle-proxy à la liste *Members***
+- Member repositories : **Ajouter maven-esb-snapshots, maven-esb-releases, maven-etl-snapshots, maven-etl-releases, maven-oracle-bipub, maven-oracle-proxy à la liste *Members***
 
 `Save`
+
+---
+
+Il reste à ajouter manuellement les librairies BI Publisher au repository *maven-oracle-bipub*, celles-ci n'étant pas
+disponibles sur le repository maven d'Oracle.
+
+@TODO : Ajouter le script permettant de le faire.
 
 ### Purge des repositories de Snapshots
 `Server administration and configuration -> Tasks -> Create Task -> Remove Snapshots from Maven Repository`
