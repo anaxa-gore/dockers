@@ -305,6 +305,12 @@ Au premier démarrage :
 - Installer les plugins suggérés
 - Créer un compte administrateur
 
+Sur la machine, configurer Git pour pouvoir effectuer des commits/push :
+```
+git config --global user.email "jenkins@apave.com"
+git config --global user.name "jenkins"
+```
+
 ### Installation des plugins
 `-> Administrer Jenkins -> Gestion des plugins -> Onglet "disponibles"`
 
