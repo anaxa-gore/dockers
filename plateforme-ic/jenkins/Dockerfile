@@ -9,7 +9,10 @@ RUN apt-get -qq install docker
 RUN apt-get -qq install xvfb
 RUN /usr/bin/Xvfb &
 
-RUN git config --global user.name Jenkins
-RUN git config --global user.email jenkins@apave.com
+ADD ./id_rsa /var/jenkins_home/.ssh/
+ADD ./id_rsa.pub /var/jenkins_home/.ssh/
+
+RUN git config --global user.name "Jenkins"
+RUN git config --global user.email "jenkins@apave.com"
 
 USER jenkins
