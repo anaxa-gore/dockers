@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+    web:
+        build: ../apache/
+        image: apave-httpd:1.0
+        container_name: apave-httpd
+        ports:
+            - "95:80"
+        network: my-network
+
+    tomcat:
+        build: ../tomcat/
+        image: apave-tomcat:1.0
+        container_name: apave-tomcat
+        ports:
+            - "9595:8080"
+        network: my-network
+
+    db:
+        image: mariadb
+        container_name: apave-db
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+        network: my-network
+
+networks:
+    my-network:
+        driver: bridge
