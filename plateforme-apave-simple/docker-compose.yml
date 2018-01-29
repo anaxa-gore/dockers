@@ -7,7 +7,8 @@ services:
         container_name: apave-httpd
         ports:
             - "95:80"
-        network: my-network
+        networks:
+            - my-network
 
     tomcat:
         build: ../tomcat/
@@ -15,14 +16,16 @@ services:
         container_name: apave-tomcat
         ports:
             - "9595:8080"
-        network: my-network
+        networks:
+            - my-network
 
     db:
         image: mariadb
         container_name: apave-db
         environment:
             MYSQL_ROOT_PASSWORD: root
-        network: my-network
+        networks:
+            - my-network
 
 networks:
     my-network:
