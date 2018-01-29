@@ -550,6 +550,44 @@ deux groupes de l'AD. Le groupe *Anonyme* permet aux utilisateurs non connectés
 
 `Enregistrer`
 
+#### Configuration des Shared Libraries dans Jenkins
+*Pour cette étape il est nécessaire de se doter d'une clé private/public. Pour générer une clé, consulter [ce lien](https://docs.gitlab.com/ce/ssh/README.html)*
+
+**Dans GitLab - Création d'un utilisateur de service Jenkins**
+
+`-> Admin area -> New User`
+- Name : **Jenkins PIC**
+- Username : **pic-svc-jenkins**
+- Email : **pic-jenkins@jenkins.com**
+- Access level : **Admin**
+
+`Create user`
+
+**Dans Jenkins**
+
+`Identifiants -> System -> Identifiants globaux (illimité) -> Ajouter des identifiants`
+- Type : **SSH Username with private key**
+- Portée : **Global (Jenkins, esclaves, items, etc...)**
+- Username : **pic-svc-jenkins**
+- Private Key : **Enter Directly** + coller la clé privée générée précédemment
+- Passphrase : **\<vide si pas de passphrase\> ou \<passphrase\>**
+- ID : **jenkins_gitlab**
+- Description : **GitLab**
+
+`OK`
+
+`Administrer Jenkins -> Global Pipeline Libraries`
+- Name : **\<Nom permettant d'importer la librairie\>**
+- Default version : **develop**
+- Allow default version to be overridden : **true**
+- Include @Library changes in job recent changes : **true**
+- Retrieval method : **Modern SCM**
+- Source Code Management : **Git**
+    - Project repository : **\<repository SSH de la librairie\>**
+    - Credentials : **pic-svc-jenkins (GitLab)**
+
+`Enregistrer`
+
 #### Configuration d'un slave Linux dans Jenkins
 Git doit obligatoirement être installé sur le noeud pour que les builds puissent se dérouler correctement.
 
@@ -570,6 +608,11 @@ Git doit obligatoirement être installé sur le noeud pour que les builds puisse
 Configurer éventuellement l'emplacement des différents outils sur le noeud.
 
 `Enregistrer`
+
+
+
+
+
 
 ====================================================================================
 
@@ -712,3 +755,4 @@ Juste avant la fin du fichier (avant </settings>), ajouter :
     <activeProfiles>
         <activeProfile>jenkins</activeProfile>
     </activeProfiles>
+=======
