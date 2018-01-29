@@ -24,6 +24,9 @@ services:
         container_name: apave-db
         environment:
             MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: apave_test
+            MYSQL_USER: apave
+            MYSQL_PASSWORD: apave
         ports:
             - "3306:3306"
         networks:
