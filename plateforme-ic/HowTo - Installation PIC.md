@@ -446,6 +446,23 @@ deux groupes de l'AD. Le groupe *Anonyme* permet aux utilisateurs non connectés
 - `Server Credentials -> Ajouter`
     - ServerId: **snapshots**
     - Credentials: **Nexus**
+
+- `Server Credentials -> Ajouter`
+    - ServerId: **snapshots-esb**
+    - Credentials: **Nexus**
+
+- `Server Credentials -> Ajouter`
+    - ServerId: **releases-esb**
+    - Credentials: **Nexus**
+
+- `Server Credentials -> Ajouter`
+    - ServerId: **snapshots-etl**
+    - Credentials: **Nexus**
+
+- `Server Credentials -> Ajouter`
+    - ServerId: **releases-etl**
+    - Credentials: **Nexus**
+
 - Content :
 
 ```xml
