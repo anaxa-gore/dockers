@@ -6,7 +6,7 @@ USER root
 RUN apt-get update
 RUN apt-get -qq install docker
 
-RUN apt-get -qq install npm
+RUN apt-get -qq install nodejs
 
 RUN apt-get -qq install xvfb
 RUN /usr/bin/Xvfb &
