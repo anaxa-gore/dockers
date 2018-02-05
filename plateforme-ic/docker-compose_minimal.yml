@@ -167,23 +167,23 @@ services:
     #        - ic_net
     
     ########## Gestion de tickets : REDMINE
-    #redmine:
-    #    build: redmine/
-    #    image: redmine.pic:3.0
-    #    container_name: pic.redmine
-    #    networks:
-    #        - ic_net
-    #    ports:
-    #        - "5050:3000"
-    #    links: 
-    #        - db_sonar
-    #    environment:
-    #        - REDMINE_DB_MYSQL=db_sonar
-    #        - REDMINE_DB_USERNAME=redmine
-    #        - REDMINE_DB_PASSWORD=redmine
-    #        - REDMINE_PLUGINS_MIGRATE=true  # Prend en compte la mise à jour des plugins
-    #    volumes:
-    #        - ${ROOT_SHARED_DATA}/redmine/repositories:/home/repositories
+    redmine:
+        build: redmine/
+        image: redmine.pic:3.0
+        container_name: pic.redmine
+        networks:
+            - ic_net
+        ports:
+            - "5050:3000"
+        links: 
+            - db_sonar
+        environment:
+            - REDMINE_DB_MYSQL=db_sonar
+            - REDMINE_DB_USERNAME=redmine
+            - REDMINE_DB_PASSWORD=redmine
+            - REDMINE_PLUGINS_MIGRATE=true  # Prend en compte la mise à jour des plugins
+        volumes:
+            - ${ROOT_SHARED_DATA}/redmine/repositories:/home/repositories
     
     ########## Gestion de tickets : MANTIS
     #mantis:
