@@ -10,8 +10,8 @@ RUN curl -O "https://nodejs.org/dist/v8.9.4/node-v8.9.4-linux-x64.tar.gz"
 RUN tar -xvzf "node-v8.9.4-linux-x64.tar.gz" -C /usr/local --strip-components=1 --no-same-owner
 RUN ln -s /usr/local/bin/node /usr/local/bin/nodejs
 
-RUN apt-get -qq install xvfb
-RUN /usr/bin/Xvfb &
+#RUN apt-get -qq install xvfb
+#RUN /usr/bin/Xvfb &
 
 ADD ./id_rsa /var/jenkins_home/.ssh/
 ADD ./id_rsa.pub /var/jenkins_home/.ssh/
