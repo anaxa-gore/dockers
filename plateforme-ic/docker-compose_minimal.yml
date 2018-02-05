@@ -6,7 +6,7 @@ services:
     #    build: apache/
     #    image: proxy.pic
     #    container_name: pic.proxy
-    #    ports: 
+    #    ports:
     #        - "80:80"
     #    networks:
     #        - ic_net
@@ -17,14 +17,14 @@ services:
         build: jenkins/
         image: jenkins.pic
         container_name: pic.jenkins
-        ports: 
+        ports:
             - "8092:8080"
             - "50000:50000"
         volumes:
             - ${ROOT_DATA}/jenkins_home:/var/jenkins_home
         networks:
             - ic_net
-            
+
     ########## Repository de données
     nexus:
         image: sonatype/nexus3
@@ -35,7 +35,7 @@ services:
             - "8081:8081"
         volumes:
             - ${ROOT_SHARED_DATA}/nexus:/nexus-data
-     
+
     ########## Qualité du code : SONARQUBE
     # La base de données est également utilisée pour XStudio
     db_sonar:
@@ -54,7 +54,7 @@ services:
             - MYSQL_DATABASE=sonar
             - MYSQL_USER=sonar
             - MYSQL_PASSWORD=sonar
-            
+
     sonarqube:
         image: sonarqube:alpine
         container_name: pic.sonar
@@ -76,21 +76,21 @@ services:
             #- ${ROOT_SHARED_DATA}/sonarqube/plugins:/opt/sonarqube/lib/bundled-plugins
 
     ########## Version Control
-    gitlab:
-        image: gitlab/gitlab-ce:latest
-        container_name: pic.gitlab
-        ports:
-            - "1212:80"
+    #gitlab:
+    #    image: gitlab/gitlab-ce:latest
+    #    container_name: pic.gitlab
+    #    ports:
+    #        - "1212:80"
             #- "443:443"
             #- "222:22"
-        volumes:
-            - ${ROOT_SHARED_DATA}/gitlab/etc:/etc/gitlab
-            - ${ROOT_SHARED_DATA}/gitlab/data:/var/opt/gitlab
-            - ${ROOT_SHARED_DATA}/gitlab/log:/var/log/gitlab
-        networks:
-            - ic_net
-    
-    
+    #    volumes:
+    #        - ${ROOT_SHARED_DATA}/gitlab/etc:/etc/gitlab
+    #        - ${ROOT_SHARED_DATA}/gitlab/data:/var/opt/gitlab
+    #        - ${ROOT_SHARED_DATA}/gitlab/log:/var/log/gitlab
+    #    networks:
+    #        - ic_net
+
+
     ########## Outils collaboratifs : ROCKET.CHAT ou MATTERMOST
     #    db_rocket:
     #    image: mongo:latest
@@ -118,7 +118,7 @@ services:
     #        - MONGO_URL=mongodb://db_rocket:27017/rocketchat
     #    networks:
     #        - ic_net
-    
+
     #db_mattermost:
     #    image: postgres:alpine
     #    ports:
@@ -154,7 +154,7 @@ services:
     #
     #mattermost_web:
     #    build: mattermost/web
-    #    links: 
+    #    links:
     #        - mattermost
     #    ports:
     #        - "2424:80"
@@ -165,7 +165,7 @@ services:
     #        - /etc/localtime:/etc/localtime:ro
     #    networks:
     #        - ic_net
-    
+
     ########## Gestion de tickets : REDMINE
     redmine:
         build: redmine/
@@ -175,7 +175,7 @@ services:
             - ic_net
         ports:
             - "5050:3000"
-        links: 
+        links:
             - db_sonar
         environment:
             - REDMINE_DB_MYSQL=db_sonar
@@ -184,7 +184,7 @@ services:
             - REDMINE_PLUGINS_MIGRATE=true  # Prend en compte la mise à jour des plugins
         volumes:
             - ${ROOT_SHARED_DATA}/redmine/repositories:/home/repositories
-    
+
     ########## Gestion de tickets : MANTIS
     #mantis:
         #image: chessmasterrr/mantis:latest
@@ -215,7 +215,7 @@ services:
     #        - /etc/localtime:/etc/localtime:ro
     #    networks:
     #        - ic_net
-    #        
+    #
     #taiga:
     #    build: taiga/
     #    ports:
@@ -235,7 +235,7 @@ services:
     #        - ${ROOT_DATA}/taiga/conf:/taiga
     #    networks:
     #        - ic_net
-            
+
     ########## Tomcat pour déploiement application
     #tomcat:
     #    build: ../container_tomcat_filebeat_xstudio/
@@ -245,7 +245,7 @@ services:
     #        - "9595:8080"
     #    networks:
     #        - ic_net
-    
+
     #agent_xstudio:
     #    build: ../container_xstudio_fat/
     #    image: xstudio_agent.pic
@@ -253,7 +253,7 @@ services:
     #    networks:
     #        - ic_net
     #    tty: true
-    
+
 networks:
     ic_net:
         driver: bridge
