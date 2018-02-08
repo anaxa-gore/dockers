@@ -327,6 +327,7 @@ Installer les plugins suivants :
 - Pipeline Utility Steps Plugin
 - Monitoring
 - Lockable Resources Plugin
+- Nexus Artifact Uploader
 
 ### Gestion de l'authentification & des rôles
 Dans la configuration exposée ci-dessous, les utilisateurs sont authentifiés à travers l'AD
