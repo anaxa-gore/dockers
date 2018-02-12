@@ -274,6 +274,38 @@ Il faut ensuite ajouter ces repositories au *maven-public* :
 
 ---
 
+Pour NPM
+
+*npm-proxy* - sert de proxy vers le NPM standard
+
+`Server administration and configuration -> Repository -> Repositories -> Create repository -> npm (proxy)`
+- Name : **npm-central**
+- Remote storage : **http://registry.npmjs.org**
+- Blob store : **npm** (créer au préalable un blob store différent pour le npm afin de ne pas stocker les NPM au même endroit que les maven)
+
+*npm-releases* - stocke les artefacts en mode release
+
+`Server administration and configuration -> Repository -> Repositories -> Create repository -> npm (hosted)`
+- Name : **npm-releases**
+- Blob store : **npm**
+- Deployment policy : **Disable redeploy**.
+
+*npm-snapshots* - stocke les artefacts en mode release
+
+`Server administration and configuration -> Repository -> Repositories -> Create repository -> npm (hosted)`
+- Name : **npm-snapshots**
+- Blob store : **npm**
+- Deployment policy : **Allow redeploy**.
+
+*npm-public* - sert de proxy vers l'ensemble des repositories NPM
+
+`Server administration and configuration -> Repository -> Repositories -> Create repository -> npm (group)`
+- Name : **npm-public**
+- Blob store : **npm**
+- Group : Ajouter *npm-central*, *npm-releases* et *npm-snapshots*.
+
+---
+
 Il reste à ajouter manuellement les librairies BI Publisher au repository *maven-oracle-bipub*, celles-ci n'étant pas
 disponibles sur le repository maven d'Oracle.
 
@@ -508,17 +540,17 @@ deux groupes de l'AD. Le groupe *Anonyme* permet aux utilisateurs non connectés
 #### Configuration de NPM dans Jenkins
 `-> Administrer Jenkins -> Configuration Files -> Add New Config`
 - Type de fichier : **Fichier Npm de configuration**
-- ID : **npmrc**
+- ID : **globalNpmrc**
 
 `Submit`
 
-- Name: **npmrc**
+- Name: **globalNpmrc**
 - `-> NPM Registry -> Ajouter`
-    - URL: **http://srv:8081/repository/internal-web/** (URL Nexus pour stockage des artefacts Web)
+    - URL: **http://srv:8081/repository/npm-public/** (URL Nexus pour stockage des artefacts Web)
     - Credentials : **Nexus**
     - Content (Ajouter en fin de fichier) :
 ```
-    registry=http://srv:8081/repository/internal-web/
+    registry=http://srv:8081/repository/npm-public/
     _auth=YWRtaW46YWRtaW4xMjM=          => echo -n 'user:passwd' | openssl base64 où <user = user nexus> & <passwd = pwd user nexus>
     user=admin                          => utilisateur Nexus
     email=admin@admin.com
