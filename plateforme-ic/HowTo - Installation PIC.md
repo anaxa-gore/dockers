@@ -327,6 +327,8 @@ Installer les plugins suivants :
 - Pipeline Utility Steps Plugin
 - Monitoring
 - Lockable Resources Plugin
+- Validating String Parameter Plugin
+- SSH Agent Plugin
 
 ### Gestion de l'authentification & des rôles
 Dans la configuration exposée ci-dessous, les utilisateurs sont authentifiés à travers l'AD
@@ -570,7 +572,7 @@ deux groupes de l'AD. Le groupe *Anonyme* permet aux utilisateurs non connectés
 #### Configuration des Shared Libraries dans Jenkins
 *Pour cette étape il est nécessaire de se doter d'une clé private/public. Pour générer une clé, consulter [ce lien](https://docs.gitlab.com/ce/ssh/README.html)*
 
-**Dans GitLab - Création d'un utilisateur de service Jenkins**
+**Dans GitLab - Création d'un utilisateur de service Jenkins (droits admin)**
 
 `-> Admin area -> New User`
 - Name : **Jenkins PIC**
@@ -606,7 +608,13 @@ deux groupes de l'AD. Le groupe *Anonyme* permet aux utilisateurs non connectés
 `Enregistrer`
 
 #### Configuration d'un slave Linux dans Jenkins
-Git doit obligatoirement être installé sur le noeud pour que les builds puissent se dérouler correctement.
+
+##### Pré-requis
+- Git doit obligatoirement être installé sur le noeud pour que les builds puissent se dérouler correctement.
+- Le noeud doit avoir accès à GitLab
+- Le noeud doit avoir accès à Nexus
+
+##### Configuration
 
 `-> Administrer Jenkins -> Gérer les noeuds -> Créer un noeud`
 - Nom du noeud : **\<Nom du noeud\>**
