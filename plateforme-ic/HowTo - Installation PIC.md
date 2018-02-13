@@ -639,12 +639,13 @@ deux groupes de l'AD. Le groupe *Anonyme* permet aux utilisateurs non connectés
 
 `Enregistrer`
 
-#### Configuration d'un slave Linux dans Jenkins
+#### Configuration d'un slave Linux/Maven/NPM dans Jenkins
 
 ##### Pré-requis
 - Git doit obligatoirement être installé sur le noeud pour que les builds puissent se dérouler correctement.
 - Le noeud doit avoir accès à GitLab
 - Le noeud doit avoir accès à Nexus
+- Le noeud doit avoir bzip2 installé
 
 ##### Configuration
 
