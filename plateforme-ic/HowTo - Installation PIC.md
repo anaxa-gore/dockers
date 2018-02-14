@@ -315,13 +315,13 @@ disponibles sur le repository maven d'Oracle.
 `Server administration and configuration -> Tasks -> Create Task -> Remove Snapshots from Maven Repository`
 - Task name : **Nettoyage snapshots**
 - Notification email : **\<email@en_cas_dechec\>**
-- Repository : **\<repo_a_purger\>**
+- Repository : **maven-public**
 - Minimim snapshots count : **1**
-- Snapshots retention : **30**
+- Snapshots retention : **2**
 - Task frequency : **Weekly**
 - Start date : **\<date_de_demmarage\>**
-- Time to run this task : **\<heure_de_declenchement\>**
-- Days to run this task : **\<jours_autorisés\>**
+- Time to run this task : **00:00**
+- Days to run this task : **Sunday / Wednesday / Saturday**
 
 `Create task`
 
@@ -361,6 +361,7 @@ Installer les plugins suivants :
 - Lockable Resources Plugin
 - Validating String Parameter Plugin
 - SSH Agent Plugin
+- Copy Artifact Plugin
 
 ### Gestion de l'authentification & des rôles
 Dans la configuration exposée ci-dessous, les utilisateurs sont authentifiés à travers l'AD
