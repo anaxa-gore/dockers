@@ -93,6 +93,7 @@ Installer les plugins suivants :
 - SonarJava
 - SonarPHP
 - SonarPython
+- Web
 - CSS / SCSS / Less
 - LDAP
 
