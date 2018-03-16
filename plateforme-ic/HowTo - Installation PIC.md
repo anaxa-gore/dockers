@@ -552,10 +552,10 @@ deux groupes de l'AD. Le groupe *Anonyme* permet aux utilisateurs non connectés
     - Credentials : **Nexus**
     - Content (Ajouter en fin de fichier) :
 ```
-    registry=http://srv:8081/repository/npm-public/
-    _auth=YWRtaW46YWRtaW4xMjM=          => echo -n 'user:passwd' | openssl base64 où <user = user nexus> & <passwd = pwd user nexus>
-    user=admin                          => utilisateur Nexus
-    email=admin@admin.com
+    ;registry=http://srv:8081/repository/npm-public/
+    ;_auth=YWRtaW46YWRtaW4xMjM=          => echo -n 'user:passwd' | openssl base64 où <user = user nexus> & <passwd = pwd user nexus>
+    ;user=admin                          => utilisateur Nexus
+    email=admin@admin.com                => INDISPENSABLE !!
 ```
 
 `Submit`
