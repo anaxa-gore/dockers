@@ -37,6 +37,10 @@
 Vérifier que la valeur soit correcte sur :
 - URL du site : **adresse + port d'exposition du service Rocket.chat**
 
+### Paramètres d'affichage
+`-> Administration -> Apparence -> Interface Utilisateur`
+- Use Real Name : **Oui**, pour afficher les noms complets plutôt que les logins
+
 ### Paramètres LDAP
 `-> Administration -> LDAP`
 - Activer : **Oui**
