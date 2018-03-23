@@ -368,6 +368,11 @@ Installer les plugins suivants :
 - SSH Agent Plugin
 - Copy Artifact Plugin
 
+### Configuration de Git
+`-> Administrer Jenkins -> Configurer le système -> Git plugin`
+- Global Config user.name Value : **Jenkins**
+- Global Config user.email Value : **jenkins@jenkins.com**
+
 ### Gestion de l'authentification & des rôles
 Dans la configuration exposée ci-dessous, les utilisateurs sont authentifiés à travers l'AD
 d'entreprise. Les autorisations sont gérés via des groupes créés dans l'AD auxquels sont associés
