@@ -216,6 +216,19 @@ Les repositories supplémentaires suivants sont ajoutés :
 
 `Create repository`
 
+*maven-divers* - sert à héberger les librairies diverses qui ne seraient pas publiées dans un Maven repo (A EVITER LA PLUPART DU TEMPS)
+
+`Server administration and configuration -> Repository -> Repositories -> Create repository -> maven2 (hosted)`
+- Name : **maven-divers**
+- Online : **True**
+- Version policy : **Release**
+- Layout policy : **Strict**
+- Blob store : **default**
+- Strict content type validation : **False**
+- Deployment policy : **Disable redeploy**
+
+`Create repository`
+
 *maven-esb-snapshots* - sert à héberger l'ensemble des artefacts MAVEN de l'ESB (en mode snapshots)
 
 `Server administration and configuration -> Repository -> Repositories -> Create repository -> maven2 (hosted)`
